@@ -1,0 +1,17 @@
+{
+  "name": "viz_histogram",
+  "description": "绘制指定曲线直方图",
+  "paths": {
+    "input_file": "data/processed_data/data_tools/cleaned_well_logs.csv",
+    "output_file": "data/processed_data/viz_tools/histogram.png"
+  },
+  "parameters": {
+    "curves": [
+      "GR",
+      "DEN",
+      "CNL",
+      "AC"
+    ],
+    "bins": 30
+  }
+}

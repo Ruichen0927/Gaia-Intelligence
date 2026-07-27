@@ -1,0 +1,42 @@
+{
+  "name": "shale_build_strategy",
+  "description": "按地层构建泥质含量解释策略（Agent驱动）",
+  "paths": {
+    "data_directory": "data/sample",
+    "output_directory": "data/processed_data/shale_content",
+    "agent_config": "ctl/agent_configs/interpretation_advisor_agent_config.json",
+    "baseline_config": "data/processed_data/shale_content/shale_interpretation_strategy.json"
+  },
+  "parameters": {
+    "strategy_filename": "shale_interpretation_strategy_agent.json",
+    "use_few_shot": false,
+    "few_shot_suffix": "_with_fewshot",
+    "zero_shot_suffix": "_zero_shot",
+    "curve_names": {
+      "GR": "GR",
+      "CGR": "CGR",
+      "DEN": "DEN",
+      "CNL": "CNL",
+      "AC": "AC",
+      "PE": "PE",
+      "LAYER": "LAYER",
+      "SH": "SH"
+    },
+    "sanity_ranges": {
+      "gr_min": [0, 75],
+      "gr_max": [80, 500],
+      "rho_sh": [2.2, 2.9],
+      "nphi_sh": [15, 60]
+    },
+    "rho_ma_sand": 2.65,
+    "rho_f_water": 1.0,
+    "universal_default_params": {
+      "gr_min": 30.0,
+      "gr_max": 150.0,
+      "rho_sh": 2.55,
+      "nphi_sh": 35.0,
+      "delta_t_sh": 320.0,
+      "optimized_gcur": 2.0
+    }
+  }
+}

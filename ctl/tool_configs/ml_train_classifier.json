@@ -1,0 +1,25 @@
+{
+  "name": "ml_train_classifier",
+  "description": "训练分类模型",
+  "paths": {
+    "input_file": "data/processed_data/permeability/interpreted_wells/*.csv",
+    "output_model_file": "data/processed_data/ml/classifier.pkl",
+    "output_metrics_file": "data/processed_data/ml/classifier_metrics.json"
+  },
+  "parameters": {
+    "feature_columns": [
+      "GR",
+      "DEN",
+      "CNL",
+      "AC",
+      "phie_final"
+    ],
+    "target_column": "rock_type",
+    "algorithm": "random_forest",
+    "test_size": 0.2,
+    "random_state": 42,
+    "algorithm_params": {
+      "n_estimators": 100
+    }
+  }
+}

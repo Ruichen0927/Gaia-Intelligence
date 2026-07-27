@@ -1,0 +1,25 @@
+{
+  "name": "ml_train_regressor",
+  "description": "训练回归模型",
+  "paths": {
+    "input_file": "data/processed_data/data_tools/cleaned_well_logs.csv",
+    "output_model_file": "data/processed_data/ml/regressor.pkl",
+    "output_metrics_file": "data/processed_data/ml/regressor_metrics.json"
+  },
+  "parameters": {
+    "feature_columns": [
+      "GR",
+      "DEN",
+      "CNL",
+      "AC"
+    ],
+    "target_column": "phie_final",
+    "algorithm": "random_forest",
+    "test_size": 0.2,
+    "random_state": 42,
+    "algorithm_params": {
+      "n_estimators": 100,
+      "max_depth": 10
+    }
+  }
+}

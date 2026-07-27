@@ -1,0 +1,26 @@
+{
+  "name": "final_report_generate_deliverable",
+  "description": "使用Agent对疑难点会诊并进行层段合并，生成最终交付成果",
+  "paths": {
+    "input_directory": "data/processed_data/lithology/interpreted_wells",
+    "output_directory": "data/processed_data/final_report",
+    "final_conclusion_agent_config": "ctl/agent_configs/final_conclusion_agent_config.json"
+  },
+  "parameters": {
+    "layer_col": "LAYER",
+    "rock_type_col": "rock_type",
+    "depth_col": "DEPTH",
+    "result_col": "RESULT",
+    "sw_col": "sw_final",
+    "phie_col": "phie_final",
+    "k_col": "k_final",
+    "vsh_col": "vsh_final",
+    "result_auto_col": "RESULT_AUTO",
+    "final_conclusion_col": "FINAL_CONCLUSION",
+    "rules_filename": "decision_rules.json",
+    "smoothing_window": 3,
+    "min_layer_thickness": 0.5,
+    "temp_pointwise_subfolder": "temp_pointwise",
+    "final_deliverable_subfolder": "final_deliverables"
+  }
+}

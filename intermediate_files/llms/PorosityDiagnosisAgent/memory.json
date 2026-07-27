@@ -1,0 +1,708 @@
+{
+    "agent_id": "PorosityDiagnosisAgent",
+    "memory": [
+        {
+            "timestamp": "2026-07-18T18:25:39.259868",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 97.2732,\n  \"DEN_avg\": 2.4972,\n  \"CNL_avg\": 23.3221,\n  \"AC_avg\": 230.3921,\n  \"PE_avg\": 2.7823,\n  \"vsh_final_avg\": 0.766,\n  \"caliper_enlargement_inch\": 7.7862,\n  \"phi_d_n_diff_avg\": -0.1701\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和Vsh的均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:25:46.174647",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 115.7612,\n  \"DEN_avg\": 2.0156,\n  \"CNL_avg\": 31.8632,\n  \"AC_avg\": 250.2157,\n  \"PE_avg\": 1.291,\n  \"vsh_final_avg\": 0.314,\n  \"caliper_enlargement_inch\": 9.7418,\n  \"phi_d_n_diff_avg\": 0.0396\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和Vsh_final_avg的值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:25:50.881831",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:25:53.268775",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"井径扩展超过1.5英寸，表明井况不良；根据GR和PE的均值，判断主要岩性为页岩；phi_d_n_diff_avg大于0.08，表明存在气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:25:57.597472",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 106.5173,\n  \"DEN_avg\": 2.3067,\n  \"CNL_avg\": 32.0915,\n  \"AC_avg\": 270.4252,\n  \"PE_avg\": 2.3951,\n  \"vsh_final_avg\": 0.237,\n  \"caliper_enlargement_inch\": 8.7372,\n  \"phi_d_n_diff_avg\": -0.139\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:26:02.841353",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性判断为Shale，因为GR值较高且Vsh为0。phi_d_n_diff_avg小于0.08，因此没有气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:26:08.389478",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 78.0129,\n  \"DEN_avg\": 2.3438,\n  \"CNL_avg\": 17.5466,\n  \"AC_avg\": 246.8319,\n  \"PE_avg\": 2.3536,\n  \"vsh_final_avg\": 0.5626,\n  \"caliper_enlargement_inch\": 7.9196,\n  \"phi_d_n_diff_avg\": -0.0216\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和Vsh_final_avg的值综合判断为Shale。phi_d_n_diff_avg小于0.08，未发现气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:26:13.997876",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2389,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值分析得出为Shale。phi_d_n_diff_avg小于0.08，未发现气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:26:19.652464",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 120.2334,\n  \"DEN_avg\": 2.0133,\n  \"CNL_avg\": 60.4487,\n  \"AC_avg\": 299.5706,\n  \"PE_avg\": 1.2335,\n  \"vsh_final_avg\": 0.0034,\n  \"caliper_enlargement_inch\": 10.3825,\n  \"phi_d_n_diff_avg\": -0.2338\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判定为Bad_Hole。岩性判断基于GR和PE的均值，显示为Shale。phi_d_n_diff_avg小于0.08，未显示气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:26:21.848839",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 107.2953,\n  \"DEN_avg\": 2.2001,\n  \"CNL_avg\": 26.9829,\n  \"AC_avg\": 242.6209,\n  \"PE_avg\": 2.4613,\n  \"vsh_final_avg\": 0.4141,\n  \"caliper_enlargement_inch\": 8.4774,\n  \"phi_d_n_diff_avg\": -0.0252\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:26:57.635473",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 97.2484,\n  \"DEN_avg\": 2.4828,\n  \"CNL_avg\": 23.8006,\n  \"AC_avg\": 231.7316,\n  \"PE_avg\": 2.7614,\n  \"vsh_final_avg\": 0.795,\n  \"caliper_enlargement_inch\": 7.8098,\n  \"phi_d_n_diff_avg\": -0.166\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和Vsh_final_avg的值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:04.161890",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 111.913,\n  \"DEN_avg\": 2.0473,\n  \"CNL_avg\": 30.0809,\n  \"AC_avg\": 260.2538,\n  \"PE_avg\": 1.7699,\n  \"vsh_final_avg\": 0.3835,\n  \"caliper_enlargement_inch\": 9.3578,\n  \"phi_d_n_diff_avg\": 0.0376\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，故没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:09.170504",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:14.651239",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 103.6803,\n  \"DEN_avg\": 2.2815,\n  \"CNL_avg\": 26.0206,\n  \"AC_avg\": 246.6433,\n  \"PE_avg\": 2.4658,\n  \"vsh_final_avg\": 0.4556,\n  \"caliper_enlargement_inch\": 8.3945,\n  \"phi_d_n_diff_avg\": -0.0653\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和Vsh_final_avg的值综合判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:19.376700",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有特殊效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:22.508011",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 116.9122,\n  \"DEN_avg\": 2.1755,\n  \"CNL_avg\": 55.9197,\n  \"AC_avg\": 302.9494,\n  \"PE_avg\": 1.7034,\n  \"vsh_final_avg\": 0.1333,\n  \"caliper_enlargement_inch\": 9.8518,\n  \"phi_d_n_diff_avg\": -0.2886\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判定为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，未检测到Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:27.599164",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 54.4921,\n  \"DEN_avg\": 2.3499,\n  \"CNL_avg\": 16.0686,\n  \"AC_avg\": 236.8213,\n  \"PE_avg\": 2.0875,\n  \"vsh_final_avg\": 0.4987,\n  \"caliper_enlargement_inch\": 7.4689,\n  \"phi_d_n_diff_avg\": -0.0111\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和Vsh_final_avg的值综合判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:32.509383",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性判断为Shale，因为GR值较高且Vsh为0。phi_d_n_diff_avg小于0.08，表明没有气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:37.608528",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 128.2683,\n  \"DEN_avg\": 1.9272,\n  \"CNL_avg\": 57.7426,\n  \"AC_avg\": 284.7945,\n  \"PE_avg\": 1.0216,\n  \"vsh_final_avg\": 0.0067,\n  \"caliper_enlargement_inch\": 10.8537,\n  \"phi_d_n_diff_avg\": -0.1556\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE等均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:43.884120",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"井径扩展超过1.5英寸，表明井况不良。同时，GR和PE的值结合Vsh的平均值，判断出主要岩性为页岩。此外，phi_d_n_diff_avg超过0.08，表明存在气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:20.731739",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 96.1088,\n  \"DEN_avg\": 2.4911,\n  \"CNL_avg\": 23.6632,\n  \"AC_avg\": 231.2899,\n  \"PE_avg\": 2.7537,\n  \"vsh_final_avg\": 0.7964,\n  \"caliper_enlargement_inch\": 7.7854,\n  \"phi_d_n_diff_avg\": -0.1697\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和Vsh的均值判断为Shale。phi_d_n_diff_avg小于0.08，未检测到Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:23.922320",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 113.3362,\n  \"DEN_avg\": 2.0594,\n  \"CNL_avg\": 30.0285,\n  \"AC_avg\": 261.9329,\n  \"PE_avg\": 1.5137,\n  \"vsh_final_avg\": 0.3373,\n  \"caliper_enlargement_inch\": 9.5036,\n  \"phi_d_n_diff_avg\": 0.0307\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判定为Bad_Hole。岩性通过GR和PE等均值判断为Shale。phi_d_n_diff_avg小于0.08，故无Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:28.602173",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，故没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:33.277893",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 104.5967,\n  \"DEN_avg\": 2.2515,\n  \"CNL_avg\": 26.5484,\n  \"AC_avg\": 247.0337,\n  \"PE_avg\": 2.5184,\n  \"vsh_final_avg\": 0.4544,\n  \"caliper_enlargement_inch\": 8.4355,\n  \"phi_d_n_diff_avg\": -0.0522\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值分析得出为Shale。phi_d_n_diff_avg小于0.08，故无Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:38.023482",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判定为Bad_Hole。岩性判断基于GR和PE的均值，显示为Shale。phi_d_n_diff_avg小于0.08，故无Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:43.040722",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 116.9122,\n  \"DEN_avg\": 2.1755,\n  \"CNL_avg\": 55.9197,\n  \"AC_avg\": 302.9494,\n  \"PE_avg\": 1.7034,\n  \"vsh_final_avg\": 0.1333,\n  \"caliper_enlargement_inch\": 9.8518,\n  \"phi_d_n_diff_avg\": -0.2886\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:47.776555",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 54.4921,\n  \"DEN_avg\": 2.3499,\n  \"CNL_avg\": 16.0686,\n  \"AC_avg\": 236.8213,\n  \"PE_avg\": 2.0875,\n  \"vsh_final_avg\": 0.4987,\n  \"caliper_enlargement_inch\": 7.4689,\n  \"phi_d_n_diff_avg\": -0.0111\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:50.801409",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性判断基于GR和PE的均值，显示为Shale。phi_d_n_diff_avg小于0.08，表明没有气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:55.754669",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 128.2683,\n  \"DEN_avg\": 1.9272,\n  \"CNL_avg\": 57.7426,\n  \"AC_avg\": 284.7945,\n  \"PE_avg\": 1.0216,\n  \"vsh_final_avg\": 0.0067,\n  \"caliper_enlargement_inch\": 10.8537,\n  \"phi_d_n_diff_avg\": -0.1556\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和Vsh_final_avg判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:29:01.359494",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"井径扩展超过1.5英寸，表明井况不良。同时，GR和PE的值结合Vsh的均值判断出主要岩性为页岩。此外，phi_d_n_diff_avg超过0.08，显示出气体效应的存在。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:11.426641",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 96.5292,\n  \"DEN_avg\": 2.4878,\n  \"CNL_avg\": 24.8532,\n  \"AC_avg\": 231.7846,\n  \"PE_avg\": 2.6979,\n  \"vsh_final_avg\": 0.81,\n  \"caliper_enlargement_inch\": 7.811,\n  \"phi_d_n_diff_avg\": -0.1792\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和vsh_final_avg的值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:17.257842",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 107.8579,\n  \"DEN_avg\": 1.7273,\n  \"CNL_avg\": 45.6896,\n  \"AC_avg\": 298.0177,\n  \"PE_avg\": 1.3915,\n  \"vsh_final_avg\": 0.2788,\n  \"caliper_enlargement_inch\": 11.7479,\n  \"phi_d_n_diff_avg\": 0.0814\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"井径扩展超过1.5英寸，表明井况不良。同时，GR和PE的值结合Vsh的平均值判断出主要岩性为页岩。此外，phi_d_n_diff_avg超过0.08，显示出气体效应的存在。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:20.269245",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 77.7953,\n  \"DEN_avg\": 2.3859,\n  \"CNL_avg\": 17.9294,\n  \"AC_avg\": 238.6067,\n  \"PE_avg\": 2.5122,\n  \"vsh_final_avg\": 0.6833,\n  \"caliper_enlargement_inch\": 7.9181,\n  \"phi_d_n_diff_avg\": -0.0508\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和Vsh_final_avg的值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:25.489925",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 101.2524,\n  \"DEN_avg\": 1.7908,\n  \"CNL_avg\": 52.161,\n  \"AC_avg\": 378.3288,\n  \"PE_avg\": 0.7088,\n  \"vsh_final_avg\": 0.252,\n  \"caliper_enlargement_inch\": 10.401,\n  \"phi_d_n_diff_avg\": -0.0193\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:30.012216",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:34.977683",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 109.1368,\n  \"DEN_avg\": 2.2603,\n  \"CNL_avg\": 28.372,\n  \"AC_avg\": 252.5123,\n  \"PE_avg\": 2.4817,\n  \"vsh_final_avg\": 0.3492,\n  \"caliper_enlargement_inch\": 8.5017,\n  \"phi_d_n_diff_avg\": -0.0751\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值判断为Shale。phi_d_n_diff_avg小于0.08，未显示气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:40.305867",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 112.1986,\n  \"DEN_avg\": 2.0993,\n  \"CNL_avg\": 63.1548,\n  \"AC_avg\": 314.3467,\n  \"PE_avg\": 1.4453,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 9.9112,\n  \"phi_d_n_diff_avg\": -0.312\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，故没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:45.703514",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值判断为Shale。phi_d_n_diff_avg小于0.08，故没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:51.046859",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 123.1018,\n  \"DEN_avg\": 1.775,\n  \"CNL_avg\": 67.2674,\n  \"AC_avg\": 307.4083,\n  \"PE_avg\": 0.8835,\n  \"vsh_final_avg\": 0.0134,\n  \"caliper_enlargement_inch\": 11.4801,\n  \"phi_d_n_diff_avg\": -0.155\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，故没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:53.795961",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 118.7068,\n  \"DEN_avg\": 2.0263,\n  \"CNL_avg\": 34.5889,\n  \"AC_avg\": 252.2098,\n  \"PE_avg\": 1.2691,\n  \"vsh_final_avg\": 0.2236,\n  \"caliper_enlargement_inch\": 9.8227,\n  \"phi_d_n_diff_avg\": 0.007\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值分析得出为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:07.004948",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 96.1088,\n  \"DEN_avg\": 2.4911,\n  \"CNL_avg\": 23.6632,\n  \"AC_avg\": 231.2899,\n  \"PE_avg\": 2.7537,\n  \"vsh_final_avg\": 0.7973,\n  \"caliper_enlargement_inch\": 7.7854,\n  \"phi_d_n_diff_avg\": -0.1697\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井径扩展超过1.5英寸，判断为Bad_Hole。根据GR、DEN、PE和Vsh的均值，岩性主要为Shale。phi_d_n_diff_avg小于0.08，未发现气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:13.387118",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 113.3362,\n  \"DEN_avg\": 2.0594,\n  \"CNL_avg\": 30.0285,\n  \"AC_avg\": 261.9329,\n  \"PE_avg\": 1.5137,\n  \"vsh_final_avg\": 0.3373,\n  \"caliper_enlargement_inch\": 9.5036,\n  \"phi_d_n_diff_avg\": 0.0307\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值分析得出为Shale。phi_d_n_diff_avg小于0.08，未发现气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:18.919222",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等均值判断为Shale。phi_d_n_diff_avg小于0.08，表明没有气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:23.020688",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 104.5967,\n  \"DEN_avg\": 2.2515,\n  \"CNL_avg\": 26.5484,\n  \"AC_avg\": 247.0337,\n  \"PE_avg\": 2.5184,\n  \"vsh_final_avg\": 0.4544,\n  \"caliper_enlargement_inch\": 8.4355,\n  \"phi_d_n_diff_avg\": -0.0522\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等参数综合判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:28.552819",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井径扩张超过1.5英寸，判断为Bad_Hole。根据GR、DEN、PE等均值，推断主要岩性为Shale。phi_d_n_diff_avg未超过0.08，故无Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:33.597830",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 121.4546,\n  \"DEN_avg\": 2.0762,\n  \"CNL_avg\": 56.6489,\n  \"AC_avg\": 295.6874,\n  \"PE_avg\": 1.4307,\n  \"vsh_final_avg\": 0.0827,\n  \"caliper_enlargement_inch\": 10.2526,\n  \"phi_d_n_diff_avg\": -0.2354\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，故没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:36.786928",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 54.4485,\n  \"DEN_avg\": 2.3553,\n  \"CNL_avg\": 14.7316,\n  \"AC_avg\": 231.3386,\n  \"PE_avg\": 2.0398,\n  \"vsh_final_avg\": 0.8655,\n  \"caliper_enlargement_inch\": 7.3688,\n  \"phi_d_n_diff_avg\": -0.0015\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井况判断为'Bad_Hole'是因为caliper_enlargement_inch大于1.5。岩性判断为'Shale'是基于GR_avg和Vsh_final_avg的值。phi_d_n_diff_avg小于0.08，因此没有气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:41.907886",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井况判断为'Bad_Hole'因为caliper_enlargement_inch大于1.5。岩性判断为'Shale'因为GR_avg较高且Vsh_final_avg为0。phi_d_n_diff_avg小于0.08，故没有气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:47.624538",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 54.5356,\n  \"DEN_avg\": 2.3445,\n  \"CNL_avg\": 17.4055,\n  \"AC_avg\": 242.3041,\n  \"PE_avg\": 2.1351,\n  \"vsh_final_avg\": 0.1032,\n  \"caliper_enlargement_inch\": 7.569,\n  \"phi_d_n_diff_avg\": -0.0207\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判定为Bad_Hole。岩性通过GR和PE等均值判断为Shale。phi_d_n_diff_avg小于0.08，故无Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:52.675522",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"井径扩展超过1.5英寸，表明井况不良。同时，GR和PE的值结合Vsh的均值判断出主要岩性为页岩。此外，phi_d_n_diff_avg大于0.08，表明存在气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:41:43.547323",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 96.1088,\n  \"DEN_avg\": 2.4911,\n  \"CNL_avg\": 23.6632,\n  \"AC_avg\": 231.2899,\n  \"PE_avg\": 2.7537,\n  \"vsh_final_avg\": 0.7776,\n  \"caliper_enlargement_inch\": 7.7854,\n  \"phi_d_n_diff_avg\": -0.1697\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况判断为'Bad_Hole'是因为caliper_enlargement_inch大于1.5。岩性判断为'Shale'是基于GR_avg和Vsh_final_avg的均值。phi_d_n_diff_avg小于0.08，因此没有异常效果。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:41:49.872633",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 113.3362,\n  \"DEN_avg\": 2.0594,\n  \"CNL_avg\": 30.0285,\n  \"AC_avg\": 261.9329,\n  \"PE_avg\": 1.5137,\n  \"vsh_final_avg\": 0.3373,\n  \"caliper_enlargement_inch\": 9.5036,\n  \"phi_d_n_diff_avg\": 0.0307\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，未发现气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:41:55.203952",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，故没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:00.705359",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 104.5967,\n  \"DEN_avg\": 2.2515,\n  \"CNL_avg\": 26.5484,\n  \"AC_avg\": 247.0337,\n  \"PE_avg\": 2.5184,\n  \"vsh_final_avg\": 0.4544,\n  \"caliper_enlargement_inch\": 8.4355,\n  \"phi_d_n_diff_avg\": -0.0522\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值判断为Shale。phi_d_n_diff_avg小于0.08，表明没有气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:05.571368",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况判断为'Bad_Hole'，因为caliper_enlargement_inch大于1.5。岩性判断为'Shale'，因为GR_avg较高且PE_avg较低，Vsh_avg也表明了较高的泥质成分。phi_d_n_diff_avg小于0.08，未显示气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:07.880264",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 116.9122,\n  \"DEN_avg\": 2.1755,\n  \"CNL_avg\": 55.9197,\n  \"AC_avg\": 302.9494,\n  \"PE_avg\": 1.7034,\n  \"vsh_final_avg\": 0.1333,\n  \"caliper_enlargement_inch\": 9.8518,\n  \"phi_d_n_diff_avg\": -0.2886\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值分析得出为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:13.083034",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 54.4921,\n  \"DEN_avg\": 2.3499,\n  \"CNL_avg\": 16.0686,\n  \"AC_avg\": 236.8213,\n  \"PE_avg\": 2.0875,\n  \"vsh_final_avg\": 0.7311,\n  \"caliper_enlargement_inch\": 7.4689,\n  \"phi_d_n_diff_avg\": -0.0111\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和Vsh的均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:18.062285",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值分析得出为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:22.483226",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 128.2683,\n  \"DEN_avg\": 1.9272,\n  \"CNL_avg\": 57.7426,\n  \"AC_avg\": 284.7945,\n  \"PE_avg\": 1.0216,\n  \"vsh_final_avg\": 0.0067,\n  \"caliper_enlargement_inch\": 10.8537,\n  \"phi_d_n_diff_avg\": -0.1556\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:27.938458",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"井径扩展超过1.5英寸，表明井况不良。同时，GR和PE的值结合Vsh的均值显示出主要岩性为页岩。此外，phi_d_n_diff_avg超过0.08，表明存在气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:48:35.164319",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 97.2484,\n  \"DEN_avg\": 2.4828,\n  \"CNL_avg\": 23.8006,\n  \"AC_avg\": 231.7316,\n  \"PE_avg\": 2.7614,\n  \"vsh_final_avg\": 0.7942,\n  \"caliper_enlargement_inch\": 7.8098,\n  \"phi_d_n_diff_avg\": -0.166\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和Vsh的均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:48:37.373303",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 111.913,\n  \"DEN_avg\": 2.0473,\n  \"CNL_avg\": 30.0809,\n  \"AC_avg\": 260.2538,\n  \"PE_avg\": 1.7699,\n  \"vsh_final_avg\": 0.3835,\n  \"caliper_enlargement_inch\": 9.3578,\n  \"phi_d_n_diff_avg\": 0.0376\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值分析得出为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:48:43.047784",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，表明没有气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:48:47.895132",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 103.6803,\n  \"DEN_avg\": 2.2815,\n  \"CNL_avg\": 26.0206,\n  \"AC_avg\": 246.6433,\n  \"PE_avg\": 2.4658,\n  \"vsh_final_avg\": 0.4556,\n  \"caliper_enlargement_inch\": 8.3945,\n  \"phi_d_n_diff_avg\": -0.0653\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和Vsh_final_avg的值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:48:52.571801",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:48:57.818364",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 116.9122,\n  \"DEN_avg\": 2.1755,\n  \"CNL_avg\": 55.9197,\n  \"AC_avg\": 302.9494,\n  \"PE_avg\": 1.7034,\n  \"vsh_final_avg\": 0.1333,\n  \"caliper_enlargement_inch\": 9.8518,\n  \"phi_d_n_diff_avg\": -0.2886\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:02.394874",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 54.4921,\n  \"DEN_avg\": 2.3499,\n  \"CNL_avg\": 16.0686,\n  \"AC_avg\": 236.8213,\n  \"PE_avg\": 2.0875,\n  \"vsh_final_avg\": 0.5506,\n  \"caliper_enlargement_inch\": 7.4689,\n  \"phi_d_n_diff_avg\": -0.0111\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:07.107961",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:09.481917",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 128.2683,\n  \"DEN_avg\": 1.9272,\n  \"CNL_avg\": 57.7426,\n  \"AC_avg\": 284.7945,\n  \"PE_avg\": 1.0216,\n  \"vsh_final_avg\": 0.0067,\n  \"caliper_enlargement_inch\": 10.8537,\n  \"phi_d_n_diff_avg\": -0.1556\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:14.571799",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"井径扩展超过1.5英寸，表明井况不良。同时，GR和PE的值结合Vsh的均值判断出主要岩性为页岩。此外，phi_d_n_diff_avg超过0.08，显示出气体效应的存在。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:52:30.942307",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 96.1088,\n  \"DEN_avg\": 2.4911,\n  \"CNL_avg\": 23.6632,\n  \"AC_avg\": 231.2899,\n  \"PE_avg\": 2.7537,\n  \"vsh_final_avg\": 0.7973,\n  \"caliper_enlargement_inch\": 7.7854,\n  \"phi_d_n_diff_avg\": -0.1697\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和Vsh均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:52:36.565660",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 113.3362,\n  \"DEN_avg\": 2.0594,\n  \"CNL_avg\": 30.0285,\n  \"AC_avg\": 261.9329,\n  \"PE_avg\": 1.5137,\n  \"vsh_final_avg\": 0.3373,\n  \"caliper_enlargement_inch\": 9.5036,\n  \"phi_d_n_diff_avg\": 0.0307\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值分析得出为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:52:38.902964",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:52:43.543315",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 104.5967,\n  \"DEN_avg\": 2.2515,\n  \"CNL_avg\": 26.5484,\n  \"AC_avg\": 247.0337,\n  \"PE_avg\": 2.5184,\n  \"vsh_final_avg\": 0.4544,\n  \"caliper_enlargement_inch\": 8.4355,\n  \"phi_d_n_diff_avg\": -0.0522\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和Vsh_final_avg的值综合判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:52:49.354314",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值综合判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:52:54.713480",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 116.9122,\n  \"DEN_avg\": 2.1755,\n  \"CNL_avg\": 55.9197,\n  \"AC_avg\": 302.9494,\n  \"PE_avg\": 1.7034,\n  \"vsh_final_avg\": 0.1333,\n  \"caliper_enlargement_inch\": 9.8518,\n  \"phi_d_n_diff_avg\": -0.2886\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:00.452096",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 54.4921,\n  \"DEN_avg\": 2.3499,\n  \"CNL_avg\": 16.0686,\n  \"AC_avg\": 236.8213,\n  \"PE_avg\": 2.0875,\n  \"vsh_final_avg\": 0.7311,\n  \"caliper_enlargement_inch\": 7.4689,\n  \"phi_d_n_diff_avg\": -0.0111\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和Vsh的均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:06.469238",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判定为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，故无Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:09.318532",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 128.2683,\n  \"DEN_avg\": 1.9272,\n  \"CNL_avg\": 57.7426,\n  \"AC_avg\": 284.7945,\n  \"PE_avg\": 1.0216,\n  \"vsh_final_avg\": 0.0067,\n  \"caliper_enlargement_inch\": 10.8537,\n  \"phi_d_n_diff_avg\": -0.1556\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值分析得出为Shale。phi_d_n_diff_avg小于0.08，未发现气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:14.507710",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"井径扩展超过1.5英寸，表明井况不良。同时，GR和PE的值结合Vsh的均值判断出主要岩性为页岩。此外，phi_d_n_diff_avg超过0.08，表明存在气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:56:43.609822",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 95.7794,\n  \"DEN_avg\": 2.4798,\n  \"CNL_avg\": 23.6742,\n  \"AC_avg\": 231.6709,\n  \"PE_avg\": 2.743,\n  \"vsh_final_avg\": 0.7615,\n  \"caliper_enlargement_inch\": 7.7893,\n  \"phi_d_n_diff_avg\": -0.1629\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和Vsh的均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:56:48.948493",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 115.7612,\n  \"DEN_avg\": 2.0156,\n  \"CNL_avg\": 31.8632,\n  \"AC_avg\": 250.2157,\n  \"PE_avg\": 1.291,\n  \"vsh_final_avg\": 0.2878,\n  \"caliper_enlargement_inch\": 9.7418,\n  \"phi_d_n_diff_avg\": 0.0396\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:56:53.609235",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，故没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:56:58.807445",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 105.7294,\n  \"DEN_avg\": 2.2353,\n  \"CNL_avg\": 26.5815,\n  \"AC_avg\": 253.2321,\n  \"PE_avg\": 2.4564,\n  \"vsh_final_avg\": 0.4305,\n  \"caliper_enlargement_inch\": 8.532,\n  \"phi_d_n_diff_avg\": -0.0427\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:02.749024",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，故没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:07.867458",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 121.4546,\n  \"DEN_avg\": 2.0762,\n  \"CNL_avg\": 56.6489,\n  \"AC_avg\": 295.6874,\n  \"PE_avg\": 1.4307,\n  \"vsh_final_avg\": 0.0827,\n  \"caliper_enlargement_inch\": 10.2526,\n  \"phi_d_n_diff_avg\": -0.2354\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值分析得出为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:10.174141",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 54.4485,\n  \"DEN_avg\": 2.3553,\n  \"CNL_avg\": 14.7316,\n  \"AC_avg\": 231.3386,\n  \"PE_avg\": 2.0398,\n  \"vsh_final_avg\": 0.8655,\n  \"caliper_enlargement_inch\": 7.3688,\n  \"phi_d_n_diff_avg\": -0.0015\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和Vsh的均值判断为Shale。phi_d_n_diff_avg小于0.08，表明没有气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:15.038918",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性判断为Shale，因为GR值较高且Vsh为0。phi_d_n_diff_avg小于0.08，故没有气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:22.508831",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 54.5356,\n  \"DEN_avg\": 2.3445,\n  \"CNL_avg\": 17.4055,\n  \"AC_avg\": 242.3041,\n  \"PE_avg\": 2.1351,\n  \"vsh_final_avg\": 0.1032,\n  \"caliper_enlargement_inch\": 7.569,\n  \"phi_d_n_diff_avg\": -0.0207\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和Vsh_final_avg的值判断为Shale。phi_d_n_diff_avg小于0.08，未发现气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:28.569474",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"井径扩张超过1.5英寸，表明井况不良；根据GR和PE的均值，判断主要岩性为页岩；phi_d_n_diff_avg超过0.08，表明存在气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:17:33.220206",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 96.1088,\n  \"DEN_avg\": 2.4911,\n  \"CNL_avg\": 23.6632,\n  \"AC_avg\": 231.2899,\n  \"PE_avg\": 2.7537,\n  \"vsh_final_avg\": 0.7964,\n  \"caliper_enlargement_inch\": 7.7854,\n  \"phi_d_n_diff_avg\": -0.1697\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和Vsh的均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:17:39.289589",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 113.3362,\n  \"DEN_avg\": 2.0594,\n  \"CNL_avg\": 30.0285,\n  \"AC_avg\": 261.9329,\n  \"PE_avg\": 1.5137,\n  \"vsh_final_avg\": 0.3373,\n  \"caliper_enlargement_inch\": 9.5036,\n  \"phi_d_n_diff_avg\": 0.0307\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，故没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:17:44.273355",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，表明没有气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:17:45.342953",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 104.5967,\n  \"DEN_avg\": 2.2515,\n  \"CNL_avg\": 26.5484,\n  \"AC_avg\": 247.0337,\n  \"PE_avg\": 2.5184,\n  \"vsh_final_avg\": 0.4544,\n  \"caliper_enlargement_inch\": 8.4355,\n  \"phi_d_n_diff_avg\": -0.0522\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"井径扩展超过1.5英寸，表明井况不良；根据GR和PE等参数，岩性判断为页岩；phi_d_n_diff_avg小于0.08，未发现气体效应。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:17:50.298940",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:17:54.574480",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 116.9122,\n  \"DEN_avg\": 2.1755,\n  \"CNL_avg\": 55.9197,\n  \"AC_avg\": 302.9494,\n  \"PE_avg\": 1.7034,\n  \"vsh_final_avg\": 0.1333,\n  \"caliper_enlargement_inch\": 9.8518,\n  \"phi_d_n_diff_avg\": -0.2886\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:17:59.434554",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 54.4921,\n  \"DEN_avg\": 2.3499,\n  \"CNL_avg\": 16.0686,\n  \"AC_avg\": 236.8213,\n  \"PE_avg\": 2.0875,\n  \"vsh_final_avg\": 0.4987,\n  \"caliper_enlargement_inch\": 7.4689,\n  \"phi_d_n_diff_avg\": -0.0111\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值分析得出为Shale。phi_d_n_diff_avg小于0.08，未检测到Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:04.034107",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:08.546640",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 128.2683,\n  \"DEN_avg\": 1.9272,\n  \"CNL_avg\": 57.7426,\n  \"AC_avg\": 284.7945,\n  \"PE_avg\": 1.0216,\n  \"vsh_final_avg\": 0.0067,\n  \"caliper_enlargement_inch\": 10.8537,\n  \"phi_d_n_diff_avg\": -0.1556\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，未检测到Gas_Effect。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:13.338312",
+            "data": {
+                "user": "请根据以下测井模式的统计情报，做出诊断:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}",
+                "response": "```json\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"井径扩张超过1.5英寸，表明井况不良。同时，GR和PE的值结合Vsh的均值判断出主要岩性为页岩。此外，phi_d_n_diff_avg超过0.08，显示出气体效应的存在。\"\n}\n```"
+            }
+        }
+    ],
+    "metadata": {
+        "capacity": 100
+    }
+}

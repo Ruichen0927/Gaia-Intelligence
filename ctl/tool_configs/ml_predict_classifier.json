@@ -1,0 +1,9 @@
+{
+  "name": "ml_predict_classifier",
+  "description": "使用训练好的分类模型预测",
+  "paths": {
+    "input_file": "data/processed_data/permeability/interpreted_wells/*.csv",
+    "model_file": "data/processed_data/ml/classifier.pkl",
+    "output_file": "data/processed_data/ml/classifier_predictions.csv"
+  }
+}

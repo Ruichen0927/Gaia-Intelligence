@@ -1,0 +1,12 @@
+{
+  "name": "data_load_well_logs",
+  "description": "批量读取测井文本文件并输出合并 CSV",
+  "paths": {
+    "input_directory": "data/sample",
+    "output_directory": "data/processed_data/data_tools"
+  },
+  "parameters": {
+    "file_extension": ".txt",
+    "merged_filename": "merged_well_logs.csv"
+  }
+}

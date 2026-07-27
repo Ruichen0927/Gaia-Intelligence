@@ -1,0 +1,11 @@
+{
+  "name": "data_split_by_formation",
+  "description": "按 LAYER 列拆分成多个层段 CSV",
+  "paths": {
+    "input_file": "data/processed_data/data_tools/cleaned_well_logs.csv",
+    "output_directory": "data/processed_data/data_tools/formations"
+  },
+  "parameters": {
+    "layer_col": "LAYER"
+  }
+}

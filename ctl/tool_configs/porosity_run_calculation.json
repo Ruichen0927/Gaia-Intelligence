@@ -1,0 +1,37 @@
+{
+  "name": "porosity_run_calculation",
+  "description": "应用孔隙度知识库，批量计算每口井的孔隙度",
+  "paths": {
+    "input_directory": "data/processed_data/shale_content/interpreted_wells",
+    "output_directory": "data/processed_data/porosity",
+    "strategy_file_vsh": "data/processed_data/shale_content/shale_interpretation_strategy_agent.json"
+  },
+  "parameters": {
+    "knowledgebase_filename": "porosity_knowledgebase.json",
+    "output_subfolder": "interpreted_wells",
+    "depth_col": "DEPTH",
+    "layer_col": "LAYER",
+    "gr_col": "GR",
+    "den_col": "DEN",
+    "cnl_col": "CNL",
+    "ac_col": "AC",
+    "pe_col": "PE",
+    "cal_col": "CAL",
+    "bit_col": "BIT",
+    "vsh_col": "vsh_final",
+    "por_col": "POR",
+    "phie_final_col": "phie_final",
+    "feature_curves_for_clustering": ["GR", "DEN", "CNL", "AC", "PE", "vsh_final"],
+    "n_clusters": 10,
+    "segmentation_curves": ["PE", "GR", "DEN"],
+    "segmentation_threshold_std": 0.5,
+    "min_segment_length": 5,
+    "bone_params": {
+      "Sandstone": {"rho_ma": 2.65, "delta_t_ma": 182, "nphi_ma": -0.04},
+      "Limestone": {"rho_ma": 2.71, "delta_t_ma": 156, "nphi_ma": 0.0},
+      "Dolomite": {"rho_ma": 2.87, "delta_t_ma": 143, "nphi_ma": 0.02},
+      "Shale": {"rho_ma": 2.68, "delta_t_ma": 280, "nphi_ma": 0.35}
+    },
+    "fluid_params": {"rho_f": 1.0, "delta_t_f": 620, "nphi_f": 1.0}
+  }
+}

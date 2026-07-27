@@ -1,0 +1,291 @@
+{
+  "metadata": {
+    "description": "Porosity interpretation knowledgebase.",
+    "creation_date": "2026-07-18T22:17:29.019577",
+    "n_clusters": 10,
+    "feature_columns": [
+      "GR_avg",
+      "DEN_avg",
+      "CNL_avg",
+      "AC_avg",
+      "PE_avg",
+      "vsh_final_avg",
+      "caliper_enlargement_inch",
+      "phi_d_n_diff_avg"
+    ]
+  },
+  "cluster_centers": {
+    "0": {
+      "GR_avg": 96.10878391164267,
+      "DEN_avg": 2.491051010352081,
+      "CNL_avg": 23.663217347490168,
+      "AC_avg": 231.28986547982447,
+      "PE_avg": 2.753744112506258,
+      "vsh_final_avg": 0.796431089522071,
+      "caliper_enlargement_inch": 7.785389750375003,
+      "phi_d_n_diff_avg": -0.16965975349635903
+    },
+    "1": {
+      "GR_avg": 113.33624906870907,
+      "DEN_avg": 2.0593934475048763,
+      "CNL_avg": 30.02853005375577,
+      "AC_avg": 261.93288430934143,
+      "PE_avg": 1.5136873085644516,
+      "vsh_final_avg": 0.33726669217179933,
+      "caliper_enlargement_inch": 9.503625058730796,
+      "phi_d_n_diff_avg": 0.030745960785523718
+    },
+    "2": {
+      "GR_avg": 52.73233974358974,
+      "DEN_avg": 1.7963632478632476,
+      "CNL_avg": 67.96822435897435,
+      "AC_avg": 367.11736111111117,
+      "PE_avg": 0.8419850427350426,
+      "vsh_final_avg": 0.006902434307307748,
+      "caliper_enlargement_inch": 8.716685173968639,
+      "phi_d_n_diff_avg": -0.17464654994222303
+    },
+    "3": {
+      "GR_avg": 104.59667513407061,
+      "DEN_avg": 2.2514662923720756,
+      "CNL_avg": 26.548363010949608,
+      "AC_avg": 247.03369129022968,
+      "PE_avg": 2.518437356653573,
+      "vsh_final_avg": 0.4544200361325748,
+      "caliper_enlargement_inch": 8.435461633330695,
+      "phi_d_n_diff_avg": -0.05219867934010916
+    },
+    "4": {
+      "GR_avg": 111.32952037037037,
+      "DEN_avg": 1.7598203703703703,
+      "CNL_avg": 46.899454166666665,
+      "AC_avg": 304.7756175925926,
+      "PE_avg": 1.2574597222222224,
+      "vsh_final_avg": 0.24887493034081504,
+      "caliper_enlargement_inch": 11.346478200641586,
+      "phi_d_n_diff_avg": 0.05008497731049813
+    },
+    "5": {
+      "GR_avg": 116.91216153846155,
+      "DEN_avg": 2.1755333333333335,
+      "CNL_avg": 55.919732051282054,
+      "AC_avg": 302.94941025641026,
+      "PE_avg": 1.703421794871795,
+      "vsh_final_avg": 0.13333333333333336,
+      "caliper_enlargement_inch": 9.8518408035534,
+      "phi_d_n_diff_avg": -0.2885957141683104
+    },
+    "6": {
+      "GR_avg": 54.49206690619876,
+      "DEN_avg": 2.349928572051488,
+      "CNL_avg": 16.068561848118048,
+      "AC_avg": 236.8213052704329,
+      "PE_avg": 2.0874824558726064,
+      "vsh_final_avg": 0.49872517228502256,
+      "caliper_enlargement_inch": 7.46892213422578,
+      "phi_d_n_diff_avg": -0.01110546936334214
+    },
+    "7": {
+      "GR_avg": 100.7202,
+      "DEN_avg": 1.8986,
+      "CNL_avg": 57.4874,
+      "AC_avg": 396.9608,
+      "PE_avg": 1.9122,
+      "vsh_final_avg": 0.0,
+      "caliper_enlargement_inch": 15.436220472440947,
+      "phi_d_n_diff_avg": -0.1358310606060606
+    },
+    "8": {
+      "GR_avg": 128.2682613981763,
+      "DEN_avg": 1.927214285714286,
+      "CNL_avg": 57.74258054711246,
+      "AC_avg": 284.7944954407295,
+      "PE_avg": 1.0216018237082067,
+      "vsh_final_avg": 0.006707729290490738,
+      "caliper_enlargement_inch": 10.853712634324966,
+      "phi_d_n_diff_avg": -0.15562671105490256
+    },
+    "9": {
+      "GR_avg": 80.42284615384617,
+      "DEN_avg": 1.5956153846153849,
+      "CNL_avg": 44.901769230769226,
+      "AC_avg": 337.7814615384616,
+      "PE_avg": 1.5129230769230768,
+      "vsh_final_avg": 0.43157468306737,
+      "caliper_enlargement_inch": 12.809569957601457,
+      "phi_d_n_diff_avg": 0.16881165949435178
+    }
+  },
+  "strategies": {
+    "Cluster_0": {
+      "diagnosis": {
+        "wellbore_condition": "Bad_Hole",
+        "dominant_lithology": "Shale",
+        "special_effects": "None",
+        "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和Vsh的均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas Effect。"
+      },
+      "strategy": {
+        "porosity_model_to_apply": "Sonic",
+        "bone_parameters_to_use": {
+          "rho_ma": 2.4911,
+          "delta_t_ma": 231.2899,
+          "nphi_ma": 0.25
+        }
+      },
+      "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和Vsh的均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas Effect。"
+    },
+    "Cluster_1": {
+      "diagnosis": {
+        "wellbore_condition": "Bad_Hole",
+        "dominant_lithology": "Shale",
+        "special_effects": "None",
+        "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，故没有Gas_Effect。"
+      },
+      "strategy": {
+        "porosity_model_to_apply": "Sonic",
+        "bone_parameters_to_use": {
+          "rho_ma": 2.0594,
+          "delta_t_ma": 261.9329,
+          "nphi_ma": 0.3373
+        }
+      },
+      "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，故没有Gas_Effect。"
+    },
+    "Cluster_2": {
+      "diagnosis": {
+        "wellbore_condition": "Bad_Hole",
+        "dominant_lithology": "Shale",
+        "special_effects": "No_Gas_Effect",
+        "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，表明没有气体效应。"
+      },
+      "strategy": {
+        "porosity_model_to_apply": "Density",
+        "bone_parameters_to_use": {
+          "rho_ma": 2.65,
+          "delta_t_ma": 50.0,
+          "nphi_ma": 0.25
+        }
+      },
+      "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性根据GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，表明没有气体效应。"
+    },
+    "Cluster_3": {
+      "diagnosis": {
+        "wellbore_condition": "Bad_Hole",
+        "dominant_lithology": "Shale",
+        "special_effects": "No_Gas_Effect",
+        "reasoning": "井径扩展超过1.5英寸，表明井况不良；根据GR和PE等参数，岩性判断为页岩；phi_d_n_diff_avg小于0.08，未发现气体效应。"
+      },
+      "strategy": {
+        "porosity_model_to_apply": "Density",
+        "bone_parameters_to_use": {
+          "rho_ma": 2.2515,
+          "delta_t_ma": 247.0337,
+          "nphi_ma": 0.4544
+        }
+      },
+      "reasoning": "井径扩展超过1.5英寸，表明井况不良；根据GR和PE等参数，岩性判断为页岩；phi_d_n_diff_avg小于0.08，未发现气体效应。"
+    },
+    "Cluster_4": {
+      "diagnosis": {
+        "wellbore_condition": "Bad_Hole",
+        "dominant_lithology": "Shale",
+        "special_effects": "None",
+        "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。"
+      },
+      "strategy": {
+        "porosity_model_to_apply": "Sonic",
+        "bone_parameters_to_use": {
+          "rho_ma": 2.65,
+          "delta_t_ma": 50.0,
+          "nphi_ma": 0.25
+        }
+      },
+      "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。"
+    },
+    "Cluster_5": {
+      "diagnosis": {
+        "wellbore_condition": "Bad_Hole",
+        "dominant_lithology": "Shale",
+        "special_effects": "None",
+        "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。"
+      },
+      "strategy": {
+        "porosity_model_to_apply": "Sonic",
+        "bone_parameters_to_use": {
+          "rho_ma": 2.1755,
+          "delta_t_ma": 302.9494,
+          "nphi_ma": 0.1333
+        }
+      },
+      "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，因此没有Gas_Effect。"
+    },
+    "Cluster_6": {
+      "diagnosis": {
+        "wellbore_condition": "Bad_Hole",
+        "dominant_lithology": "Shale",
+        "special_effects": "None",
+        "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值分析得出为Shale。phi_d_n_diff_avg小于0.08，未检测到Gas_Effect。"
+      },
+      "strategy": {
+        "porosity_model_to_apply": "Sonic",
+        "bone_parameters_to_use": {
+          "rho_ma": 2.3499,
+          "delta_t_ma": 236.8213,
+          "nphi_ma": 0.15
+        }
+      },
+      "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE等均值分析得出为Shale。phi_d_n_diff_avg小于0.08，未检测到Gas_Effect。"
+    },
+    "Cluster_7": {
+      "diagnosis": {
+        "wellbore_condition": "Bad_Hole",
+        "dominant_lithology": "Shale",
+        "special_effects": "None",
+        "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。"
+      },
+      "strategy": {
+        "porosity_model_to_apply": "Sonic",
+        "bone_parameters_to_use": {
+          "rho_ma": 2.65,
+          "delta_t_ma": 50.0,
+          "nphi_ma": 0.25
+        }
+      },
+      "reasoning": "井况由于caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR和PE的均值判断为Shale。phi_d_n_diff_avg小于0.08，未出现Gas_Effect。"
+    },
+    "Cluster_8": {
+      "diagnosis": {
+        "wellbore_condition": "Bad_Hole",
+        "dominant_lithology": "Shale",
+        "special_effects": "None",
+        "reasoning": "井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，未检测到Gas_Effect。"
+      },
+      "strategy": {
+        "porosity_model_to_apply": "Sonic",
+        "bone_parameters_to_use": {
+          "rho_ma": 2.65,
+          "delta_t_ma": 50.0,
+          "nphi_ma": 0.25
+        }
+      },
+      "reasoning": "井况因caliper_enlargement_inch大于1.5被判断为Bad_Hole。岩性通过GR_avg和PE_avg等值判断为Shale。phi_d_n_diff_avg小于0.08，未检测到Gas_Effect。"
+    },
+    "Cluster_9": {
+      "diagnosis": {
+        "wellbore_condition": "Bad_Hole",
+        "dominant_lithology": "Shale",
+        "special_effects": "Gas_Effect",
+        "reasoning": "井径扩张超过1.5英寸，表明井况不良。同时，GR和PE的值结合Vsh的均值判断出主要岩性为页岩。此外，phi_d_n_diff_avg超过0.08，显示出气体效应的存在。"
+      },
+      "strategy": {
+        "porosity_model_to_apply": "Gas_Correction",
+        "bone_parameters_to_use": {
+          "rho_ma": 2.65,
+          "delta_t_ma": 50.0,
+          "nphi_ma": 0.25
+        }
+      },
+      "reasoning": "井径扩张超过1.5英寸，表明井况不良。同时，GR和PE的值结合Vsh的均值判断出主要岩性为页岩。此外，phi_d_n_diff_avg超过0.08，显示出气体效应的存在。"
+    }
+  }
+}

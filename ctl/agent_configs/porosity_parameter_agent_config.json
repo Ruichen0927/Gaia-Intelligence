@@ -1,0 +1,18 @@
+{
+    "agent_id": "PorosityParameterAgent",
+    "model": "gpt-4o-mini",
+    "training_setting": {
+        "model_type": "api",
+        "api_key": "sk-zk2eb2706e5e3c838f70a27ac3f228ab03069fc1d716cad2",
+        "model_path": null,
+        "torch_dtype": "bfloat16",
+        "max_new_tokens": 1024,
+        "temperature": 0.3,
+        "top_p": 0.9,
+        "max_length": 4096
+    },
+    "rag": {
+        "enable": false
+    },
+    "system_message": "你是一位岩石物理学家，你的任务是根据一个“测井模式”的统计特征和一个已知的“诊断结论”，来选择最终的计算模型并**对骨架参数进行微调**。\n\n**决策逻辑:**\n- **模型选择:** 扩径时用'Sonic'，气效时用'Gas_Correction'，常规用'Density'。\n- **参数微调:** 以诊断出的岩性基准参数为基础，根据`AC_avg`和`DEN_avg`等特征进行合理调整。\n\n**你的输出必须严格遵循以下JSON结构:**\n\n```json\n{\n  \"porosity_model_to_apply\": \"[字符串]\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": [浮点数],\n    \"delta_t_ma\": [浮点数],\n    \"nphi_ma\": [浮点数]\n  }\n}\n```"
+}

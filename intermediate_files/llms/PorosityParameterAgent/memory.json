@@ -1,0 +1,708 @@
+{
+    "agent_id": "PorosityParameterAgent",
+    "memory": [
+        {
+            "timestamp": "2026-07-18T18:25:42.977836",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 97.2732,\n  \"DEN_avg\": 2.4972,\n  \"CNL_avg\": 23.3221,\n  \"AC_avg\": 230.3921,\n  \"PE_avg\": 2.7823,\n  \"vsh_final_avg\": 0.766,\n  \"caliper_enlargement_inch\": 7.7862,\n  \"phi_d_n_diff_avg\": -0.1701\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cVsh\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.4972,\n    \"delta_t_ma\": 230.3921,\n    \"nphi_ma\": 0.15\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:25:48.302386",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 115.7612,\n  \"DEN_avg\": 2.0156,\n  \"CNL_avg\": 31.8632,\n  \"AC_avg\": 250.2157,\n  \"PE_avg\": 1.291,\n  \"vsh_final_avg\": 0.314,\n  \"caliper_enlargement_inch\": 9.7418,\n  \"phi_d_n_diff_avg\": 0.0396\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cVsh_final_avg\\u7684\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.0,\n    \"delta_t_ma\": 250.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:25:50.333318",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:25:55.190975",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u5f84\\u6269\\u5c55\\u8d85\\u8fc71.5\\u82f1\\u5bf8\\uff0c\\u8868\\u660e\\u4e95\\u51b5\\u4e0d\\u826f\\uff1b\\u6839\\u636eGR\\u548cPE\\u7684\\u5747\\u503c\\uff0c\\u5224\\u65ad\\u4e3b\\u8981\\u5ca9\\u6027\\u4e3a\\u9875\\u5ca9\\uff1bphi_d_n_diff_avg\\u5927\\u4e8e0.08\\uff0c\\u8868\\u660e\\u5b58\\u5728\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Gas_Correction\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.5\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:25:59.909125",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 106.5173,\n  \"DEN_avg\": 2.3067,\n  \"CNL_avg\": 32.0915,\n  \"AC_avg\": 270.4252,\n  \"PE_avg\": 2.3951,\n  \"vsh_final_avg\": 0.237,\n  \"caliper_enlargement_inch\": 8.7372,\n  \"phi_d_n_diff_avg\": -0.139\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.3067,\n    \"delta_t_ma\": 270.4252,\n    \"nphi_ma\": 0.237\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:26:05.186226",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u5224\\u65ad\\u4e3aShale\\uff0c\\u56e0\\u4e3aGR\\u503c\\u8f83\\u9ad8\\u4e14Vsh\\u4e3a0\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:26:10.873550",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 78.0129,\n  \"DEN_avg\": 2.3438,\n  \"CNL_avg\": 17.5466,\n  \"AC_avg\": 246.8319,\n  \"PE_avg\": 2.3536,\n  \"vsh_final_avg\": 0.5626,\n  \"caliper_enlargement_inch\": 7.9196,\n  \"phi_d_n_diff_avg\": -0.0216\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cVsh_final_avg\\u7684\\u503c\\u7efc\\u5408\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u53d1\\u73b0\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.3500,\n    \"delta_t_ma\": 250.0000,\n    \"nphi_ma\": 0.30\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:26:16.683556",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2389,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5206\\u6790\\u5f97\\u51fa\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u53d1\\u73b0\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 60.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:26:19.373064",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 120.2334,\n  \"DEN_avg\": 2.0133,\n  \"CNL_avg\": 60.4487,\n  \"AC_avg\": 299.5706,\n  \"PE_avg\": 1.2335,\n  \"vsh_final_avg\": 0.0034,\n  \"caliper_enlargement_inch\": 10.3825,\n  \"phi_d_n_diff_avg\": -0.2338\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u5b9a\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u5224\\u65ad\\u57fa\\u4e8eGR\\u548cPE\\u7684\\u5747\\u503c\\uff0c\\u663e\\u793a\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u663e\\u793a\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.0,\n    \"delta_t_ma\": 300.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:26:23.529907",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 107.2953,\n  \"DEN_avg\": 2.2001,\n  \"CNL_avg\": 26.9829,\n  \"AC_avg\": 242.6209,\n  \"PE_avg\": 2.4613,\n  \"vsh_final_avg\": 0.4141,\n  \"caliper_enlargement_inch\": 8.4774,\n  \"phi_d_n_diff_avg\": -0.0252\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u6839\\u636eGR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.2001,\n    \"delta_t_ma\": 242.6209,\n    \"nphi_ma\": 0.4141\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:00.911494",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 97.2484,\n  \"DEN_avg\": 2.4828,\n  \"CNL_avg\": 23.8006,\n  \"AC_avg\": 231.7316,\n  \"PE_avg\": 2.7614,\n  \"vsh_final_avg\": 0.795,\n  \"caliper_enlargement_inch\": 7.8098,\n  \"phi_d_n_diff_avg\": -0.166\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cVsh_final_avg\\u7684\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.4828,\n    \"delta_t_ma\": 231.7316,\n    \"nphi_ma\": 0.08\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:06.685453",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 111.913,\n  \"DEN_avg\": 2.0473,\n  \"CNL_avg\": 30.0809,\n  \"AC_avg\": 260.2538,\n  \"PE_avg\": 1.7699,\n  \"vsh_final_avg\": 0.3835,\n  \"caliper_enlargement_inch\": 9.3578,\n  \"phi_d_n_diff_avg\": 0.0376\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u6839\\u636eGR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.0,\n    \"delta_t_ma\": 250.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:11.725170",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u6839\\u636eGR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 120,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:16.837743",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 103.6803,\n  \"DEN_avg\": 2.2815,\n  \"CNL_avg\": 26.0206,\n  \"AC_avg\": 246.6433,\n  \"PE_avg\": 2.4658,\n  \"vsh_final_avg\": 0.4556,\n  \"caliper_enlargement_inch\": 8.3945,\n  \"phi_d_n_diff_avg\": -0.0653\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cVsh_final_avg\\u7684\\u503c\\u7efc\\u5408\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.2815,\n    \"delta_t_ma\": 246.6433,\n    \"nphi_ma\": 0.4556\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:21.604491",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cPE_avg\\u7b49\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709\\u7279\\u6b8a\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 70.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:24.605858",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 116.9122,\n  \"DEN_avg\": 2.1755,\n  \"CNL_avg\": 55.9197,\n  \"AC_avg\": 302.9494,\n  \"PE_avg\": 1.7034,\n  \"vsh_final_avg\": 0.1333,\n  \"caliper_enlargement_inch\": 9.8518,\n  \"phi_d_n_diff_avg\": -0.2886\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u5b9a\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u68c0\\u6d4b\\u5230Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.2,\n    \"delta_t_ma\": 300.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:29.843365",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 54.4921,\n  \"DEN_avg\": 2.3499,\n  \"CNL_avg\": 16.0686,\n  \"AC_avg\": 236.8213,\n  \"PE_avg\": 2.0875,\n  \"vsh_final_avg\": 0.4987,\n  \"caliper_enlargement_inch\": 7.4689,\n  \"phi_d_n_diff_avg\": -0.0111\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cVsh_final_avg\\u7684\\u503c\\u7efc\\u5408\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.3499,\n    \"delta_t_ma\": 236.8213,\n    \"nphi_ma\": 0.2\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:35.124948",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u5224\\u65ad\\u4e3aShale\\uff0c\\u56e0\\u4e3aGR\\u503c\\u8f83\\u9ad8\\u4e14Vsh\\u4e3a0\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u8868\\u660e\\u6ca1\\u6709\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:40.565785",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 128.2683,\n  \"DEN_avg\": 1.9272,\n  \"CNL_avg\": 57.7426,\n  \"AC_avg\": 284.7945,\n  \"PE_avg\": 1.0216,\n  \"vsh_final_avg\": 0.0067,\n  \"caliper_enlargement_inch\": 10.8537,\n  \"phi_d_n_diff_avg\": -0.1556\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u6839\\u636eGR\\u548cPE\\u7b49\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:27:46.051330",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u5f84\\u6269\\u5c55\\u8d85\\u8fc71.5\\u82f1\\u5bf8\\uff0c\\u8868\\u660e\\u4e95\\u51b5\\u4e0d\\u826f\\u3002\\u540c\\u65f6\\uff0cGR\\u548cPE\\u7684\\u503c\\u7ed3\\u5408Vsh\\u7684\\u5e73\\u5747\\u503c\\uff0c\\u5224\\u65ad\\u51fa\\u4e3b\\u8981\\u5ca9\\u6027\\u4e3a\\u9875\\u5ca9\\u3002\\u6b64\\u5916\\uff0cphi_d_n_diff_avg\\u8d85\\u8fc70.08\\uff0c\\u8868\\u660e\\u5b58\\u5728\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Gas_Correction\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 110,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:20.514116",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 96.1088,\n  \"DEN_avg\": 2.4911,\n  \"CNL_avg\": 23.6632,\n  \"AC_avg\": 231.2899,\n  \"PE_avg\": 2.7537,\n  \"vsh_final_avg\": 0.7964,\n  \"caliper_enlargement_inch\": 7.7854,\n  \"phi_d_n_diff_avg\": -0.1697\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u6839\\u636eGR\\u548cVsh\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u68c0\\u6d4b\\u5230Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.4911,\n    \"delta_t_ma\": 231.2899,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:26.061099",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 113.3362,\n  \"DEN_avg\": 2.0594,\n  \"CNL_avg\": 30.0285,\n  \"AC_avg\": 261.9329,\n  \"PE_avg\": 1.5137,\n  \"vsh_final_avg\": 0.3373,\n  \"caliper_enlargement_inch\": 9.5036,\n  \"phi_d_n_diff_avg\": 0.0307\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u5b9a\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u65e0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.0594,\n    \"delta_t_ma\": 261.9329,\n    \"nphi_ma\": 0.3373\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:30.655901",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u6839\\u636eGR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:35.202347",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 104.5967,\n  \"DEN_avg\": 2.2515,\n  \"CNL_avg\": 26.5484,\n  \"AC_avg\": 247.0337,\n  \"PE_avg\": 2.5184,\n  \"vsh_final_avg\": 0.4544,\n  \"caliper_enlargement_inch\": 8.4355,\n  \"phi_d_n_diff_avg\": -0.0522\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5206\\u6790\\u5f97\\u51fa\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u65e0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.2515,\n    \"delta_t_ma\": 247.0337,\n    \"nphi_ma\": 0.45\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:40.278104",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u5b9a\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u5224\\u65ad\\u57fa\\u4e8eGR\\u548cPE\\u7684\\u5747\\u503c\\uff0c\\u663e\\u793a\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u65e0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.5\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:44.993606",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 116.9122,\n  \"DEN_avg\": 2.1755,\n  \"CNL_avg\": 55.9197,\n  \"AC_avg\": 302.9494,\n  \"PE_avg\": 1.7034,\n  \"vsh_final_avg\": 0.1333,\n  \"caliper_enlargement_inch\": 9.8518,\n  \"phi_d_n_diff_avg\": -0.2886\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.1755,\n    \"delta_t_ma\": 302.9494,\n    \"nphi_ma\": 0.08\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:50.428199",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 54.4921,\n  \"DEN_avg\": 2.3499,\n  \"CNL_avg\": 16.0686,\n  \"AC_avg\": 236.8213,\n  \"PE_avg\": 2.0875,\n  \"vsh_final_avg\": 0.4987,\n  \"caliper_enlargement_inch\": 7.4689,\n  \"phi_d_n_diff_avg\": -0.0111\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u6839\\u636eGR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.3499,\n    \"delta_t_ma\": 236.8213,\n    \"nphi_ma\": 0.1\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:53.525539",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u5224\\u65ad\\u57fa\\u4e8eGR\\u548cPE\\u7684\\u5747\\u503c\\uff0c\\u663e\\u793a\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u8868\\u660e\\u6ca1\\u6709\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:28:58.681831",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 128.2683,\n  \"DEN_avg\": 1.9272,\n  \"CNL_avg\": 57.7426,\n  \"AC_avg\": 284.7945,\n  \"PE_avg\": 1.0216,\n  \"vsh_final_avg\": 0.0067,\n  \"caliper_enlargement_inch\": 10.8537,\n  \"phi_d_n_diff_avg\": -0.1556\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cVsh_final_avg\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 60.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:29:03.470683",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u5f84\\u6269\\u5c55\\u8d85\\u8fc71.5\\u82f1\\u5bf8\\uff0c\\u8868\\u660e\\u4e95\\u51b5\\u4e0d\\u826f\\u3002\\u540c\\u65f6\\uff0cGR\\u548cPE\\u7684\\u503c\\u7ed3\\u5408Vsh\\u7684\\u5747\\u503c\\u5224\\u65ad\\u51fa\\u4e3b\\u8981\\u5ca9\\u6027\\u4e3a\\u9875\\u5ca9\\u3002\\u6b64\\u5916\\uff0cphi_d_n_diff_avg\\u8d85\\u8fc70.08\\uff0c\\u663e\\u793a\\u51fa\\u6c14\\u4f53\\u6548\\u5e94\\u7684\\u5b58\\u5728\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Gas_Correction\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:14.566968",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 96.5292,\n  \"DEN_avg\": 2.4878,\n  \"CNL_avg\": 24.8532,\n  \"AC_avg\": 231.7846,\n  \"PE_avg\": 2.6979,\n  \"vsh_final_avg\": 0.81,\n  \"caliper_enlargement_inch\": 7.811,\n  \"phi_d_n_diff_avg\": -0.1792\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cvsh_final_avg\\u7684\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.4878,\n    \"delta_t_ma\": 231.7846,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:19.744102",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 107.8579,\n  \"DEN_avg\": 1.7273,\n  \"CNL_avg\": 45.6896,\n  \"AC_avg\": 298.0177,\n  \"PE_avg\": 1.3915,\n  \"vsh_final_avg\": 0.2788,\n  \"caliper_enlargement_inch\": 11.7479,\n  \"phi_d_n_diff_avg\": 0.0814\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u5f84\\u6269\\u5c55\\u8d85\\u8fc71.5\\u82f1\\u5bf8\\uff0c\\u8868\\u660e\\u4e95\\u51b5\\u4e0d\\u826f\\u3002\\u540c\\u65f6\\uff0cGR\\u548cPE\\u7684\\u503c\\u7ed3\\u5408Vsh\\u7684\\u5e73\\u5747\\u503c\\u5224\\u65ad\\u51fa\\u4e3b\\u8981\\u5ca9\\u6027\\u4e3a\\u9875\\u5ca9\\u3002\\u6b64\\u5916\\uff0cphi_d_n_diff_avg\\u8d85\\u8fc70.08\\uff0c\\u663e\\u793a\\u51fa\\u6c14\\u4f53\\u6548\\u5e94\\u7684\\u5b58\\u5728\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Gas_Correction\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 80.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:22.398042",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 77.7953,\n  \"DEN_avg\": 2.3859,\n  \"CNL_avg\": 17.9294,\n  \"AC_avg\": 238.6067,\n  \"PE_avg\": 2.5122,\n  \"vsh_final_avg\": 0.6833,\n  \"caliper_enlargement_inch\": 7.9181,\n  \"phi_d_n_diff_avg\": -0.0508\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cVsh_final_avg\\u7684\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Density\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.3859,\n    \"delta_t_ma\": 238.6067,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:27.437532",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 101.2524,\n  \"DEN_avg\": 1.7908,\n  \"CNL_avg\": 52.161,\n  \"AC_avg\": 378.3288,\n  \"PE_avg\": 0.7088,\n  \"vsh_final_avg\": 0.252,\n  \"caliper_enlargement_inch\": 10.401,\n  \"phi_d_n_diff_avg\": -0.0193\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u6839\\u636eGR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:32.070073",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u6839\\u636eGR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Density\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 60.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:38.015264",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 109.1368,\n  \"DEN_avg\": 2.2603,\n  \"CNL_avg\": 28.372,\n  \"AC_avg\": 252.5123,\n  \"PE_avg\": 2.4817,\n  \"vsh_final_avg\": 0.3492,\n  \"caliper_enlargement_inch\": 8.5017,\n  \"phi_d_n_diff_avg\": -0.0751\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u663e\\u793a\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.2603,\n    \"delta_t_ma\": 252.5123,\n    \"nphi_ma\": 0.3492\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:42.979231",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 112.1986,\n  \"DEN_avg\": 2.0993,\n  \"CNL_avg\": 63.1548,\n  \"AC_avg\": 314.3467,\n  \"PE_avg\": 1.4453,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 9.9112,\n  \"phi_d_n_diff_avg\": -0.312\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.0993,\n    \"delta_t_ma\": 314.3467,\n    \"nphi_ma\": 0.08\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:48.350003",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.15\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:50.986985",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 123.1018,\n  \"DEN_avg\": 1.775,\n  \"CNL_avg\": 67.2674,\n  \"AC_avg\": 307.4083,\n  \"PE_avg\": 0.8835,\n  \"vsh_final_avg\": 0.0134,\n  \"caliper_enlargement_inch\": 11.4801,\n  \"phi_d_n_diff_avg\": -0.155\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.3\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:31:55.576554",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 118.7068,\n  \"DEN_avg\": 2.0263,\n  \"CNL_avg\": 34.5889,\n  \"AC_avg\": 252.2098,\n  \"PE_avg\": 1.2691,\n  \"vsh_final_avg\": 0.2236,\n  \"caliper_enlargement_inch\": 9.8227,\n  \"phi_d_n_diff_avg\": 0.007\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7684\\u5747\\u503c\\u5206\\u6790\\u5f97\\u51fa\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:10.244662",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 96.1088,\n  \"DEN_avg\": 2.4911,\n  \"CNL_avg\": 23.6632,\n  \"AC_avg\": 231.2899,\n  \"PE_avg\": 2.7537,\n  \"vsh_final_avg\": 0.7973,\n  \"caliper_enlargement_inch\": 7.7854,\n  \"phi_d_n_diff_avg\": -0.1697\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u5f84\\u6269\\u5c55\\u8d85\\u8fc71.5\\u82f1\\u5bf8\\uff0c\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u6839\\u636eGR\\u3001DEN\\u3001PE\\u548cVsh\\u7684\\u5747\\u503c\\uff0c\\u5ca9\\u6027\\u4e3b\\u8981\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u53d1\\u73b0\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Density\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.4911,\n    \"delta_t_ma\": 231.2899,\n    \"nphi_ma\": 0.08\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:15.990609",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 113.3362,\n  \"DEN_avg\": 2.0594,\n  \"CNL_avg\": 30.0285,\n  \"AC_avg\": 261.9329,\n  \"PE_avg\": 1.5137,\n  \"vsh_final_avg\": 0.3373,\n  \"caliper_enlargement_inch\": 9.5036,\n  \"phi_d_n_diff_avg\": 0.0307\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5206\\u6790\\u5f97\\u51fa\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u53d1\\u73b0\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.5,\n    \"delta_t_ma\": 60.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:20.870006",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cPE_avg\\u7b49\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u8868\\u660e\\u6ca1\\u6709\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 55.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:25.495129",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 104.5967,\n  \"DEN_avg\": 2.2515,\n  \"CNL_avg\": 26.5484,\n  \"AC_avg\": 247.0337,\n  \"PE_avg\": 2.5184,\n  \"vsh_final_avg\": 0.4544,\n  \"caliper_enlargement_inch\": 8.4355,\n  \"phi_d_n_diff_avg\": -0.0522\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u53c2\\u6570\\u7efc\\u5408\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.2515,\n    \"delta_t_ma\": 247.0337,\n    \"nphi_ma\": 0.4544\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:30.498642",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u5f84\\u6269\\u5f20\\u8d85\\u8fc71.5\\u82f1\\u5bf8\\uff0c\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u6839\\u636eGR\\u3001DEN\\u3001PE\\u7b49\\u5747\\u503c\\uff0c\\u63a8\\u65ad\\u4e3b\\u8981\\u5ca9\\u6027\\u4e3aShale\\u3002phi_d_n_diff_avg\\u672a\\u8d85\\u8fc70.08\\uff0c\\u6545\\u65e0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Density\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 60.0,\n    \"nphi_ma\": 0.45\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:33.929209",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 121.4546,\n  \"DEN_avg\": 2.0762,\n  \"CNL_avg\": 56.6489,\n  \"AC_avg\": 295.6874,\n  \"PE_avg\": 1.4307,\n  \"vsh_final_avg\": 0.0827,\n  \"caliper_enlargement_inch\": 10.2526,\n  \"phi_d_n_diff_avg\": -0.2354\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.0762,\n    \"delta_t_ma\": 295.6874,\n    \"nphi_ma\": 0.0827\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:38.900318",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 54.4485,\n  \"DEN_avg\": 2.3553,\n  \"CNL_avg\": 14.7316,\n  \"AC_avg\": 231.3386,\n  \"PE_avg\": 2.0398,\n  \"vsh_final_avg\": 0.8655,\n  \"caliper_enlargement_inch\": 7.3688,\n  \"phi_d_n_diff_avg\": -0.0015\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u5224\\u65ad\\u4e3a'Bad_Hole'\\u662f\\u56e0\\u4e3acaliper_enlargement_inch\\u5927\\u4e8e1.5\\u3002\\u5ca9\\u6027\\u5224\\u65ad\\u4e3a'Shale'\\u662f\\u57fa\\u4e8eGR_avg\\u548cVsh_final_avg\\u7684\\u503c\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.3553,\n    \"delta_t_ma\": 231.3386,\n    \"nphi_ma\": 0.15\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:43.991289",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u5224\\u65ad\\u4e3a'Bad_Hole'\\u56e0\\u4e3acaliper_enlargement_inch\\u5927\\u4e8e1.5\\u3002\\u5ca9\\u6027\\u5224\\u65ad\\u4e3a'Shale'\\u56e0\\u4e3aGR_avg\\u8f83\\u9ad8\\u4e14Vsh_final_avg\\u4e3a0\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u6ca1\\u6709\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:49.950677",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 54.5356,\n  \"DEN_avg\": 2.3445,\n  \"CNL_avg\": 17.4055,\n  \"AC_avg\": 242.3041,\n  \"PE_avg\": 2.1351,\n  \"vsh_final_avg\": 0.1032,\n  \"caliper_enlargement_inch\": 7.569,\n  \"phi_d_n_diff_avg\": -0.0207\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u5b9a\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u65e0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.3445,\n    \"delta_t_ma\": 242.3041,\n    \"nphi_ma\": 0.1032\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:34:54.816787",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u5f84\\u6269\\u5c55\\u8d85\\u8fc71.5\\u82f1\\u5bf8\\uff0c\\u8868\\u660e\\u4e95\\u51b5\\u4e0d\\u826f\\u3002\\u540c\\u65f6\\uff0cGR\\u548cPE\\u7684\\u503c\\u7ed3\\u5408Vsh\\u7684\\u5747\\u503c\\u5224\\u65ad\\u51fa\\u4e3b\\u8981\\u5ca9\\u6027\\u4e3a\\u9875\\u5ca9\\u3002\\u6b64\\u5916\\uff0cphi_d_n_diff_avg\\u5927\\u4e8e0.08\\uff0c\\u8868\\u660e\\u5b58\\u5728\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Gas_Correction\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:41:46.974420",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 96.1088,\n  \"DEN_avg\": 2.4911,\n  \"CNL_avg\": 23.6632,\n  \"AC_avg\": 231.2899,\n  \"PE_avg\": 2.7537,\n  \"vsh_final_avg\": 0.7776,\n  \"caliper_enlargement_inch\": 7.7854,\n  \"phi_d_n_diff_avg\": -0.1697\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u5224\\u65ad\\u4e3a'Bad_Hole'\\u662f\\u56e0\\u4e3acaliper_enlargement_inch\\u5927\\u4e8e1.5\\u3002\\u5ca9\\u6027\\u5224\\u65ad\\u4e3a'Shale'\\u662f\\u57fa\\u4e8eGR_avg\\u548cVsh_final_avg\\u7684\\u5747\\u503c\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709\\u5f02\\u5e38\\u6548\\u679c\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.4911,\n    \"delta_t_ma\": 231.2899,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:41:52.699229",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 113.3362,\n  \"DEN_avg\": 2.0594,\n  \"CNL_avg\": 30.0285,\n  \"AC_avg\": 261.9329,\n  \"PE_avg\": 1.5137,\n  \"vsh_final_avg\": 0.3373,\n  \"caliper_enlargement_inch\": 9.5036,\n  \"phi_d_n_diff_avg\": 0.0307\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cPE_avg\\u7b49\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u53d1\\u73b0\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Density\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.0594,\n    \"delta_t_ma\": 261.9329,\n    \"nphi_ma\": 0.3373\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:41:57.736415",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cPE_avg\\u7b49\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:02.973741",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 104.5967,\n  \"DEN_avg\": 2.2515,\n  \"CNL_avg\": 26.5484,\n  \"AC_avg\": 247.0337,\n  \"PE_avg\": 2.5184,\n  \"vsh_final_avg\": 0.4544,\n  \"caliper_enlargement_inch\": 8.4355,\n  \"phi_d_n_diff_avg\": -0.0522\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u8868\\u660e\\u6ca1\\u6709\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.2515,\n    \"delta_t_ma\": 247.0337,\n    \"nphi_ma\": 0.4544\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:05.526785",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u5224\\u65ad\\u4e3a'Bad_Hole'\\uff0c\\u56e0\\u4e3acaliper_enlargement_inch\\u5927\\u4e8e1.5\\u3002\\u5ca9\\u6027\\u5224\\u65ad\\u4e3a'Shale'\\uff0c\\u56e0\\u4e3aGR_avg\\u8f83\\u9ad8\\u4e14PE_avg\\u8f83\\u4f4e\\uff0cVsh_avg\\u4e5f\\u8868\\u660e\\u4e86\\u8f83\\u9ad8\\u7684\\u6ce5\\u8d28\\u6210\\u5206\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u663e\\u793a\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 60.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:09.909674",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 116.9122,\n  \"DEN_avg\": 2.1755,\n  \"CNL_avg\": 55.9197,\n  \"AC_avg\": 302.9494,\n  \"PE_avg\": 1.7034,\n  \"vsh_final_avg\": 0.1333,\n  \"caliper_enlargement_inch\": 9.8518,\n  \"phi_d_n_diff_avg\": -0.2886\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5206\\u6790\\u5f97\\u51fa\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.1755,\n    \"delta_t_ma\": 302.9494,\n    \"nphi_ma\": 0.1333\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:15.300560",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 54.4921,\n  \"DEN_avg\": 2.3499,\n  \"CNL_avg\": 16.0686,\n  \"AC_avg\": 236.8213,\n  \"PE_avg\": 2.0875,\n  \"vsh_final_avg\": 0.7311,\n  \"caliper_enlargement_inch\": 7.4689,\n  \"phi_d_n_diff_avg\": -0.0111\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cVsh\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.35,\n    \"delta_t_ma\": 230.0,\n    \"nphi_ma\": 0.45\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:20.340874",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7684\\u5747\\u503c\\u5206\\u6790\\u5f97\\u51fa\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:25.002281",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 128.2683,\n  \"DEN_avg\": 1.9272,\n  \"CNL_avg\": 57.7426,\n  \"AC_avg\": 284.7945,\n  \"PE_avg\": 1.0216,\n  \"vsh_final_avg\": 0.0067,\n  \"caliper_enlargement_inch\": 10.8537,\n  \"phi_d_n_diff_avg\": -0.1556\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 60.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:29.890356",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u5f84\\u6269\\u5c55\\u8d85\\u8fc71.5\\u82f1\\u5bf8\\uff0c\\u8868\\u660e\\u4e95\\u51b5\\u4e0d\\u826f\\u3002\\u540c\\u65f6\\uff0cGR\\u548cPE\\u7684\\u503c\\u7ed3\\u5408Vsh\\u7684\\u5747\\u503c\\u663e\\u793a\\u51fa\\u4e3b\\u8981\\u5ca9\\u6027\\u4e3a\\u9875\\u5ca9\\u3002\\u6b64\\u5916\\uff0cphi_d_n_diff_avg\\u8d85\\u8fc70.08\\uff0c\\u8868\\u660e\\u5b58\\u5728\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Gas_Correction\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:48:34.902366",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 97.2484,\n  \"DEN_avg\": 2.4828,\n  \"CNL_avg\": 23.8006,\n  \"AC_avg\": 231.7316,\n  \"PE_avg\": 2.7614,\n  \"vsh_final_avg\": 0.7942,\n  \"caliper_enlargement_inch\": 7.8098,\n  \"phi_d_n_diff_avg\": -0.166\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cVsh\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.48,\n    \"delta_t_ma\": 231.73,\n    \"nphi_ma\": 0.08\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:48:40.099890",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 111.913,\n  \"DEN_avg\": 2.0473,\n  \"CNL_avg\": 30.0809,\n  \"AC_avg\": 260.2538,\n  \"PE_avg\": 1.7699,\n  \"vsh_final_avg\": 0.3835,\n  \"caliper_enlargement_inch\": 9.3578,\n  \"phi_d_n_diff_avg\": 0.0376\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5206\\u6790\\u5f97\\u51fa\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.6,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:48:45.092615",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cPE_avg\\u7b49\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u8868\\u660e\\u6ca1\\u6709\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Density\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:48:50.292471",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 103.6803,\n  \"DEN_avg\": 2.2815,\n  \"CNL_avg\": 26.0206,\n  \"AC_avg\": 246.6433,\n  \"PE_avg\": 2.4658,\n  \"vsh_final_avg\": 0.4556,\n  \"caliper_enlargement_inch\": 8.3945,\n  \"phi_d_n_diff_avg\": -0.0653\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cVsh_final_avg\\u7684\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.2815,\n    \"delta_t_ma\": 246.6433,\n    \"nphi_ma\": 0.4556\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:48:55.357889",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cPE_avg\\u7b49\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 60.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:48:59.465831",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 116.9122,\n  \"DEN_avg\": 2.1755,\n  \"CNL_avg\": 55.9197,\n  \"AC_avg\": 302.9494,\n  \"PE_avg\": 1.7034,\n  \"vsh_final_avg\": 0.1333,\n  \"caliper_enlargement_inch\": 9.8518,\n  \"phi_d_n_diff_avg\": -0.2886\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.1755,\n    \"delta_t_ma\": 302.9494,\n    \"nphi_ma\": 0.1333\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:04.516404",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 54.4921,\n  \"DEN_avg\": 2.3499,\n  \"CNL_avg\": 16.0686,\n  \"AC_avg\": 236.8213,\n  \"PE_avg\": 2.0875,\n  \"vsh_final_avg\": 0.5506,\n  \"caliper_enlargement_inch\": 7.4689,\n  \"phi_d_n_diff_avg\": -0.0111\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Density\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.3499,\n    \"delta_t_ma\": 236.8213,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:07.141605",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u6839\\u636eGR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 45.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:11.864618",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 128.2683,\n  \"DEN_avg\": 1.9272,\n  \"CNL_avg\": 57.7426,\n  \"AC_avg\": 284.7945,\n  \"PE_avg\": 1.0216,\n  \"vsh_final_avg\": 0.0067,\n  \"caliper_enlargement_inch\": 10.8537,\n  \"phi_d_n_diff_avg\": -0.1556\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cPE_avg\\u7b49\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 60.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:16.521818",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u5f84\\u6269\\u5c55\\u8d85\\u8fc71.5\\u82f1\\u5bf8\\uff0c\\u8868\\u660e\\u4e95\\u51b5\\u4e0d\\u826f\\u3002\\u540c\\u65f6\\uff0cGR\\u548cPE\\u7684\\u503c\\u7ed3\\u5408Vsh\\u7684\\u5747\\u503c\\u5224\\u65ad\\u51fa\\u4e3b\\u8981\\u5ca9\\u6027\\u4e3a\\u9875\\u5ca9\\u3002\\u6b64\\u5916\\uff0cphi_d_n_diff_avg\\u8d85\\u8fc70.08\\uff0c\\u663e\\u793a\\u51fa\\u6c14\\u4f53\\u6548\\u5e94\\u7684\\u5b58\\u5728\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Gas_Correction\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:52:33.807675",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 96.1088,\n  \"DEN_avg\": 2.4911,\n  \"CNL_avg\": 23.6632,\n  \"AC_avg\": 231.2899,\n  \"PE_avg\": 2.7537,\n  \"vsh_final_avg\": 0.7973,\n  \"caliper_enlargement_inch\": 7.7854,\n  \"phi_d_n_diff_avg\": -0.1697\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cVsh\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.4911,\n    \"delta_t_ma\": 231.2899,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:52:36.324885",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 113.3362,\n  \"DEN_avg\": 2.0594,\n  \"CNL_avg\": 30.0285,\n  \"AC_avg\": 261.9329,\n  \"PE_avg\": 1.5137,\n  \"vsh_final_avg\": 0.3373,\n  \"caliper_enlargement_inch\": 9.5036,\n  \"phi_d_n_diff_avg\": 0.0307\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7684\\u5747\\u503c\\u5206\\u6790\\u5f97\\u51fa\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.0594,\n    \"delta_t_ma\": 261.9329,\n    \"nphi_ma\": 0.3373\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:52:41.048730",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u6839\\u636eGR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 60.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:52:46.428401",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 104.5967,\n  \"DEN_avg\": 2.2515,\n  \"CNL_avg\": 26.5484,\n  \"AC_avg\": 247.0337,\n  \"PE_avg\": 2.5184,\n  \"vsh_final_avg\": 0.4544,\n  \"caliper_enlargement_inch\": 8.4355,\n  \"phi_d_n_diff_avg\": -0.0522\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cVsh_final_avg\\u7684\\u503c\\u7efc\\u5408\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.2515,\n    \"delta_t_ma\": 247.0337,\n    \"nphi_ma\": 0.45\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:52:51.870491",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u7efc\\u5408\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 80.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:52:57.179028",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 116.9122,\n  \"DEN_avg\": 2.1755,\n  \"CNL_avg\": 55.9197,\n  \"AC_avg\": 302.9494,\n  \"PE_avg\": 1.7034,\n  \"vsh_final_avg\": 0.1333,\n  \"caliper_enlargement_inch\": 9.8518,\n  \"phi_d_n_diff_avg\": -0.2886\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cPE_avg\\u7b49\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.1755,\n    \"delta_t_ma\": 302.9494,\n    \"nphi_ma\": 0.1333\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:02.555557",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 54.4921,\n  \"DEN_avg\": 2.3499,\n  \"CNL_avg\": 16.0686,\n  \"AC_avg\": 236.8213,\n  \"PE_avg\": 2.0875,\n  \"vsh_final_avg\": 0.7311,\n  \"caliper_enlargement_inch\": 7.4689,\n  \"phi_d_n_diff_avg\": -0.0111\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cVsh\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.3500,\n    \"delta_t_ma\": 235.0000,\n    \"nphi_ma\": 0.30\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:06.642883",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u5b9a\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u65e0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:11.277321",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 128.2683,\n  \"DEN_avg\": 1.9272,\n  \"CNL_avg\": 57.7426,\n  \"AC_avg\": 284.7945,\n  \"PE_avg\": 1.0216,\n  \"vsh_final_avg\": 0.0067,\n  \"caliper_enlargement_inch\": 10.8537,\n  \"phi_d_n_diff_avg\": -0.1556\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5206\\u6790\\u5f97\\u51fa\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u53d1\\u73b0\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 60,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:16.920331",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u5f84\\u6269\\u5c55\\u8d85\\u8fc71.5\\u82f1\\u5bf8\\uff0c\\u8868\\u660e\\u4e95\\u51b5\\u4e0d\\u826f\\u3002\\u540c\\u65f6\\uff0cGR\\u548cPE\\u7684\\u503c\\u7ed3\\u5408Vsh\\u7684\\u5747\\u503c\\u5224\\u65ad\\u51fa\\u4e3b\\u8981\\u5ca9\\u6027\\u4e3a\\u9875\\u5ca9\\u3002\\u6b64\\u5916\\uff0cphi_d_n_diff_avg\\u8d85\\u8fc70.08\\uff0c\\u8868\\u660e\\u5b58\\u5728\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Gas_Correction\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:56:46.658908",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 95.7794,\n  \"DEN_avg\": 2.4798,\n  \"CNL_avg\": 23.6742,\n  \"AC_avg\": 231.6709,\n  \"PE_avg\": 2.743,\n  \"vsh_final_avg\": 0.7615,\n  \"caliper_enlargement_inch\": 7.7893,\n  \"phi_d_n_diff_avg\": -0.1629\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cVsh\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.4798,\n    \"delta_t_ma\": 231.6709,\n    \"nphi_ma\": 0.15\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:56:51.046684",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 115.7612,\n  \"DEN_avg\": 2.0156,\n  \"CNL_avg\": 31.8632,\n  \"AC_avg\": 250.2157,\n  \"PE_avg\": 1.291,\n  \"vsh_final_avg\": 0.2878,\n  \"caliper_enlargement_inch\": 9.7418,\n  \"phi_d_n_diff_avg\": 0.0396\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.0156,\n    \"delta_t_ma\": 250.2157,\n    \"nphi_ma\": 0.0396\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:56:56.172319",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cPE_avg\\u7b49\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 80,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:00.387910",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 105.7294,\n  \"DEN_avg\": 2.2353,\n  \"CNL_avg\": 26.5815,\n  \"AC_avg\": 253.2321,\n  \"PE_avg\": 2.4564,\n  \"vsh_final_avg\": 0.4305,\n  \"caliper_enlargement_inch\": 8.532,\n  \"phi_d_n_diff_avg\": -0.0427\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u6839\\u636eGR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 55.0,\n    \"nphi_ma\": 0.45\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:05.045389",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cPE_avg\\u7b49\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:07.484233",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 121.4546,\n  \"DEN_avg\": 2.0762,\n  \"CNL_avg\": 56.6489,\n  \"AC_avg\": 295.6874,\n  \"PE_avg\": 1.4307,\n  \"vsh_final_avg\": 0.0827,\n  \"caliper_enlargement_inch\": 10.2526,\n  \"phi_d_n_diff_avg\": -0.2354\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5206\\u6790\\u5f97\\u51fa\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.0762,\n    \"delta_t_ma\": 295.6874,\n    \"nphi_ma\": 0.0827\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:12.765093",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 54.4485,\n  \"DEN_avg\": 2.3553,\n  \"CNL_avg\": 14.7316,\n  \"AC_avg\": 231.3386,\n  \"PE_avg\": 2.0398,\n  \"vsh_final_avg\": 0.8655,\n  \"caliper_enlargement_inch\": 7.3688,\n  \"phi_d_n_diff_avg\": -0.0015\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cVsh\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u8868\\u660e\\u6ca1\\u6709\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.3553,\n    \"delta_t_ma\": 231.3386,\n    \"nphi_ma\": 0.08\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:17.207125",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u5224\\u65ad\\u4e3aShale\\uff0c\\u56e0\\u4e3aGR\\u503c\\u8f83\\u9ad8\\u4e14Vsh\\u4e3a0\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u6ca1\\u6709\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.3\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:25.818516",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 54.5356,\n  \"DEN_avg\": 2.3445,\n  \"CNL_avg\": 17.4055,\n  \"AC_avg\": 242.3041,\n  \"PE_avg\": 2.1351,\n  \"vsh_final_avg\": 0.1032,\n  \"caliper_enlargement_inch\": 7.569,\n  \"phi_d_n_diff_avg\": -0.0207\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cVsh_final_avg\\u7684\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u53d1\\u73b0\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.3445,\n    \"delta_t_ma\": 242.3041,\n    \"nphi_ma\": 0.1032\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:30.589166",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u5f84\\u6269\\u5f20\\u8d85\\u8fc71.5\\u82f1\\u5bf8\\uff0c\\u8868\\u660e\\u4e95\\u51b5\\u4e0d\\u826f\\uff1b\\u6839\\u636eGR\\u548cPE\\u7684\\u5747\\u503c\\uff0c\\u5224\\u65ad\\u4e3b\\u8981\\u5ca9\\u6027\\u4e3a\\u9875\\u5ca9\\uff1bphi_d_n_diff_avg\\u8d85\\u8fc70.08\\uff0c\\u8868\\u660e\\u5b58\\u5728\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Gas_Correction\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:17:36.113941",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 96.1088,\n  \"DEN_avg\": 2.4911,\n  \"CNL_avg\": 23.6632,\n  \"AC_avg\": 231.2899,\n  \"PE_avg\": 2.7537,\n  \"vsh_final_avg\": 0.7964,\n  \"caliper_enlargement_inch\": 7.7854,\n  \"phi_d_n_diff_avg\": -0.1697\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cVsh\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.4911,\n    \"delta_t_ma\": 231.2899,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:17:41.315362",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 113.3362,\n  \"DEN_avg\": 2.0594,\n  \"CNL_avg\": 30.0285,\n  \"AC_avg\": 261.9329,\n  \"PE_avg\": 1.5137,\n  \"vsh_final_avg\": 0.3373,\n  \"caliper_enlargement_inch\": 9.5036,\n  \"phi_d_n_diff_avg\": 0.0307\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cPE_avg\\u7b49\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u6545\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.0594,\n    \"delta_t_ma\": 261.9329,\n    \"nphi_ma\": 0.3373\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:17:46.133771",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 52.7323,\n  \"DEN_avg\": 1.7964,\n  \"CNL_avg\": 67.9682,\n  \"AC_avg\": 367.1174,\n  \"PE_avg\": 0.842,\n  \"vsh_final_avg\": 0.0069,\n  \"caliper_enlargement_inch\": 8.7167,\n  \"phi_d_n_diff_avg\": -0.1746\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u6839\\u636eGR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u8868\\u660e\\u6ca1\\u6709\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Density\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:17:47.575687",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 104.5967,\n  \"DEN_avg\": 2.2515,\n  \"CNL_avg\": 26.5484,\n  \"AC_avg\": 247.0337,\n  \"PE_avg\": 2.5184,\n  \"vsh_final_avg\": 0.4544,\n  \"caliper_enlargement_inch\": 8.4355,\n  \"phi_d_n_diff_avg\": -0.0522\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"No_Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u5f84\\u6269\\u5c55\\u8d85\\u8fc71.5\\u82f1\\u5bf8\\uff0c\\u8868\\u660e\\u4e95\\u51b5\\u4e0d\\u826f\\uff1b\\u6839\\u636eGR\\u548cPE\\u7b49\\u53c2\\u6570\\uff0c\\u5ca9\\u6027\\u5224\\u65ad\\u4e3a\\u9875\\u5ca9\\uff1bphi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u53d1\\u73b0\\u6c14\\u4f53\\u6548\\u5e94\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Density\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.2515,\n    \"delta_t_ma\": 247.0337,\n    \"nphi_ma\": 0.4544\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:17:52.027530",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 111.3295,\n  \"DEN_avg\": 1.7598,\n  \"CNL_avg\": 46.8995,\n  \"AC_avg\": 304.7756,\n  \"PE_avg\": 1.2575,\n  \"vsh_final_avg\": 0.2489,\n  \"caliper_enlargement_inch\": 11.3465,\n  \"phi_d_n_diff_avg\": 0.0501\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:17:56.837898",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 116.9122,\n  \"DEN_avg\": 2.1755,\n  \"CNL_avg\": 55.9197,\n  \"AC_avg\": 302.9494,\n  \"PE_avg\": 1.7034,\n  \"vsh_final_avg\": 0.1333,\n  \"caliper_enlargement_inch\": 9.8518,\n  \"phi_d_n_diff_avg\": -0.2886\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u56e0\\u6b64\\u6ca1\\u6709Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.1755,\n    \"delta_t_ma\": 302.9494,\n    \"nphi_ma\": 0.1333\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:02.050878",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 54.4921,\n  \"DEN_avg\": 2.3499,\n  \"CNL_avg\": 16.0686,\n  \"AC_avg\": 236.8213,\n  \"PE_avg\": 2.0875,\n  \"vsh_final_avg\": 0.4987,\n  \"caliper_enlargement_inch\": 7.4689,\n  \"phi_d_n_diff_avg\": -0.0111\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7b49\\u5747\\u503c\\u5206\\u6790\\u5f97\\u51fa\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u68c0\\u6d4b\\u5230Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.3499,\n    \"delta_t_ma\": 236.8213,\n    \"nphi_ma\": 0.15\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:06.284010",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 100.7202,\n  \"DEN_avg\": 1.8986,\n  \"CNL_avg\": 57.4874,\n  \"AC_avg\": 396.9608,\n  \"PE_avg\": 1.9122,\n  \"vsh_final_avg\": 0.0,\n  \"caliper_enlargement_inch\": 15.4362,\n  \"phi_d_n_diff_avg\": -0.1358\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u7531\\u4e8ecaliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR\\u548cPE\\u7684\\u5747\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u51fa\\u73b0Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:10.897040",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 128.2683,\n  \"DEN_avg\": 1.9272,\n  \"CNL_avg\": 57.7426,\n  \"AC_avg\": 284.7945,\n  \"PE_avg\": 1.0216,\n  \"vsh_final_avg\": 0.0067,\n  \"caliper_enlargement_inch\": 10.8537,\n  \"phi_d_n_diff_avg\": -0.1556\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"None\",\n  \"reasoning\": \"\\u4e95\\u51b5\\u56e0caliper_enlargement_inch\\u5927\\u4e8e1.5\\u88ab\\u5224\\u65ad\\u4e3aBad_Hole\\u3002\\u5ca9\\u6027\\u901a\\u8fc7GR_avg\\u548cPE_avg\\u7b49\\u503c\\u5224\\u65ad\\u4e3aShale\\u3002phi_d_n_diff_avg\\u5c0f\\u4e8e0.08\\uff0c\\u672a\\u68c0\\u6d4b\\u5230Gas_Effect\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Sonic\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:16.231834",
+            "data": {
+                "user": "统计情报:\n{\n  \"GR_avg\": 80.4228,\n  \"DEN_avg\": 1.5956,\n  \"CNL_avg\": 44.9018,\n  \"AC_avg\": 337.7815,\n  \"PE_avg\": 1.5129,\n  \"vsh_final_avg\": 0.4316,\n  \"caliper_enlargement_inch\": 12.8096,\n  \"phi_d_n_diff_avg\": 0.1688\n}\n\n诊断结论:\n{\n  \"wellbore_condition\": \"Bad_Hole\",\n  \"dominant_lithology\": \"Shale\",\n  \"special_effects\": \"Gas_Effect\",\n  \"reasoning\": \"\\u4e95\\u5f84\\u6269\\u5f20\\u8d85\\u8fc71.5\\u82f1\\u5bf8\\uff0c\\u8868\\u660e\\u4e95\\u51b5\\u4e0d\\u826f\\u3002\\u540c\\u65f6\\uff0cGR\\u548cPE\\u7684\\u503c\\u7ed3\\u5408Vsh\\u7684\\u5747\\u503c\\u5224\\u65ad\\u51fa\\u4e3b\\u8981\\u5ca9\\u6027\\u4e3a\\u9875\\u5ca9\\u3002\\u6b64\\u5916\\uff0cphi_d_n_diff_avg\\u8d85\\u8fc70.08\\uff0c\\u663e\\u793a\\u51fa\\u6c14\\u4f53\\u6548\\u5e94\\u7684\\u5b58\\u5728\\u3002\"\n}\n\n请基于以上信息，选择模型并对骨架参数进行微调。",
+                "response": "```json\n{\n  \"porosity_model_to_apply\": \"Gas_Correction\",\n  \"bone_parameters_to_use\": {\n    \"rho_ma\": 2.65,\n    \"delta_t_ma\": 50.0,\n    \"nphi_ma\": 0.25\n  }\n}\n```"
+            }
+        }
+    ],
+    "metadata": {
+        "capacity": 100
+    }
+}

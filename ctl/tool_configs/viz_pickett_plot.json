@@ -1,0 +1,16 @@
+{
+  "name": "viz_pickett_plot",
+  "description": "绘制含水饱和度 Pickett 图",
+  "paths": {
+    "input_file": "data/processed_data/saturation/interpreted_wells/*.csv",
+    "output_file": "data/processed_data/viz_tools/pickett_plot.png"
+  },
+  "parameters": {
+    "rt_col": "RT",
+    "por_col": "phie_final",
+    "a": 1.0,
+    "Rw": 0.1,
+    "m": 2.0,
+    "n": 2.0
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "data_qc_report",
+  "description": "生成数据质量报告",
+  "paths": {
+    "input_file": "data/processed_data/data_tools/cleaned_well_logs.csv",
+    "output_file": "data/processed_data/data_tools/qc_report.json"
+  },
+  "parameters": {
+    "curves": [
+      "GR",
+      "DEN",
+      "CNL",
+      "AC",
+      "PE"
+    ]
+  }
+}

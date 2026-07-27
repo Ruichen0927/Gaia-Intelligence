@@ -1,0 +1,12 @@
+{
+  "name": "ml_evaluate_classifier",
+  "description": "评估分类预测结果",
+  "paths": {
+    "input_file": "data/processed_data/ml/classifier_predictions.csv",
+    "output_file": "data/processed_data/ml/classifier_evaluation.json"
+  },
+  "parameters": {
+    "actual_col": "rock_type",
+    "pred_col": "rock_type_pred"
+  }
+}

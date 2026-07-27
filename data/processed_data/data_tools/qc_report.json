@@ -1,0 +1,48 @@
+{
+  "total_rows": 5690,
+  "wells": [
+    "0473ffd021f94d17a9091d6a3b5ac567"
+  ],
+  "curve_stats": {
+    "GR": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "min": 22.889,
+      "max": 218.191,
+      "mean": 88.4346,
+      "std": 31.8536
+    },
+    "DEN": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "min": 1.43,
+      "max": 2.692,
+      "mean": 2.4075,
+      "std": 0.217
+    },
+    "CNL": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "min": 8.201,
+      "max": 110.81,
+      "mean": 23.7823,
+      "std": 10.7842
+    },
+    "AC": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "min": 180.245,
+      "max": 552.174,
+      "mean": 240.3644,
+      "std": 31.4978
+    },
+    "PE": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "min": 0.229,
+      "max": 3.724,
+      "mean": 2.5035,
+      "std": 0.513
+    }
+  }
+}

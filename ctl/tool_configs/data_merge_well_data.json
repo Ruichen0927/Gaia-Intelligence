@@ -1,0 +1,11 @@
+{
+  "name": "data_merge_well_data",
+  "description": "合并多井 interpreted CSV",
+  "paths": {
+    "input_directory": "data/processed_data/shale_content/interpreted_wells",
+    "output_file": "data/processed_data/data_tools/merged_interpreted.csv"
+  },
+  "parameters": {
+    "pattern": "*.csv"
+  }
+}

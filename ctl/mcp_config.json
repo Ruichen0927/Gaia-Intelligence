@@ -1,0 +1,240 @@
+{
+  "server_name": "gaia-welllog-mcp",
+  "version": "1.0.0",
+  "tools": {
+    "shale_build_strategy": {
+      "module": "shale_tool",
+      "function": "build_strategy",
+      "default_config": "ctl/tool_configs/shale_build_strategy.json",
+      "description": "按地层构建泥质含量解释策略"
+    },
+    "shale_run_interpretation": {
+      "module": "shale_tool",
+      "function": "run_interpretation",
+      "default_config": "ctl/tool_configs/shale_run_interpretation.json",
+      "description": "应用泥质含量解释策略计算每口井Vsh"
+    },
+    "porosity_build_knowledgebase": {
+      "module": "porosity_tool",
+      "function": "build_knowledgebase",
+      "default_config": "ctl/tool_configs/porosity_build_knowledgebase.json",
+      "description": "构建孔隙度解释知识库"
+    },
+    "porosity_run_calculation": {
+      "module": "porosity_tool",
+      "function": "run_calculation",
+      "default_config": "ctl/tool_configs/porosity_run_calculation.json",
+      "description": "应用孔隙度知识库计算每口井孔隙度"
+    },
+    "permeability_build_strategy": {
+      "module": "permeability_tool",
+      "function": "build_strategy",
+      "default_config": "ctl/tool_configs/permeability_build_strategy.json",
+      "description": "按地层-岩石类型组合构建渗透率解释策略"
+    },
+    "permeability_run_calculation": {
+      "module": "permeability_tool",
+      "function": "run_calculation",
+      "default_config": "ctl/tool_configs/permeability_run_calculation.json",
+      "description": "应用渗透率解释策略计算每口井渗透率"
+    },
+    "saturation_build_strategy": {
+      "module": "saturation_tool",
+      "function": "build_strategy",
+      "default_config": "ctl/tool_configs/saturation_build_strategy.json",
+      "description": "使用Pickett图+Agent确定饱和度解释策略"
+    },
+    "saturation_run_calculation": {
+      "module": "saturation_tool",
+      "function": "run_calculation",
+      "default_config": "ctl/tool_configs/saturation_run_calculation.json",
+      "description": "计算含水饱和度、冲洗带饱和度与可动油"
+    },
+    "lithology_run_calculation": {
+      "module": "lithology_tool",
+      "function": "run_calculation",
+      "default_config": "ctl/tool_configs/lithology_run_calculation.json",
+      "description": "使用多矿物模型求解岩性组分"
+    },
+    "final_report_learn_rules": {
+      "module": "final_report_tool",
+      "function": "learn_rules_tool",
+      "default_config": "ctl/tool_configs/final_report_learn_rules.json",
+      "description": "从原始标签中学习决策规则"
+    },
+    "final_report_generate_deliverable": {
+      "module": "final_report_tool",
+      "function": "generate_deliverable",
+      "default_config": "ctl/tool_configs/final_report_generate_deliverable.json",
+      "description": "Agent会诊+层段合并生成最终交付成果"
+    },
+    "data_load_well_logs": {
+      "module": "data_tool",
+      "function": "load_well_logs",
+      "default_config": "ctl/tool_configs/data_load_well_logs.json",
+      "description": "批量读取测井文本文件并输出合并 CSV",
+      "source": "builtin"
+    },
+    "data_clean_curves": {
+      "module": "data_tool",
+      "function": "clean_curves",
+      "default_config": "ctl/tool_configs/data_clean_curves.json",
+      "description": "替换无效值、类型转换、按核心曲线 dropna",
+      "source": "builtin"
+    },
+    "data_detect_outliers": {
+      "module": "data_tool",
+      "function": "detect_outliers",
+      "default_config": "ctl/tool_configs/data_detect_outliers.json",
+      "description": "使用 IQR 或 Z-Score 标记异常值",
+      "source": "builtin"
+    },
+    "data_impute_missing": {
+      "module": "data_tool",
+      "function": "impute_missing",
+      "default_config": "ctl/tool_configs/data_impute_missing.json",
+      "description": "使用插值/均值/中位数填充缺失值",
+      "source": "builtin"
+    },
+    "data_split_by_formation": {
+      "module": "data_tool",
+      "function": "split_by_formation",
+      "default_config": "ctl/tool_configs/data_split_by_formation.json",
+      "description": "按 LAYER 列拆分成多个层段 CSV",
+      "source": "builtin"
+    },
+    "data_merge_well_data": {
+      "module": "data_tool",
+      "function": "merge_well_data",
+      "default_config": "ctl/tool_configs/data_merge_well_data.json",
+      "description": "合并多井 interpreted CSV",
+      "source": "builtin"
+    },
+    "data_qc_report": {
+      "module": "data_tool",
+      "function": "data_qc_report",
+      "default_config": "ctl/tool_configs/data_qc_report.json",
+      "description": "生成数据质量报告",
+      "source": "builtin"
+    },
+    "feature_compute_derived_curves": {
+      "module": "feature_tool",
+      "function": "compute_derived_curves",
+      "default_config": "ctl/tool_configs/feature_compute_derived_curves.json",
+      "description": "计算派生曲线",
+      "source": "builtin"
+    },
+    "feature_normalize_curves": {
+      "module": "feature_tool",
+      "function": "normalize_curves",
+      "default_config": "ctl/tool_configs/feature_normalize_curves.json",
+      "description": "曲线归一化",
+      "source": "builtin"
+    },
+    "feature_window_features": {
+      "module": "feature_tool",
+      "function": "window_features",
+      "default_config": "ctl/tool_configs/feature_window_features.json",
+      "description": "深度窗统计特征",
+      "source": "builtin"
+    },
+    "viz_crossplot": {
+      "module": "viz_tool",
+      "function": "crossplot",
+      "default_config": "ctl/tool_configs/viz_crossplot.json",
+      "description": "交会图",
+      "source": "builtin"
+    },
+    "viz_histogram": {
+      "module": "viz_tool",
+      "function": "histogram",
+      "default_config": "ctl/tool_configs/viz_histogram.json",
+      "description": "直方图",
+      "source": "builtin"
+    },
+    "viz_pickett_plot": {
+      "module": "viz_tool",
+      "function": "pickett_plot",
+      "default_config": "ctl/tool_configs/viz_pickett_plot.json",
+      "description": "Pickett 图",
+      "source": "builtin"
+    },
+    "stat_summary": {
+      "module": "stat_tool",
+      "function": "summary_statistics",
+      "default_config": "ctl/tool_configs/stat_summary.json",
+      "description": "统计摘要",
+      "source": "builtin"
+    },
+    "stat_correlation": {
+      "module": "stat_tool",
+      "function": "correlation_matrix",
+      "default_config": "ctl/tool_configs/stat_correlation.json",
+      "description": "相关性矩阵",
+      "source": "builtin"
+    },
+    "ml_train_regressor": {
+      "module": "ml_tool",
+      "function": "train_regressor",
+      "default_config": "ctl/tool_configs/ml_train_regressor.json",
+      "description": "训练回归模型",
+      "source": "builtin"
+    },
+    "ml_predict": {
+      "module": "ml_tool",
+      "function": "predict",
+      "default_config": "ctl/tool_configs/ml_predict.json",
+      "description": "回归预测",
+      "source": "builtin"
+    },
+    "ml_evaluate": {
+      "module": "ml_tool",
+      "function": "evaluate_regressor",
+      "default_config": "ctl/tool_configs/ml_evaluate.json",
+      "description": "回归评估",
+      "source": "builtin"
+    },
+    "ml_train_classifier": {
+      "module": "ml_tool",
+      "function": "train_classifier",
+      "default_config": "ctl/tool_configs/ml_train_classifier.json",
+      "description": "训练分类模型",
+      "source": "builtin"
+    },
+    "ml_predict_classifier": {
+      "module": "ml_tool",
+      "function": "predict_classifier",
+      "default_config": "ctl/tool_configs/ml_predict_classifier.json",
+      "description": "分类预测",
+      "source": "builtin"
+    },
+    "ml_evaluate_classifier": {
+      "module": "ml_tool",
+      "function": "evaluate_classifier",
+      "default_config": "ctl/tool_configs/ml_evaluate_classifier.json",
+      "description": "分类评估",
+      "source": "builtin"
+    },
+    "ml_cluster_data": {
+      "module": "ml_tool",
+      "function": "cluster_data",
+      "default_config": "ctl/tool_configs/ml_cluster_data.json",
+      "description": "曲线聚类",
+      "source": "builtin"
+    },
+    "ml_save_load_model": {
+      "module": "ml_tool",
+      "function": "save_load_model",
+      "default_config": "ctl/tool_configs/ml_save_load_model.json",
+      "description": "模型持久化辅助",
+      "source": "builtin"
+    },
+    "gr_mean": {
+      "module": "extensions.tools.gr_mean",
+      "function": "run",
+      "default_config": "extensions/configs/gr_mean.json",
+      "description": "计算测井中GR均值",
+      "source": "user"
+    }
+  }
+}

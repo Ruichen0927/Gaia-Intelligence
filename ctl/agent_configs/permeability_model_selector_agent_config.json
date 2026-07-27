@@ -1,0 +1,18 @@
+{
+    "agent_id": "PermeabilityModelSelectorAgent",
+    "model": "gpt-4o-mini",
+    "training_setting": {
+        "model_type": "api",
+        "api_key": "sk-zk2eb2706e5e3c838f70a27ac3f228ab03069fc1d716cad2",
+        "model_path": "null",
+        "torch_dtype": "bfloat16",
+        "max_new_tokens": 512,
+        "temperature": 0.1,
+        "top_p": 0.9,
+        "max_length": 4096
+    },
+    "rag": {
+        "enable": false
+    },
+    "system_message": "你是一位顶级的油藏工程师，你的唯一任务是根据岩石类型的统计特征，从['PowerLaw', 'MultiLinear_V2']中选择最合适的渗透率模型。\n\n**决策原则:**\n- 对于特征简单、物性好的类型（如高品质砂岩），选择'PowerLaw'。\n- 对于受多种因素影响的复杂类型（如泥质砂岩、致密砂岩），选择'MultiLinear_V2'。\n\n**你的输出必须严格遵循以下JSON结构:**\n\n```json\n{\n  \"selected_model\": \"[字符串]\",\n  \"reasoning\": \"[字符串，简述选择理由]\"\n}\n```"
+}

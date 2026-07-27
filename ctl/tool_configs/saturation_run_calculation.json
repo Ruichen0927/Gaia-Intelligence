@@ -1,0 +1,36 @@
+{
+  "name": "saturation_run_calculation",
+  "description": "应用饱和度解释策略，批量计算每口井的含水饱和度、冲洗带饱和度与可动油",
+  "paths": {
+    "input_directory": "data/processed_data/permeability/interpreted_wells",
+    "output_directory": "data/processed_data/saturation"
+  },
+  "parameters": {
+    "strategy_filename": "saturation_strategy_agent.json",
+    "output_subfolder": "interpreted_wells",
+    "layer_col": "LAYER",
+    "depth_col": "DEPTH",
+    "phie_final_col": "phie_final",
+    "vsh_col": "vsh_final",
+    "rt_col": "RT",
+    "rxo_col": "RXO",
+    "den_col": "DEN",
+    "sw_true_col": "SW",
+    "sw_final_col": "sw_final",
+    "sxo_final_col": "sxo_final",
+    "so_final_col": "so_final",
+    "movable_oil_col": "so_movable",
+    "rock_type_col": "rock_type",
+    "shale_model_vsh_threshold": 0.15,
+    "global_fallback_params": {"a": 1.0, "m": 2.0, "n": 2.0, "rw": 0.1, "rsh": 10.0},
+    "fluid_density": 1.0,
+    "rock_type_rules": {
+      "RT5_Cemented_Sand": [0.0, 0.3, 0.0, 1.0, 0.08, 999.0],
+      "RT1_High_Quality_Sand": [0.0, 0.15, 0.12, 1.0, -999.0, 0.08],
+      "RT2_Medium_Quality_Sand": [0.0, 0.25, 0.08, 0.12, -999.0, 0.08],
+      "RT4_Tight_Sand": [0.0, 0.25, 0.0, 0.08, -999.0, 0.08],
+      "RT3_Shaly_Sand": [0.15, 0.5, 0.0, 1.0, -999.0, 999.0]
+    },
+    "default_rock_type": "Undefined"
+  }
+}

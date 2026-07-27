@@ -1,0 +1,151 @@
+{
+  "project_info": {
+    "description": "Agent-driven saturation strategy (V2 - Pickett-reviewed).",
+    "generation_date": "2026-07-18"
+  },
+  "detailed_strategies": {
+    "J2z_RT2_Medium_Quality_Sand": {
+      "a": 1.0,
+      "m": 2.0,
+      "n": 1.8,
+      "rw": 0.1,
+      "rsh": null,
+      "reasoning": "由于自动标定失败，依据宏观特征指定了经验值"
+    },
+    "J2z_RT3_Shaly_Sand": {
+      "a": 1.0,
+      "m": 0.1282,
+      "n": 2.0,
+      "rw": 70.704,
+      "rsh": 107.906,
+      "reasoning": "采纳了计算结果，因为所有参数都在合理的物理范围内，并且标定状态为成功。"
+    },
+    "J2z_RT4_Tight_Sand": {
+      "a": 1.0,
+      "m": -0.1452,
+      "n": 2.0,
+      "rw": 143.4751,
+      "rsh": null,
+      "reasoning": "采纳了计算结果，因为标定成功且参数在合理范围内。"
+    },
+    "chang4+5_RT1_High_Quality_Sand": {
+      "a": 1.0,
+      "m": 1.442,
+      "n": 2.0,
+      "rw": 1.0869,
+      "rsh": null,
+      "reasoning": "采纳了计算结果，因为所有参数都在合理的物理范围内，且标定状态为成功。"
+    },
+    "chang4+5_RT3_Shaly_Sand": {
+      "a": 1.0,
+      "m": 0.2517,
+      "n": 2.0,
+      "rw": 8.9673,
+      "rsh": 21.205,
+      "reasoning": "采纳了计算结果，因为标定成功且所有参数在合理的物理范围内。"
+    },
+    "chang4+5_RT4_Tight_Sand": {
+      "a": 1.0,
+      "m": 0.0319,
+      "n": 2.0,
+      "rw": 11.7573,
+      "rsh": null,
+      "reasoning": "采纳了计算结果，因为所有参数都在合理的物理范围内。"
+    },
+    "chang6_RT1_High_Quality_Sand": {
+      "a": 1.0,
+      "m": 2.0,
+      "n": 2.0,
+      "rw": 0.1,
+      "rsh": null,
+      "reasoning": "由于自动标定失败，依据岩石类型的宏观特征指定了经验值"
+    },
+    "chang6_RT3_Shaly_Sand": {
+      "a": 1.0,
+      "m": 0.2243,
+      "n": 2.0,
+      "rw": 9.7722,
+      "rsh": 17.991,
+      "reasoning": "采纳了计算结果，因为所有参数在合理的物理范围内。"
+    },
+    "chang6_RT4_Tight_Sand": {
+      "a": 1.0,
+      "m": 0.2189,
+      "n": 2.0,
+      "rw": 3.7225,
+      "rsh": null,
+      "reasoning": "采纳了计算结果，因为所有参数都在合理的物理范围内，且标定状态为成功。"
+    },
+    "chang8_RT3_Shaly_Sand": {
+      "a": 1.0,
+      "m": 2.0,
+      "n": 1.8,
+      "rw": 0.1,
+      "rsh": 19.058,
+      "reasoning": "由于自动标定失败，依据岩石类型的宏观特征指定了经验值"
+    },
+    "chang8_RT4_Tight_Sand": {
+      "a": 1.0,
+      "m": 0.4206,
+      "n": 2.0,
+      "rw": 1.2447,
+      "rsh": null,
+      "reasoning": "采纳了计算结果，因为所有参数都在合理的物理范围内。"
+    },
+    "y8_RT1_High_Quality_Sand": {
+      "a": 1.0,
+      "m": 2.0,
+      "n": 1.8,
+      "rw": 0.1,
+      "rsh": null,
+      "reasoning": "由于自动标定失败，依据岩石类型的宏观特征指定了合理的默认参数"
+    },
+    "y8_RT3_Shaly_Sand": {
+      "a": 1.0,
+      "m": 2.0,
+      "n": 1.8,
+      "rw": 0.1,
+      "rsh": 95.666,
+      "reasoning": "由于自动标定失败，依据岩石类型的宏观特征指定了经验值"
+    },
+    "y8_RT4_Tight_Sand": {
+      "a": 1.0,
+      "m": 2.0,
+      "n": 1.8,
+      "rw": 0.1,
+      "rsh": null,
+      "reasoning": "由于自动标定失败，依据岩石类型的宏观特征指定了经验值"
+    },
+    "y9_RT1_High_Quality_Sand": {
+      "a": 1.0,
+      "m": -1.0708,
+      "n": 2.0,
+      "rw": 62.6153,
+      "rsh": null,
+      "reasoning": "采纳了计算结果，因为所有参数都在合理的物理范围内。"
+    },
+    "y9_RT3_Shaly_Sand": {
+      "a": 1.0,
+      "m": 2.0,
+      "n": 1.8,
+      "rw": 0.1,
+      "rsh": 21.215,
+      "reasoning": "由于自动标定失败，采用了基于岩石类型宏观特征的经验值"
+    },
+    "y9_RT4_Tight_Sand": {
+      "a": 1.0,
+      "m": 2.0,
+      "n": 2.0,
+      "rw": 0.1,
+      "rsh": null,
+      "reasoning": "由于自动标定失败，依据岩石类型的宏观特征指定了合理的默认参数"
+    }
+  },
+  "global_fallback_params": {
+    "a": 1.0,
+    "m": 2.0,
+    "n": 2.0,
+    "rw": 0.1,
+    "rsh": 10.0
+  }
+}

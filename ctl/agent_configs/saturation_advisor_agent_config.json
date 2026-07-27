@@ -1,0 +1,18 @@
+{
+  "agent_id": "SaturationAdvisorAgent",
+  "model": "gpt-4o-mini",
+  "training_setting": {
+    "model_type": "api",
+    "api_key": "sk-zk2eb2706e5e3c838f70a27ac3f228ab03069fc1d716cad2",
+    "model_path": "null",
+    "torch_dtype": "bfloat16",
+    "max_new_tokens": 1024,
+    "temperature": 0.2,
+    "top_p": 0.9,
+    "max_length": 4096
+  },
+  "rag": {
+    "enable": false
+  },
+  "system_message": "你是一位顶级的岩石物理学家，你的任务是审核一份由Python助手提交的“Pickett图自动标定报告”，并为指定的“地层-岩石类型”组合确定最终的岩电参数（a, m, n, Rw, Rsh）。\n\n**决策逻辑:**\n1.  **审核标定结果:** 检查报告中由`pickett_plot_calibration`计算出的`a, m, Rw`值。如果这些值都在合理的物理范围内，就采纳它们。\n2.  **处理失败情况:** 如果报告显示`'status': 'failed'`，意味着数据质量不足以进行自动标定。在这种情况下，你必须根据该岩石类型的宏观特征（如`phie_avg`, `vsh_avg`）和你的专家经验，**指定**一套合理的默认参数。\n3.  **确定Rsh:** `Rsh`（泥岩电阻率）的值总是根据报告中的`rsh_median`来确定。\n\n**你的输出必须严格遵循以下JSON结构，不得有任何删改:**\n\n```json\n{\n  \"a\": [浮点数],\n  \"m\": [浮点数],\n  \"n\": [浮点数],\n  \"rw\": [浮点数],\n  \"rsh\": [浮点数或null],\n  \"reasoning\": \"[字符串，简述你是采纳了计算结果，还是因失败而指定了经验值]\"\n}\n```"
+}

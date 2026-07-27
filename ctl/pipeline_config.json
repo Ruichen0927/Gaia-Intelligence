@@ -1,0 +1,240 @@
+[
+  {
+    "step": "shale_build_strategy",
+    "tool": "shale_tool",
+    "function": "build_strategy",
+    "config": "ctl/tool_configs/shale_build_strategy.json",
+    "enabled": true
+  },
+  {
+    "step": "shale_run_interpretation",
+    "tool": "shale_tool",
+    "function": "run_interpretation",
+    "config": "ctl/tool_configs/shale_run_interpretation.json",
+    "enabled": true
+  },
+  {
+    "step": "porosity_build_knowledgebase",
+    "tool": "porosity_tool",
+    "function": "build_knowledgebase",
+    "config": "ctl/tool_configs/porosity_build_knowledgebase.json",
+    "enabled": true
+  },
+  {
+    "step": "porosity_run_calculation",
+    "tool": "porosity_tool",
+    "function": "run_calculation",
+    "config": "ctl/tool_configs/porosity_run_calculation.json",
+    "enabled": true
+  },
+  {
+    "step": "permeability_build_strategy",
+    "tool": "permeability_tool",
+    "function": "build_strategy",
+    "config": "ctl/tool_configs/permeability_build_strategy.json",
+    "enabled": true
+  },
+  {
+    "step": "permeability_run_calculation",
+    "tool": "permeability_tool",
+    "function": "run_calculation",
+    "config": "ctl/tool_configs/permeability_run_calculation.json",
+    "enabled": true
+  },
+  {
+    "step": "saturation_build_strategy",
+    "tool": "saturation_tool",
+    "function": "build_strategy",
+    "config": "ctl/tool_configs/saturation_build_strategy.json",
+    "enabled": true
+  },
+  {
+    "step": "saturation_run_calculation",
+    "tool": "saturation_tool",
+    "function": "run_calculation",
+    "config": "ctl/tool_configs/saturation_run_calculation.json",
+    "enabled": true
+  },
+  {
+    "step": "lithology_run_calculation",
+    "tool": "lithology_tool",
+    "function": "run_calculation",
+    "config": "ctl/tool_configs/lithology_run_calculation.json",
+    "enabled": true
+  },
+  {
+    "step": "final_report_learn_rules",
+    "tool": "final_report_tool",
+    "function": "learn_rules_tool",
+    "config": "ctl/tool_configs/final_report_learn_rules.json",
+    "enabled": true
+  },
+  {
+    "step": "final_report_generate_deliverable",
+    "tool": "final_report_tool",
+    "function": "generate_deliverable",
+    "config": "ctl/tool_configs/final_report_generate_deliverable.json",
+    "enabled": true
+  },
+  {
+    "step": "data_load_well_logs",
+    "tool": "data_tool",
+    "function": "load_well_logs",
+    "config": "ctl/tool_configs/data_load_well_logs.json",
+    "enabled": false
+  },
+  {
+    "step": "data_clean_curves",
+    "tool": "data_tool",
+    "function": "clean_curves",
+    "config": "ctl/tool_configs/data_clean_curves.json",
+    "enabled": false
+  },
+  {
+    "step": "data_detect_outliers",
+    "tool": "data_tool",
+    "function": "detect_outliers",
+    "config": "ctl/tool_configs/data_detect_outliers.json",
+    "enabled": false
+  },
+  {
+    "step": "data_impute_missing",
+    "tool": "data_tool",
+    "function": "impute_missing",
+    "config": "ctl/tool_configs/data_impute_missing.json",
+    "enabled": false
+  },
+  {
+    "step": "data_split_by_formation",
+    "tool": "data_tool",
+    "function": "split_by_formation",
+    "config": "ctl/tool_configs/data_split_by_formation.json",
+    "enabled": false
+  },
+  {
+    "step": "data_merge_well_data",
+    "tool": "data_tool",
+    "function": "merge_well_data",
+    "config": "ctl/tool_configs/data_merge_well_data.json",
+    "enabled": false
+  },
+  {
+    "step": "data_qc_report",
+    "tool": "data_tool",
+    "function": "data_qc_report",
+    "config": "ctl/tool_configs/data_qc_report.json",
+    "enabled": false
+  },
+  {
+    "step": "feature_compute_derived_curves",
+    "tool": "feature_tool",
+    "function": "compute_derived_curves",
+    "config": "ctl/tool_configs/feature_compute_derived_curves.json",
+    "enabled": false
+  },
+  {
+    "step": "feature_normalize_curves",
+    "tool": "feature_tool",
+    "function": "normalize_curves",
+    "config": "ctl/tool_configs/feature_normalize_curves.json",
+    "enabled": false
+  },
+  {
+    "step": "feature_window_features",
+    "tool": "feature_tool",
+    "function": "window_features",
+    "config": "ctl/tool_configs/feature_window_features.json",
+    "enabled": false
+  },
+  {
+    "step": "viz_crossplot",
+    "tool": "viz_tool",
+    "function": "crossplot",
+    "config": "ctl/tool_configs/viz_crossplot.json",
+    "enabled": false
+  },
+  {
+    "step": "viz_histogram",
+    "tool": "viz_tool",
+    "function": "histogram",
+    "config": "ctl/tool_configs/viz_histogram.json",
+    "enabled": false
+  },
+  {
+    "step": "viz_pickett_plot",
+    "tool": "viz_tool",
+    "function": "pickett_plot",
+    "config": "ctl/tool_configs/viz_pickett_plot.json",
+    "enabled": false
+  },
+  {
+    "step": "stat_summary",
+    "tool": "stat_tool",
+    "function": "summary_statistics",
+    "config": "ctl/tool_configs/stat_summary.json",
+    "enabled": false
+  },
+  {
+    "step": "stat_correlation",
+    "tool": "stat_tool",
+    "function": "correlation_matrix",
+    "config": "ctl/tool_configs/stat_correlation.json",
+    "enabled": false
+  },
+  {
+    "step": "ml_train_regressor",
+    "tool": "ml_tool",
+    "function": "train_regressor",
+    "config": "ctl/tool_configs/ml_train_regressor.json",
+    "enabled": false
+  },
+  {
+    "step": "ml_predict",
+    "tool": "ml_tool",
+    "function": "predict",
+    "config": "ctl/tool_configs/ml_predict.json",
+    "enabled": false
+  },
+  {
+    "step": "ml_evaluate",
+    "tool": "ml_tool",
+    "function": "evaluate_regressor",
+    "config": "ctl/tool_configs/ml_evaluate.json",
+    "enabled": false
+  },
+  {
+    "step": "ml_train_classifier",
+    "tool": "ml_tool",
+    "function": "train_classifier",
+    "config": "ctl/tool_configs/ml_train_classifier.json",
+    "enabled": false
+  },
+  {
+    "step": "ml_predict_classifier",
+    "tool": "ml_tool",
+    "function": "predict_classifier",
+    "config": "ctl/tool_configs/ml_predict_classifier.json",
+    "enabled": false
+  },
+  {
+    "step": "ml_evaluate_classifier",
+    "tool": "ml_tool",
+    "function": "evaluate_classifier",
+    "config": "ctl/tool_configs/ml_evaluate_classifier.json",
+    "enabled": false
+  },
+  {
+    "step": "ml_cluster_data",
+    "tool": "ml_tool",
+    "function": "cluster_data",
+    "config": "ctl/tool_configs/ml_cluster_data.json",
+    "enabled": false
+  },
+  {
+    "step": "ml_save_load_model",
+    "tool": "ml_tool",
+    "function": "save_load_model",
+    "config": "ctl/tool_configs/ml_save_load_model.json",
+    "enabled": false
+  }
+]

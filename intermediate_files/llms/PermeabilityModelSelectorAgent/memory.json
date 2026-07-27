@@ -1,0 +1,708 @@
+{
+    "agent_id": "PermeabilityModelSelectorAgent",
+    "memory": [
+        {
+            "timestamp": "2026-07-18T18:36:28.153574",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1502,\n  \"vsh_avg\": 0.3255,\n  \"gr_avg\": 97.4644\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:36:33.117996",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0052,\n  \"vsh_avg\": 0.0096,\n  \"gr_avg\": 103.8055\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:36:35.511588",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.3326,\n  \"vsh_avg\": 0.0118,\n  \"gr_avg\": 70.8742\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，适合选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:36:40.412371",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT2_Medium_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1016,\n  \"vsh_avg\": 0.0081,\n  \"gr_avg\": 124.7164\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为中等品质砂岩，特征相对简单，物性较好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:36:45.248836",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1686,\n  \"vsh_avg\": 0.3055,\n  \"gr_avg\": 103.6079\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:36:50.278499",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0297,\n  \"vsh_avg\": 0.0004,\n  \"gr_avg\": 122.6798\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征较复杂，因此选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:33.546474",
+            "data": {
+                "user": "地层-岩石类型组合 'J2z_RT2_Medium_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0947,\n  \"vsh_avg\": 0.1018,\n  \"gr_avg\": 50.3973\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为中等品质砂岩，特征相对简单，物性较好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:35.467228",
+            "data": {
+                "user": "地层-岩石类型组合 'J2z_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1525,\n  \"vsh_avg\": 0.3435,\n  \"gr_avg\": 54.991\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:40.830297",
+            "data": {
+                "user": "地层-岩石类型组合 'J2z_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0348,\n  \"vsh_avg\": 0.0081,\n  \"gr_avg\": 54.9629\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:46.987184",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.2996,\n  \"vsh_avg\": 0.0335,\n  \"gr_avg\": 105.2618\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:51.374487",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT2_Medium_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0974,\n  \"vsh_avg\": 0.025,\n  \"gr_avg\": 108.063\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为中等品质砂岩，特征相对简单，物性较好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:42:56.435932",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1706,\n  \"vsh_avg\": 0.3424,\n  \"gr_avg\": 102.7529\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:43:01.079155",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0108,\n  \"vsh_avg\": 0.008,\n  \"gr_avg\": 106.1357\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:43:04.430872",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.2223,\n  \"vsh_avg\": 0.0276,\n  \"gr_avg\": 120.2641\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，适合选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:43:08.621878",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1956,\n  \"vsh_avg\": 0.324,\n  \"gr_avg\": 118.2544\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:43:18.259388",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0287,\n  \"vsh_avg\": 0.0031,\n  \"gr_avg\": 105.7212\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:43:23.725519",
+            "data": {
+                "user": "地层-岩石类型组合 'chang7_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1567,\n  \"vsh_avg\": 0.0014,\n  \"gr_avg\": 146.9417\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:43:28.064128",
+            "data": {
+                "user": "地层-岩石类型组合 'chang7_RT2_Medium_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1099,\n  \"vsh_avg\": 0.0,\n  \"gr_avg\": 144.7297\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为中等品质砂岩，特征相对简单，物性较好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:43:32.962436",
+            "data": {
+                "user": "地层-岩石类型组合 'chang7_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0039,\n  \"vsh_avg\": 0.0,\n  \"gr_avg\": 86.903\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:43:39.997554",
+            "data": {
+                "user": "地层-岩石类型组合 'chang7_RT5_Cemented_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.177,\n  \"vsh_avg\": 0.0,\n  \"gr_avg\": 147.771\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:43:45.884081",
+            "data": {
+                "user": "地层-岩石类型组合 'chang8_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.108,\n  \"vsh_avg\": 0.3269,\n  \"gr_avg\": 95.6114\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，其物性受多种因素影响，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:43:52.172991",
+            "data": {
+                "user": "地层-岩石类型组合 'chang8_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0399,\n  \"vsh_avg\": 0.0026,\n  \"gr_avg\": 78.4451\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:43:59.875041",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.4211,\n  \"vsh_avg\": 0.01,\n  \"gr_avg\": 130.1385\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:44:04.236170",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1685,\n  \"vsh_avg\": 0.3255,\n  \"gr_avg\": 97.4644\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:44:07.452632",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.007,\n  \"vsh_avg\": 0.0075,\n  \"gr_avg\": 72.3079\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:44:13.156097",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.3487,\n  \"vsh_avg\": 0.0126,\n  \"gr_avg\": 66.7325\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，适合选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:44:17.206480",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT2_Medium_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.098,\n  \"vsh_avg\": 0.0081,\n  \"gr_avg\": 127.965\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为中等品质砂岩，特征相对简单，物性较好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:44:21.335648",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1686,\n  \"vsh_avg\": 0.3055,\n  \"gr_avg\": 103.6079\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:44:25.803385",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0273,\n  \"vsh_avg\": 0.0004,\n  \"gr_avg\": 121.6757\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:19.816128",
+            "data": {
+                "user": "地层-岩石类型组合 'J2z_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0129,\n  \"vsh_avg\": 0.3248,\n  \"gr_avg\": 45.831\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，特征较复杂，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:26.472308",
+            "data": {
+                "user": "地层-岩石类型组合 'J2z_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0019,\n  \"vsh_avg\": 0.0297,\n  \"gr_avg\": 57.8192\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:32.158038",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.3366,\n  \"vsh_avg\": 0.0333,\n  \"gr_avg\": 106.3084\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，适合选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:36.866616",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT2_Medium_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0971,\n  \"vsh_avg\": 0.029,\n  \"gr_avg\": 106.7839\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为中等品质砂岩，特征相对简单，物性较好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:38.574457",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1994,\n  \"vsh_avg\": 0.3424,\n  \"gr_avg\": 102.7529\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:44.568778",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0117,\n  \"vsh_avg\": 0.0073,\n  \"gr_avg\": 105.1846\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:50.392782",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT5_Cemented_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.3837,\n  \"vsh_avg\": 0.0037,\n  \"gr_avg\": 110.5433\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:54.788110",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.224,\n  \"vsh_avg\": 0.0282,\n  \"gr_avg\": 120.5888\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:49:59.259306",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1954,\n  \"vsh_avg\": 0.324,\n  \"gr_avg\": 118.2544\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:50:04.565476",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.028,\n  \"vsh_avg\": 0.0031,\n  \"gr_avg\": 105.7212\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:50:08.358061",
+            "data": {
+                "user": "地层-岩石类型组合 'chang8_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1343,\n  \"vsh_avg\": 0.3452,\n  \"gr_avg\": 77.6615\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:50:13.920210",
+            "data": {
+                "user": "地层-岩石类型组合 'chang8_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0364,\n  \"vsh_avg\": 0.0779,\n  \"gr_avg\": 76.6935\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:50:19.459507",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.4142,\n  \"vsh_avg\": 0.0097,\n  \"gr_avg\": 130.035\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，适合选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:50:25.062815",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1263,\n  \"vsh_avg\": 0.3255,\n  \"gr_avg\": 97.4644\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:50:31.300666",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0071,\n  \"vsh_avg\": 0.0077,\n  \"gr_avg\": 70.5759\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:50:36.163977",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.3532,\n  \"vsh_avg\": 0.0105,\n  \"gr_avg\": 70.1943\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:50:38.437690",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1576,\n  \"vsh_avg\": 0.3055,\n  \"gr_avg\": 103.6079\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:50:44.529443",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0288,\n  \"vsh_avg\": 0.0004,\n  \"gr_avg\": 121.6955\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，物性较复杂，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:20.394146",
+            "data": {
+                "user": "地层-岩石类型组合 'J2z_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1488,\n  \"vsh_avg\": 0.3435,\n  \"gr_avg\": 54.991\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:34.031764",
+            "data": {
+                "user": "地层-岩石类型组合 'J2z_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.025,\n  \"vsh_avg\": 0.0108,\n  \"gr_avg\": 55.3809\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:41.534571",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.3227,\n  \"vsh_avg\": 0.0335,\n  \"gr_avg\": 105.2604\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:46.206016",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT2_Medium_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0973,\n  \"vsh_avg\": 0.0257,\n  \"gr_avg\": 105.6382\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为中等品质砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:52.412190",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1796,\n  \"vsh_avg\": 0.3424,\n  \"gr_avg\": 102.7529\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:53:58.070326",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0117,\n  \"vsh_avg\": 0.0092,\n  \"gr_avg\": 105.9476\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:54:03.273558",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.2207,\n  \"vsh_avg\": 0.0276,\n  \"gr_avg\": 120.2641\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:54:07.378925",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1949,\n  \"vsh_avg\": 0.324,\n  \"gr_avg\": 118.2544\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:54:10.423755",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0287,\n  \"vsh_avg\": 0.0031,\n  \"gr_avg\": 105.7212\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:54:15.582978",
+            "data": {
+                "user": "地层-岩石类型组合 'chang7_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1863,\n  \"vsh_avg\": 0.0057,\n  \"gr_avg\": 149.5051\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:54:20.320869",
+            "data": {
+                "user": "地层-岩石类型组合 'chang8_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1237,\n  \"vsh_avg\": 0.3269,\n  \"gr_avg\": 95.6114\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:54:25.515235",
+            "data": {
+                "user": "地层-岩石类型组合 'chang8_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0387,\n  \"vsh_avg\": 0.003,\n  \"gr_avg\": 78.8168\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:54:30.680845",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.4209,\n  \"vsh_avg\": 0.01,\n  \"gr_avg\": 130.1385\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，适合选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:54:35.393477",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.165,\n  \"vsh_avg\": 0.3255,\n  \"gr_avg\": 97.4644\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:54:38.526198",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0045,\n  \"vsh_avg\": 0.0075,\n  \"gr_avg\": 72.3079\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，物性较复杂，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:54:43.057854",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.3482,\n  \"vsh_avg\": 0.0126,\n  \"gr_avg\": 66.7325\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:54:47.343298",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT2_Medium_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.098,\n  \"vsh_avg\": 0.0081,\n  \"gr_avg\": 127.965\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为中等品质砂岩，特征相对简单，物性较好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:54:52.613205",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1684,\n  \"vsh_avg\": 0.3055,\n  \"gr_avg\": 103.6079\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:54:59.830538",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0273,\n  \"vsh_avg\": 0.0004,\n  \"gr_avg\": 121.6757\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:34.128382",
+            "data": {
+                "user": "地层-岩石类型组合 'J2z_RT2_Medium_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0885,\n  \"vsh_avg\": 0.1266,\n  \"gr_avg\": 46.6644\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为中等品质砂岩，特征相对简单，物性较好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:36.985352",
+            "data": {
+                "user": "地层-岩石类型组合 'J2z_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1068,\n  \"vsh_avg\": 0.2076,\n  \"gr_avg\": 45.3599\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:41.990224",
+            "data": {
+                "user": "地层-岩石类型组合 'J2z_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0239,\n  \"vsh_avg\": 0.0377,\n  \"gr_avg\": 56.0337\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:46.977343",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.3774,\n  \"vsh_avg\": 0.0329,\n  \"gr_avg\": 107.6623\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，适合选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:51.487030",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.2242,\n  \"vsh_avg\": 0.3424,\n  \"gr_avg\": 102.7529\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:57:56.790719",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0236,\n  \"vsh_avg\": 0.0083,\n  \"gr_avg\": 99.759\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，物性较复杂，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:58:02.944455",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT5_Cemented_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.3523,\n  \"vsh_avg\": 0.0031,\n  \"gr_avg\": 109.7574\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:58:06.197129",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.2027,\n  \"vsh_avg\": 0.0327,\n  \"gr_avg\": 118.0124\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:58:11.071519",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.198,\n  \"vsh_avg\": 0.324,\n  \"gr_avg\": 118.2544\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:58:16.637852",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0285,\n  \"vsh_avg\": 0.0005,\n  \"gr_avg\": 107.1287\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:58:22.080141",
+            "data": {
+                "user": "地层-岩石类型组合 'chang8_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0283,\n  \"vsh_avg\": 0.0008,\n  \"gr_avg\": 80.5409\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:58:27.450142",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1857,\n  \"vsh_avg\": 0.0042,\n  \"gr_avg\": 91.971\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:58:32.404629",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1502,\n  \"vsh_avg\": 0.3255,\n  \"gr_avg\": 97.4644\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:58:36.398921",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0052,\n  \"vsh_avg\": 0.0096,\n  \"gr_avg\": 103.8055\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:58:41.385061",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.4222,\n  \"vsh_avg\": 0.013,\n  \"gr_avg\": 79.5713\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:58:46.408839",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.2737,\n  \"vsh_avg\": 0.3055,\n  \"gr_avg\": 103.6079\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T18:58:51.922972",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT5_Cemented_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.3919,\n  \"vsh_avg\": 0.0,\n  \"gr_avg\": 107.7833\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为水泥砂岩，特征简单且物性较好，适合使用PowerLaw模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:16.701063",
+            "data": {
+                "user": "地层-岩石类型组合 'J2z_RT2_Medium_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0917,\n  \"vsh_avg\": 0.1186,\n  \"gr_avg\": 47.4271\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为中等品质砂岩，特征相对简单，物性较好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:24.359146",
+            "data": {
+                "user": "地层-岩石类型组合 'J2z_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1252,\n  \"vsh_avg\": 0.2455,\n  \"gr_avg\": 45.1642\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:29.414593",
+            "data": {
+                "user": "地层-岩石类型组合 'J2z_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0259,\n  \"vsh_avg\": 0.0267,\n  \"gr_avg\": 58.6852\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:37.961399",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.3015,\n  \"vsh_avg\": 0.0322,\n  \"gr_avg\": 108.0051\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:41.158212",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1578,\n  \"vsh_avg\": 0.3424,\n  \"gr_avg\": 102.7529\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:47.083250",
+            "data": {
+                "user": "地层-岩石类型组合 'chang4+5_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0111,\n  \"vsh_avg\": 0.0068,\n  \"gr_avg\": 105.0014\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:51.218789",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.2143,\n  \"vsh_avg\": 0.0336,\n  \"gr_avg\": 119.982\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，适合选择PowerLaw模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:18:55.794837",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.2068,\n  \"vsh_avg\": 0.324,\n  \"gr_avg\": 118.2544\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:19:01.784478",
+            "data": {
+                "user": "地层-岩石类型组合 'chang6_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0299,\n  \"vsh_avg\": 0.0006,\n  \"gr_avg\": 104.9857\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:19:07.625776",
+            "data": {
+                "user": "地层-岩石类型组合 'chang8_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.124,\n  \"vsh_avg\": 0.3269,\n  \"gr_avg\": 95.6114\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:19:14.250838",
+            "data": {
+                "user": "地层-岩石类型组合 'chang8_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0394,\n  \"vsh_avg\": 0.0026,\n  \"gr_avg\": 78.4451\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:19:19.178088",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.4278,\n  \"vsh_avg\": 0.01,\n  \"gr_avg\": 130.1385\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:19:23.725810",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1642,\n  \"vsh_avg\": 0.3255,\n  \"gr_avg\": 97.4644\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:19:27.772826",
+            "data": {
+                "user": "地层-岩石类型组合 'y8_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0038,\n  \"vsh_avg\": 0.0075,\n  \"gr_avg\": 72.3079\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，特征较复杂，因此选择'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:19:35.321031",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT1_High_Quality_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.353,\n  \"vsh_avg\": 0.0107,\n  \"gr_avg\": 82.6525\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"PowerLaw\",\n  \"reasoning\": \"该岩石类型为高品质砂岩，特征简单且物性良好，适合选择'PowerLaw'模型。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:19:40.295005",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT3_Shaly_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.1855,\n  \"vsh_avg\": 0.3055,\n  \"gr_avg\": 103.6079\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为泥质砂岩，其物性受到多种因素影响，因此选择'MultiLinear_V2'模型更为合适。\"\n}\n```"
+            }
+        },
+        {
+            "timestamp": "2026-07-18T22:19:44.978751",
+            "data": {
+                "user": "地层-岩石类型组合 'y9_RT4_Tight_Sand' 的统计特征如下:\n{\n  \"phie_avg\": 0.0215,\n  \"vsh_avg\": 0.0,\n  \"gr_avg\": 120.2034\n}\n请选择最合适的模型。",
+                "response": "```json\n{\n  \"selected_model\": \"MultiLinear_V2\",\n  \"reasoning\": \"该岩石类型为致密砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。\"\n}\n```"
+            }
+        }
+    ],
+    "metadata": {
+        "capacity": 100
+    }
+}

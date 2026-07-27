@@ -1,0 +1,40 @@
+{
+  "name": "permeability_run_calculation",
+  "description": "应用渗透率解释策略，批量计算每口井的渗透率",
+  "paths": {
+    "input_directory": "data/processed_data/porosity/interpreted_wells",
+    "output_directory": "data/processed_data/permeability"
+  },
+  "parameters": {
+    "strategy_filename": "permeability_strategy_agent.json",
+    "output_subfolder": "interpreted_wells",
+    "layer_col": "LAYER",
+    "depth_col": "DEPTH",
+    "gr_col": "GR",
+    "den_col": "DEN",
+    "ac_col": "AC",
+    "th_col": "TH",
+    "k_col": "K",
+    "u_col": "U",
+    "cgr_col": "CGR",
+    "phie_final_col": "phie_final",
+    "vsh_col": "vsh_final",
+    "perm_col": "PERM",
+    "k_final_col": "k_final",
+    "perm_model_used_col": "permeability_model_used",
+    "rock_type_col": "rock_type",
+    "shale_vsh_threshold": 0.6,
+    "shale_perm_background_value": 0.001,
+    "fluid_density": 1.0,
+    "rock_type_rules": {
+      "RT5_Cemented_Sand": [0.0, 0.3, 0.0, 1.0, 0.08, 999.0],
+      "RT1_High_Quality_Sand": [0.0, 0.15, 0.12, 1.0, -999.0, 0.08],
+      "RT2_Medium_Quality_Sand": [0.0, 0.25, 0.08, 0.12, -999.0, 0.08],
+      "RT4_Tight_Sand": [0.0, 0.25, 0.0, 0.08, -999.0, 0.08],
+      "RT3_Shaly_Sand": [0.15, 0.5, 0.0, 1.0, -999.0, 999.0]
+    },
+    "default_rock_type": "Undefined",
+    "few_shot_suffix": "_with_fewshot",
+    "zero_shot_suffix": "_zero_shot"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ml_cluster_data",
+  "description": "对曲线数据进行聚类",
+  "paths": {
+    "input_file": "data/processed_data/data_tools/cleaned_well_logs.csv",
+    "output_file": "data/processed_data/ml/clustered_data.csv"
+  },
+  "parameters": {
+    "feature_columns": [
+      "GR",
+      "DEN",
+      "CNL",
+      "AC"
+    ],
+    "algorithm": "kmeans",
+    "n_clusters": 5,
+    "random_state": 42
+  }
+}

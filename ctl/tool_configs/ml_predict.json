@@ -1,0 +1,9 @@
+{
+  "name": "ml_predict",
+  "description": "使用训练好的回归模型预测",
+  "paths": {
+    "input_file": "data/processed_data/data_tools/cleaned_well_logs.csv",
+    "model_file": "data/processed_data/ml/regressor.pkl",
+    "output_file": "data/processed_data/ml/regressor_predictions.csv"
+  }
+}

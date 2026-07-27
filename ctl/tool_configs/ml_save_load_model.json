@@ -1,0 +1,11 @@
+{
+  "name": "ml_save_load_model",
+  "description": "模型持久化辅助：save/load",
+  "paths": {
+    "input_file": "data/processed_data/data_tools/cleaned_well_logs.csv",
+    "model_file": "data/processed_data/ml/saved_model.pkl"
+  },
+  "parameters": {
+    "action": "save"
+  }
+}

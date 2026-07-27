@@ -1,0 +1,8 @@
+{
+  "name": "GR均值计算工具",
+  "description": "计算测井中GR均值",
+  "paths": {
+    "output_directory": "data/processed_data/gr_mean"
+  },
+  "parameters": {}
+}

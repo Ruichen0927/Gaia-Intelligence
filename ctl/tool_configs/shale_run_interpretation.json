@@ -1,0 +1,26 @@
+{
+  "name": "shale_run_interpretation",
+  "description": "应用泥质含量解释策略，计算每口井的Vsh",
+  "paths": {
+    "data_directory": "data/sample",
+    "strategy_file": "data/processed_data/shale_content/shale_interpretation_strategy_agent.json",
+    "output_directory": "data/processed_data/shale_content"
+  },
+  "parameters": {
+    "output_subfolder": "interpreted_wells",
+    "curve_names": {
+      "GR": "GR",
+      "CGR": "CGR",
+      "DEN": "DEN",
+      "CNL": "CNL",
+      "AC": "AC",
+      "PE": "PE",
+      "LAYER": "LAYER",
+      "SH": "SH"
+    },
+    "rho_ma_sand": 2.65,
+    "rho_f_water": 1.0,
+    "few_shot_suffix": "_with_fewshot",
+    "zero_shot_suffix": "_zero_shot"
+  }
+}

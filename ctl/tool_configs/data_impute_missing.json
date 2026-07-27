@@ -1,0 +1,18 @@
+{
+  "name": "data_impute_missing",
+  "description": "使用插值/均值/中位数填充缺失值",
+  "paths": {
+    "input_file": "data/processed_data/data_tools/cleaned_well_logs.csv",
+    "output_file": "data/processed_data/data_tools/imputed_well_logs.csv"
+  },
+  "parameters": {
+    "curves": [
+      "GR",
+      "DEN",
+      "CNL",
+      "AC",
+      "PE"
+    ],
+    "method": "interpolation"
+  }
+}

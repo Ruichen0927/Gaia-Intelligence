@@ -1,0 +1,14 @@
+{
+  "name": "viz_crossplot",
+  "description": "绘制两曲线交会图并输出相关系数",
+  "paths": {
+    "input_file": "data/processed_data/data_tools/cleaned_well_logs.csv",
+    "output_file": "data/processed_data/viz_tools/crossplot.png"
+  },
+  "parameters": {
+    "x_curve": "GR",
+    "y_curve": "DEN",
+    "color_curve": null,
+    "alpha": 0.5
+  }
+}

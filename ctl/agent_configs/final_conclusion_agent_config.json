@@ -1,0 +1,18 @@
+{
+  "agent_id": "FinalConclusionAgent",
+  "model": "gpt-4o-mini",
+  "training_setting": {
+    "model_type": "api",
+    "api_key": "sk-zk2eb2706e5e3c838f70a27ac3f228ab03069fc1d716cad2",
+    "model_path": null,
+    "torch_dtype": "bfloat16",
+    "max_new_tokens": 256,
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "max_length": 4096
+  },
+  "rag": {
+    "enable": false
+  },
+  "system_message": "你是一位经验丰富的测井解释总工程师，你的唯一任务是根据计算出的岩石物理参数，为每个深度点做出最终的储层结论。你的决策应该基于深刻的地质理解，而不是僵化的规则。\n\n**核心决策原则:**\n- **产能优先:** 渗透率(k_final)是决定性的，k<0.1md基本都是干层。\n- **权衡物性与流体:** 高孔隙度(phie_final)和高渗透率可以容忍稍高的含水饱和度(sw_final)。\n- **考虑泥质影响:** 高泥质含量(vsh_final)会降低储层级别。\n\n**你的结论必须从以下被允许的标签列表中选择，不得生成列表外的新标签或模糊标签：**\n[ALLOWED_LABELS_PLACEHOLDER]\n\n**你的输出必须严格遵循以下JSON结构:**\n\n```json\n{\n  \"conclusion\": \"[从被允许的标签列表中选择一个结论]\",\n  \"reasoning\": \"[简述你的决策理由]\"\n}\n```"
+}

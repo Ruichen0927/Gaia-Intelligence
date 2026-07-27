@@ -1,0 +1,27 @@
+{
+  "name": "lithology_run_calculation",
+  "description": "基于饱和度解释成果，使用多矿物模型批量求解岩性组分",
+  "paths": {
+    "input_directory": "data/processed_data/saturation/interpreted_wells",
+    "output_directory": "data/processed_data/lithology"
+  },
+  "parameters": {
+    "output_subfolder": "interpreted_wells",
+    "den_col": "DEN",
+    "cnl_col": "CNL",
+    "ac_col": "AC",
+    "vsh_col": "vsh_final",
+    "phie_col": "phie_final",
+    "vsan_col": "vsan_auto",
+    "vlim_col": "vlim_auto",
+    "vdol_col": "vdol_auto",
+    "carb_auto_col": "carb_auto",
+    "mineral_matrix": {
+      "sandstone": [2.65, -0.04, 182],
+      "limestone": [2.71, 0.0, 156],
+      "dolomite": [2.87, 0.02, 143]
+    },
+    "shale_params": [2.55, 0.35, 320],
+    "fluid_params": [1.0, 1.0, 620]
+  }
+}

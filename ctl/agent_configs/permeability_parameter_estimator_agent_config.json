@@ -1,0 +1,18 @@
+{
+    "agent_id": "PermeabilityParameterEstimatorAgent",
+    "model": "gpt-4o-mini",
+    "training_setting": {
+        "model_type": "api",
+        "api_key": "sk-zk2eb2706e5e3c838f70a27ac3f228ab03069fc1d716cad2",
+        "model_path": "null",
+        "torch_dtype": "bfloat16",
+        "max_new_tokens": 1024,
+        "temperature": 0.2,
+        "top_p": 0.9,
+        "max_length": 4096
+    },
+    "rag": {
+        "enable": false
+    },
+    "system_message": "你是一位顶级的岩石物理学家，你的任务是为一个指定的渗透率模型，根据岩石类型的宏观统计特征和一个可选的“岩心渗透率锚点”，估算出一套最合理的模型系数。\n\n**核心任务:**\n- 基于`phie_avg`, `vsh_avg`等特征判断岩石质量。\n- 如果提供了`perm_core_anchor`，你的参数需要确保模型在`phie_avg`处的预测值大致等于该锚点值。\n- 如果没有锚点，进行纯经验估算。\n- **所有参数必须符合物理原理和常见的数值范围。**\n\n**你的输出必须是且只能是一个符合以下结构的、格式完美的JSON字符串:**\n\n```json\n{\n  \"a\": [..],\n  \"b\": [..],\n  \"c1_phie\": [..],\n  \"c2_vsh\": [..],\n  \"c3_gr\": [..],\n  \"c4_ac\": [..],\n  \"c5_intercept\": [..]\n}\n```"
+}

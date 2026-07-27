@@ -1,0 +1,22 @@
+{
+  "name": "feature_window_features",
+  "description": "按深度窗计算曲线统计特征",
+  "paths": {
+    "input_file": "data/processed_data/feature_tools/normalized_curves.csv",
+    "output_file": "data/processed_data/feature_tools/window_features.csv"
+  },
+  "parameters": {
+    "depth_col": "DEPTH",
+    "curves": [
+      "GR",
+      "DEN"
+    ],
+    "window": 11,
+    "stats": [
+      "mean",
+      "std",
+      "min",
+      "max"
+    ]
+  }
+}

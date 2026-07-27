@@ -1,0 +1,25 @@
+{
+  "name": "final_report_learn_rules",
+  "description": "从岩性解释成果中学习决策规则，生成逐点初步解释结论",
+  "paths": {
+    "input_directory": "data/processed_data/lithology/interpreted_wells",
+    "output_directory": "data/processed_data/final_report"
+  },
+  "parameters": {
+    "layer_col": "LAYER",
+    "rock_type_col": "rock_type",
+    "depth_col": "DEPTH",
+    "result_col": "RESULT",
+    "sw_col": "sw_final",
+    "phie_col": "phie_final",
+    "k_col": "k_final",
+    "vsh_col": "vsh_final",
+    "result_auto_col": "RESULT_AUTO",
+    "final_conclusion_col": "FINAL_CONCLUSION",
+    "rules_filename": "decision_rules.json",
+    "smoothing_window": 3,
+    "min_layer_thickness": 0.5,
+    "temp_pointwise_subfolder": "temp_pointwise",
+    "final_deliverable_subfolder": "final_deliverables"
+  }
+}

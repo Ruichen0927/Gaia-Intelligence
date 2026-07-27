@@ -1,0 +1,650 @@
+{
+  "project_info": {
+    "description": "Agent-driven permeability strategy.",
+    "generation_date": "2026-07-18",
+    "few_shot_enabled": false
+  },
+  "permeability_models": {
+    "J2z_RT2_Medium_Quality_Sand": {
+      "model_to_use": {
+        "model_type": "PowerLaw",
+        "parameters": {
+          "a": [
+            0.5
+          ],
+          "b": [
+            2.0
+          ],
+          "c1_phie": [
+            0.1
+          ],
+          "c2_vsh": [
+            0.3
+          ],
+          "c3_gr": [
+            0.05
+          ],
+          "c4_ac": [
+            0.2
+          ],
+          "c5_intercept": [
+            0.01
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为中等品质砂岩，特征相对简单，物性较好，因此选择'PowerLaw'模型。"
+    },
+    "J2z_RT3_Shaly_Sand": {
+      "model_to_use": {
+        "model_type": "MultiLinear_V2",
+        "parameters": {
+          "a": [
+            0.5,
+            0.3,
+            0.2
+          ],
+          "b": [
+            1.0,
+            0.8,
+            0.6
+          ],
+          "c1_phie": [
+            0.1,
+            0.15,
+            0.2
+          ],
+          "c2_vsh": [
+            0.05,
+            0.1,
+            0.15
+          ],
+          "c3_gr": [
+            0.02,
+            0.03,
+            0.04
+          ],
+          "c4_ac": [
+            0.01,
+            0.02,
+            0.03
+          ],
+          "c5_intercept": [
+            0.02,
+            0.03,
+            0.04
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为泥质砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。"
+    },
+    "J2z_RT4_Tight_Sand": {
+      "model_to_use": {
+        "model_type": "MultiLinear_V2",
+        "parameters": {
+          "a": [
+            0.5,
+            1.2,
+            0.8
+          ],
+          "b": [
+            0.3,
+            0.7,
+            0.5
+          ],
+          "c1_phie": [
+            0.1,
+            0.2,
+            0.15
+          ],
+          "c2_vsh": [
+            0.05,
+            0.1,
+            0.075
+          ],
+          "c3_gr": [
+            0.02,
+            0.04,
+            0.03
+          ],
+          "c4_ac": [
+            0.01,
+            0.02,
+            0.015
+          ],
+          "c5_intercept": [
+            0.005,
+            0.01,
+            0.0075
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为致密砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。"
+    },
+    "chang4+5_RT1_High_Quality_Sand": {
+      "model_to_use": {
+        "model_type": "PowerLaw",
+        "parameters": {
+          "a": [
+            3.5
+          ],
+          "b": [
+            2.0
+          ],
+          "c1_phie": [
+            0.0
+          ],
+          "c2_vsh": [
+            0.0
+          ],
+          "c3_gr": [
+            0.0
+          ],
+          "c4_ac": [
+            0.0
+          ],
+          "c5_intercept": [
+            0.0
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。"
+    },
+    "chang4+5_RT3_Shaly_Sand": {
+      "model_to_use": {
+        "model_type": "MultiLinear_V2",
+        "parameters": {
+          "a": [
+            0.5,
+            1.2,
+            0.8
+          ],
+          "b": [
+            0.3,
+            0.7,
+            0.5
+          ],
+          "c1_phie": [
+            0.1,
+            0.2,
+            0.15
+          ],
+          "c2_vsh": [
+            0.05,
+            0.1,
+            0.075
+          ],
+          "c3_gr": [
+            0.02,
+            0.04,
+            0.03
+          ],
+          "c4_ac": [
+            0.01,
+            0.02,
+            0.015
+          ],
+          "c5_intercept": [
+            0.02,
+            0.03,
+            0.025
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。"
+    },
+    "chang4+5_RT4_Tight_Sand": {
+      "model_to_use": {
+        "model_type": "MultiLinear_V2",
+        "parameters": {
+          "a": [
+            0.5,
+            1.2,
+            0.8
+          ],
+          "b": [
+            0.3,
+            0.7,
+            0.5
+          ],
+          "c1_phie": [
+            0.1,
+            0.2,
+            0.15
+          ],
+          "c2_vsh": [
+            0.05,
+            0.1,
+            0.075
+          ],
+          "c3_gr": [
+            0.02,
+            0.03,
+            0.025
+          ],
+          "c4_ac": [
+            0.01,
+            0.02,
+            0.015
+          ],
+          "c5_intercept": [
+            0.001,
+            0.002,
+            0.0015
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为致密砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。"
+    },
+    "chang6_RT1_High_Quality_Sand": {
+      "model_to_use": {
+        "model_type": "PowerLaw",
+        "parameters": {
+          "a": [
+            0.5
+          ],
+          "b": [
+            1.5
+          ],
+          "c1_phie": [
+            0.1
+          ],
+          "c2_vsh": [
+            0.2
+          ],
+          "c3_gr": [
+            0.3
+          ],
+          "c4_ac": [
+            0.4
+          ],
+          "c5_intercept": [
+            0.01
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为高品质砂岩，特征简单且物性良好，适合选择PowerLaw模型。"
+    },
+    "chang6_RT3_Shaly_Sand": {
+      "model_to_use": {
+        "model_type": "MultiLinear_V2",
+        "parameters": {
+          "a": [
+            0.5,
+            1.2,
+            0.8
+          ],
+          "b": [
+            0.3,
+            0.7,
+            0.5
+          ],
+          "c1_phie": [
+            0.1,
+            0.2,
+            0.15
+          ],
+          "c2_vsh": [
+            0.05,
+            0.1,
+            0.08
+          ],
+          "c3_gr": [
+            0.02,
+            0.03,
+            0.025
+          ],
+          "c4_ac": [
+            0.01,
+            0.02,
+            0.015
+          ],
+          "c5_intercept": [
+            0.01,
+            0.02,
+            0.015
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。"
+    },
+    "chang6_RT4_Tight_Sand": {
+      "model_to_use": {
+        "model_type": "MultiLinear_V2",
+        "parameters": {
+          "a": [
+            0.5,
+            1.2,
+            0.8
+          ],
+          "b": [
+            0.3,
+            0.7,
+            0.5
+          ],
+          "c1_phie": [
+            0.1,
+            0.2,
+            0.15
+          ],
+          "c2_vsh": [
+            0.05,
+            0.1,
+            0.075
+          ],
+          "c3_gr": [
+            0.02,
+            0.03,
+            0.025
+          ],
+          "c4_ac": [
+            0.01,
+            0.02,
+            0.015
+          ],
+          "c5_intercept": [
+            0.001,
+            0.002,
+            0.0015
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型更为合适。"
+    },
+    "chang8_RT3_Shaly_Sand": {
+      "model_to_use": {
+        "model_type": "MultiLinear_V2",
+        "parameters": {
+          "a": [
+            0.5,
+            0.3,
+            0.2
+          ],
+          "b": [
+            0.1,
+            0.05,
+            0.15
+          ],
+          "c1_phie": [
+            1.2
+          ],
+          "c2_vsh": [
+            0.8
+          ],
+          "c3_gr": [
+            0.01
+          ],
+          "c4_ac": [
+            0.03
+          ],
+          "c5_intercept": [
+            0.02
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。"
+    },
+    "chang8_RT4_Tight_Sand": {
+      "model_to_use": {
+        "model_type": "MultiLinear_V2",
+        "parameters": {
+          "a": [
+            0.5,
+            1.2,
+            0.8
+          ],
+          "b": [
+            0.3,
+            0.7,
+            0.5
+          ],
+          "c1_phie": [
+            0.1,
+            0.2,
+            0.15
+          ],
+          "c2_vsh": [
+            0.05,
+            0.1,
+            0.075
+          ],
+          "c3_gr": [
+            0.02,
+            0.04,
+            0.03
+          ],
+          "c4_ac": [
+            0.01,
+            0.02,
+            0.015
+          ],
+          "c5_intercept": [
+            0.01,
+            0.02,
+            0.015
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为致密砂岩，受多种因素影响，特征复杂，因此选择'MultiLinear_V2'模型更为合适。"
+    },
+    "y8_RT1_High_Quality_Sand": {
+      "model_to_use": {
+        "model_type": "PowerLaw",
+        "parameters": {
+          "a": [
+            0.5
+          ],
+          "b": [
+            1.5
+          ],
+          "c1_phie": [
+            0.1
+          ],
+          "c2_vsh": [
+            0.3
+          ],
+          "c3_gr": [
+            0.01
+          ],
+          "c4_ac": [
+            0.2
+          ],
+          "c5_intercept": [
+            0.05
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为高品质砂岩，特征简单且物性良好，因此选择'PowerLaw'模型。"
+    },
+    "y8_RT3_Shaly_Sand": {
+      "model_to_use": {
+        "model_type": "MultiLinear_V2",
+        "parameters": {
+          "a": [
+            0.5,
+            1.2,
+            0.8
+          ],
+          "b": [
+            0.3,
+            0.6,
+            0.4
+          ],
+          "c1_phie": [
+            1.0
+          ],
+          "c2_vsh": [
+            0.5
+          ],
+          "c3_gr": [
+            0.02
+          ],
+          "c4_ac": [
+            0.1
+          ],
+          "c5_intercept": [
+            0.01
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为泥质砂岩，受多种因素影响，适合选择'MultiLinear_V2'模型。"
+    },
+    "y8_RT4_Tight_Sand": {
+      "model_to_use": {
+        "model_type": "MultiLinear_V2",
+        "parameters": {
+          "a": [
+            0.5,
+            1.2,
+            0.8
+          ],
+          "b": [
+            0.1,
+            0.3,
+            0.2
+          ],
+          "c1_phie": [
+            0.01,
+            0.02,
+            0.015
+          ],
+          "c2_vsh": [
+            0.05,
+            0.1,
+            0.075
+          ],
+          "c3_gr": [
+            0.2,
+            0.4,
+            0.3
+          ],
+          "c4_ac": [
+            0.01,
+            0.02,
+            0.015
+          ],
+          "c5_intercept": [
+            0.001,
+            0.002,
+            0.0015
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为致密砂岩，受多种因素影响，特征较复杂，因此选择'MultiLinear_V2'模型。"
+    },
+    "y9_RT1_High_Quality_Sand": {
+      "model_to_use": {
+        "model_type": "PowerLaw",
+        "parameters": {
+          "a": [
+            0.5
+          ],
+          "b": [
+            2.0
+          ],
+          "c1_phie": [
+            0.1
+          ],
+          "c2_vsh": [
+            0.3
+          ],
+          "c3_gr": [
+            0.05
+          ],
+          "c4_ac": [
+            0.2
+          ],
+          "c5_intercept": [
+            0.01
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为高品质砂岩，特征简单且物性良好，适合选择'PowerLaw'模型。"
+    },
+    "y9_RT3_Shaly_Sand": {
+      "model_to_use": {
+        "model_type": "MultiLinear_V2",
+        "parameters": {
+          "a": [
+            0.5,
+            1.2,
+            0.8
+          ],
+          "b": [
+            0.3,
+            0.7,
+            0.4
+          ],
+          "c1_phie": [
+            0.1,
+            0.2,
+            0.15
+          ],
+          "c2_vsh": [
+            0.05,
+            0.1,
+            0.08
+          ],
+          "c3_gr": [
+            0.02,
+            0.03,
+            0.025
+          ],
+          "c4_ac": [
+            0.01,
+            0.02,
+            0.015
+          ],
+          "c5_intercept": [
+            0.02,
+            0.03,
+            0.025
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为泥质砂岩，其物性受到多种因素影响，因此选择'MultiLinear_V2'模型更为合适。"
+    },
+    "y9_RT4_Tight_Sand": {
+      "model_to_use": {
+        "model_type": "MultiLinear_V2",
+        "parameters": {
+          "a": [
+            0.5,
+            1.0,
+            1.5
+          ],
+          "b": [
+            0.1,
+            0.2,
+            0.3
+          ],
+          "c1_phie": [
+            0.01,
+            0.02,
+            0.03
+          ],
+          "c2_vsh": [
+            0.0,
+            0.1,
+            0.2
+          ],
+          "c3_gr": [
+            0.5,
+            1.0,
+            1.5
+          ],
+          "c4_ac": [
+            0.05,
+            0.1,
+            0.15
+          ],
+          "c5_intercept": [
+            0.01,
+            0.02,
+            0.03
+          ]
+        }
+      },
+      "reasoning": "该岩石类型为致密砂岩，受多种因素影响，适合使用'MultiLinear_V2'模型。"
+    }
+  }
+}

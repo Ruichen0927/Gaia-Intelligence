@@ -1,0 +1,18 @@
+{
+  "name": "feature_normalize_curves",
+  "description": "对指定曲线进行 Min-Max 或 Z-Score 归一化",
+  "paths": {
+    "input_file": "data/processed_data/feature_tools/derived_curves.csv",
+    "output_file": "data/processed_data/feature_tools/normalized_curves.csv"
+  },
+  "parameters": {
+    "curves": [
+      "GR",
+      "DEN",
+      "CNL",
+      "AC"
+    ],
+    "method": "minmax",
+    "suffix": "_norm"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "feature_compute_derived_curves",
+  "description": "计算派生曲线：线性 VSH、密度孔隙度、视骨架密度等",
+  "paths": {
+    "input_file": "data/processed_data/data_tools/cleaned_well_logs.csv",
+    "output_file": "data/processed_data/feature_tools/derived_curves.csv"
+  },
+  "parameters": {
+    "gr_min": 30.0,
+    "gr_max": 150.0,
+    "rho_ma": 2.65,
+    "rho_f": 1.0
+  }
+}

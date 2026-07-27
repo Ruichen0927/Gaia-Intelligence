@@ -1,0 +1,22 @@
+{
+  "name": "data_clean_curves",
+  "description": "替换无效值、类型转换、按核心曲线 dropna",
+  "paths": {
+    "input_file": "data/processed_data/data_tools/merged_well_logs.csv",
+    "output_file": "data/processed_data/data_tools/cleaned_well_logs.csv"
+  },
+  "parameters": {
+    "invalid_values": [
+      -99999.0,
+      -9999.0,
+      -999.25
+    ],
+    "core_curves": [
+      "GR",
+      "DEN",
+      "CNL",
+      "AC",
+      "LAYER"
+    ]
+  }
+}

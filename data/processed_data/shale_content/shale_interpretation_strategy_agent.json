@@ -1,0 +1,111 @@
+{
+  "project_info": {
+    "description": "Auto-generated interpretation strategy by LLM Agents.",
+    "generation_date": "2026-07-20",
+    "few_shot_enabled": false,
+    "data_quality_report": {
+      "J2z": "Error: Agent workflow failed. Details: OpenAI API 生成响应时发生错误：Connection error.. Cleaned response was: 'N/A' -> Used Universal Default.",
+      "chang4+5": "Error: Agent workflow failed. Details: OpenAI API 生成响应时发生错误：Connection error.. Cleaned response was: 'N/A' -> Used Universal Default.",
+      "chang6": "Error: Agent workflow failed. Details: OpenAI API 生成响应时发生错误：Connection error.. Cleaned response was: 'N/A' -> Used Universal Default.",
+      "chang7": "Error: Agent workflow failed. Details: OpenAI API 生成响应时发生错误：Connection error.. Cleaned response was: 'N/A' -> Used Universal Default.",
+      "chang8": "Error: Agent workflow failed. Details: OpenAI API 生成响应时发生错误：Connection error.. Cleaned response was: 'N/A' -> Used Universal Default.",
+      "chang9": "Skipped: Insufficient data points",
+      "y8": "Error: Agent workflow failed. Details: OpenAI API 生成响应时发生错误：Connection error.. Cleaned response was: 'N/A' -> Used Universal Default.",
+      "y9": "Error: Agent workflow failed. Details: OpenAI API 生成响应时发生错误：Connection error.. Cleaned response was: 'N/A' -> Used Universal Default."
+    }
+  },
+  "global_parameters": {
+    "rho_f_water": 1.0,
+    "rho_ma_sand": 2.65
+  },
+  "formation_strategies": {
+    "J2z": {
+      "best_model_type": "Linear",
+      "reasoning_from_agent": "Agent workflow failed, falling back to universal default.",
+      "final_optimized_params": {
+        "gr_min": 30.0,
+        "gr_max": 150.0,
+        "rho_sh": 2.55,
+        "nphi_sh": 35.0,
+        "delta_t_sh": 320.0,
+        "optimized_gcur": 2.0
+      }
+    },
+    "chang4+5": {
+      "best_model_type": "Linear",
+      "reasoning_from_agent": "Agent workflow failed, falling back to universal default.",
+      "final_optimized_params": {
+        "gr_min": 30.0,
+        "gr_max": 150.0,
+        "rho_sh": 2.55,
+        "nphi_sh": 35.0,
+        "delta_t_sh": 320.0,
+        "optimized_gcur": 2.0
+      }
+    },
+    "chang6": {
+      "best_model_type": "Linear",
+      "reasoning_from_agent": "Agent workflow failed, falling back to universal default.",
+      "final_optimized_params": {
+        "gr_min": 30.0,
+        "gr_max": 150.0,
+        "rho_sh": 2.55,
+        "nphi_sh": 35.0,
+        "delta_t_sh": 320.0,
+        "optimized_gcur": 2.0
+      }
+    },
+    "chang7": {
+      "best_model_type": "Linear",
+      "reasoning_from_agent": "Agent workflow failed, falling back to universal default.",
+      "final_optimized_params": {
+        "gr_min": 30.0,
+        "gr_max": 150.0,
+        "rho_sh": 2.55,
+        "nphi_sh": 35.0,
+        "delta_t_sh": 320.0,
+        "optimized_gcur": 2.0
+      }
+    },
+    "chang8": {
+      "best_model_type": "Linear",
+      "reasoning_from_agent": "Agent workflow failed, falling back to universal default.",
+      "final_optimized_params": {
+        "gr_min": 30.0,
+        "gr_max": 150.0,
+        "rho_sh": 2.55,
+        "nphi_sh": 35.0,
+        "delta_t_sh": 320.0,
+        "optimized_gcur": 2.0
+      }
+    },
+    "chang9": {
+      "best_model_type": "N/A",
+      "reasoning_from_agent": "Skipped: Insufficient data points"
+    },
+    "y8": {
+      "best_model_type": "Linear",
+      "reasoning_from_agent": "Agent workflow failed, falling back to universal default.",
+      "final_optimized_params": {
+        "gr_min": 30.0,
+        "gr_max": 150.0,
+        "rho_sh": 2.55,
+        "nphi_sh": 35.0,
+        "delta_t_sh": 320.0,
+        "optimized_gcur": 2.0
+      }
+    },
+    "y9": {
+      "best_model_type": "Linear",
+      "reasoning_from_agent": "Agent workflow failed, falling back to universal default.",
+      "final_optimized_params": {
+        "gr_min": 30.0,
+        "gr_max": 150.0,
+        "rho_sh": 2.55,
+        "nphi_sh": 35.0,
+        "delta_t_sh": 320.0,
+        "optimized_gcur": 2.0
+      }
+    }
+  }
+}

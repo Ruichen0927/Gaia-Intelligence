@@ -1,0 +1,12 @@
+{
+  "name": "ml_evaluate",
+  "description": "评估回归预测结果",
+  "paths": {
+    "input_file": "data/processed_data/ml/regressor_predictions.csv",
+    "output_file": "data/processed_data/ml/regressor_evaluation.json"
+  },
+  "parameters": {
+    "actual_col": "phie_final",
+    "pred_col": "phie_final_pred"
+  }
+}
