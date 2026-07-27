@@ -12,6 +12,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 from mcp.server.fastmcp import FastMCP
 from common.config_loader import get_project_root, load_json, load_tool_config
+from common.utils import _resolve_object
 import importlib
 
 mcp = FastMCP("gaia-welllog-mcp")
@@ -32,6 +33,8 @@ def _make_tool_handler(tool_name: str, info: Dict[str, Any]):
         cfg = load_tool_config(cfg_rel, root)
         if overrides:
             _deep_merge(cfg, overrides)
+            # overrides 中可能包含相对路径，需要再次解析为绝对路径
+            cfg = _resolve_object(cfg, root)
         module_name = info['module'] if '.' in info['module'] else f"tools.{info['module']}"
         module = importlib.import_module(module_name)
         func = getattr(module, info['function'])

@@ -60,14 +60,24 @@ def page_run():
     col1, col2 = st.columns([1, 2])
     with col1:
         method = st.radio("选择运行模式", ["流程法", "MCP方法"], index=0)
+        use_llm = st.checkbox(
+            "🧠 使用 LLM 智能选工具（实验）",
+            value=True,
+            help="勾选后，MCP 方法会先让 LLM Agent 根据工具描述选择工具；失败时自动回退到关键词匹配。",
+            key="use_llm_tool_selector"
+        ) if method == "MCP方法" else False
         user_input = st.text_area(
             "自然语言指令",
             value="运行全流程" if method == "流程法" else "调用全部工具",
             height=100,
-            placeholder="例如：运行全流程 / 只计算泥质含量和孔隙度 / 调用渗透率工具"
+            placeholder="例如：运行全流程 / 只计算泥质含量和孔隙度 / 调用渗透率工具 / 计算GR均值"
         )
-        parsed = parse_command(method, user_input)
+        parsed = parse_command(method, user_input, use_llm=use_llm, project_root=PROJECT_ROOT)
         st.info(f"**解析结果**：{parsed['action']}")
+        if parsed.get("reasoning"):
+            st.caption(f"💡 {parsed['reasoning']}")
+        if parsed.get("llm_error"):
+            st.warning(f"LLM 提示：{parsed['llm_error']}")
 
         run_clicked = st.button("🚀 一键运行", type="primary")
 
@@ -82,8 +92,8 @@ def page_run():
                     if parsed.get("stop_at"):
                         cmd.extend(["--stop-at", parsed["stop_at"]])
                 else:
-                    # 生成临时 MCP 计划文件
-                    plan = [{"tool": t} for t in parsed["tools"]]
+                    # 生成临时 MCP 计划文件；优先使用 LLM 返回的 plan（可能含 overrides）
+                    plan = parsed.get("plan") or [{"tool": t} for t in parsed["tools"]]
                     fd, plan_path = tempfile.mkstemp(suffix=".json", prefix="gaia_mcp_plan_")
                     with os.fdopen(fd, "w", encoding="utf-8") as f:
                         json.dump(plan, f, ensure_ascii=False, indent=2)

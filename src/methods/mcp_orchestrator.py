@@ -11,6 +11,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 from common.config_loader import get_project_root, load_json, load_tool_config
+from common.utils import _resolve_object
 
 
 def _deep_merge(base: Dict[str, Any], override: Dict[str, Any]) -> None:
@@ -56,6 +57,8 @@ def run_tool(tool_name: str,
     cfg = load_tool_config(cfg_rel, project_root)
     if overrides:
         _deep_merge(cfg, overrides)
+        # overrides 中可能包含相对路径，需要再次解析为绝对路径
+        cfg = _resolve_object(cfg, project_root)
 
     module_name = info['module'] if '.' in info['module'] else f"tools.{info['module']}"
     module = importlib.import_module(module_name)
