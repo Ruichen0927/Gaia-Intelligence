@@ -96,3 +96,29 @@ def validate_plan_tools(plan: List[Dict[str, Any]], project_root: Path = None) -
         else:
             invalid.append(item)
     return {"valid": valid, "invalid": invalid}
+
+
+def load_default_tool_paths(tool_name: str, project_root: Path = None) -> Dict[str, str]:
+    """加载 ctl/default_tool_paths.json 并替换 {tool_name} 占位符。
+
+    参数：
+        tool_name: 当前工具名，用于替换占位符。
+        project_root: 项目根目录。
+
+    返回：
+        包含默认 input_file、input_directory、output_directory 等路径的字典。
+        若配置文件不存在，返回最简默认 output_directory。
+    """
+    root = project_root or get_project_root()
+    default_path = root / "ctl" / "default_tool_paths.json"
+
+    defaults = {"output_directory": f"data/processed_data/{tool_name}"}
+    if default_path.exists():
+        try:
+            cfg = load_json("ctl/default_tool_paths.json", root)
+            paths = cfg.get("paths", {})
+            defaults.update({k: v.format(tool_name=tool_name) for k, v in paths.items()})
+        except Exception:
+            pass
+
+    return defaults

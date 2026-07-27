@@ -42,12 +42,12 @@ def ${function_name}(config: Dict[str, Any], project_root: Path) -> Dict[str, An
 
 def make_default_config_template(tool_name: str, description: str) -> dict:
     """生成用户工具的默认 JSON 配置模板。"""
+    # 延迟导入，避免循环依赖
+    from common.tool_registry import load_default_tool_paths
     return {
         "name": tool_name,
         "description": description,
-        "paths": {
-            "output_directory": f"data/processed_data/{tool_name}"
-        },
+        "paths": load_default_tool_paths(tool_name),
         "parameters": {}
     }
 

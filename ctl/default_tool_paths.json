@@ -1,0 +1,8 @@
+{
+  "description": "新用户工具的默认输入/输出路径模板。值中可使用 {tool_name} 占位符，保存工具配置时会被替换为实际工具名。",
+  "paths": {
+    "input_file": "data/processed_data/data_tools/cleaned_well_logs.csv",
+    "input_directory": "data/sample",
+    "output_directory": "data/processed_data/{tool_name}"
+  }
+}

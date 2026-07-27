@@ -74,6 +74,7 @@ def _normalize_module_name(module_name: str) -> str:
 def _save_tool(tool_name: str, description: str, module_name: str,
                function_name: str, python_code: str, config_template: dict) -> dict:
     """保存工具源码、配置文件并注册到 MCP。"""
+    from common.tool_registry import load_default_tool_paths
     root = _project_root()
     module_name = _normalize_module_name(module_name)
     module_file = _module_file_for(module_name, root)
@@ -81,6 +82,13 @@ def _save_tool(tool_name: str, description: str, module_name: str,
 
     module_file.parent.mkdir(parents=True, exist_ok=True)
     config_file.parent.mkdir(parents=True, exist_ok=True)
+
+    # 合并默认输入/输出路径，确保用户工具注册后即可运行
+    config_template.setdefault("paths", {})
+    default_paths = load_default_tool_paths(tool_name, root)
+    for key, value in default_paths.items():
+        if key not in config_template["paths"] or not config_template["paths"][key]:
+            config_template["paths"][key] = value
 
     module_file.write_text(python_code, encoding="utf-8")
     config_file.write_text(json.dumps(config_template, indent=2, ensure_ascii=False), encoding="utf-8")

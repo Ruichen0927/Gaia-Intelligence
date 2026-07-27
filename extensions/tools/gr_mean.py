@@ -9,6 +9,8 @@ def run(config: dict, project_root: Path) -> dict:
         paths = config["paths"]
         input_file = paths["input_file"]
         output_directory = paths["output_directory"]
+        # 确保输出目录存在
+        Path(output_directory).mkdir(parents=True, exist_ok=True)
         output_file = os.path.join(output_directory, "gr_mean_output.csv")
 
         # 读取数据

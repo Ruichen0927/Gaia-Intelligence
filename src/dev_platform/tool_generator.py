@@ -63,9 +63,10 @@ def _build_generation_prompt(
 请严格遵循以下规范：
 1. 工具主函数签名必须是：def run(config: dict, project_root: Path) -> dict
 2. config 字典中包含 paths 和 parameters，paths 中的路径已经是绝对路径，可直接使用。
-3. 返回值必须是字典，至少包含 success(bool)、message(str)、output_files(list[str])。
-4. 代码需要健壮，使用 try/except 捕获异常并返回 success=false。
-5. 使用 pathlib.Path 和 project_root 处理路径。
+3. 默认情况下，config["paths"] 至少会包含 input_file、input_directory 和 output_directory（见 ctl/default_tool_paths.json）。若工具需要读取文件，优先使用 config["paths"]["input_file"]；若需要输出文件，优先写入 config["paths"]["output_directory"] 并在代码中确保该目录存在（使用 Path.mkdir(parents=True, exist_ok=True)）。
+4. 返回值必须是字典，至少包含 success(bool)、message(str)、output_files(list[str])。
+5. 代码需要健壮，使用 try/except 捕获异常并返回 success=false。
+6. 使用 pathlib.Path 和 project_root 处理路径。
 
 请直接输出严格符合以下结构的 JSON，不要包含 markdown 代码块或任何解释文字：
 
@@ -79,6 +80,8 @@ def _build_generation_prompt(
     "name": "工具名",
     "description": "描述",
     "paths": {{
+      "input_file": "data/processed_data/data_tools/cleaned_well_logs.csv",
+      "input_directory": "data/sample",
       "output_directory": "data/processed_data/<tool_name>"
     }},
     "parameters": {{}}
@@ -111,10 +114,11 @@ def _build_conversion_prompt(
 
 转换要求：
 1. 主函数签名改为：def run(config: dict, project_root: Path) -> dict
-2. 原函数中的硬编码路径应改为从 config["paths"] 读取；config 中的路径已经是绝对路径。
-3. 原函数中的常数/阈值建议放到 config["parameters"] 中读取，并给出合理的默认值。
-4. 返回值必须是字典，至少包含 success(bool)、message(str)、output_files(list[str])。
-5. 添加 try/except，异常时返回 success=false 与错误信息。
+2. 原函数中的硬编码路径应改为从 config["paths"] 读取；config 中的路径已经是绝对路径。默认 config["paths"] 会包含 input_file、input_directory 和 output_directory，请尽量使用它们。
+3. 输出前请确保 output_directory 存在（Path.mkdir(parents=True, exist_ok=True)）。
+4. 原函数中的常数/阈值建议放到 config["parameters"] 中读取，并给出合理的默认值。
+5. 返回值必须是字典，至少包含 success(bool)、message(str)、output_files(list[str])。
+6. 添加 try/except，异常时返回 success=false 与错误信息。
 
 请直接输出严格符合以下结构的 JSON，不要包含 markdown 代码块或任何解释文字：
 
@@ -127,7 +131,11 @@ def _build_conversion_prompt(
   "config_template": {{
     "name": "{tool_name}",
     "description": "{description}",
-    "paths": {{}},
+    "paths": {{
+      "input_file": "data/processed_data/data_tools/cleaned_well_logs.csv",
+      "input_directory": "data/sample",
+      "output_directory": "data/processed_data/{tool_name}"
+    }},
     "parameters": {{}}
   }}
 }}
