@@ -113,7 +113,8 @@ import sys
 from pathlib import Path
 
 project_root = Path({str(project_root)!r}).resolve()
-sys.path.insert(0, str(project_root / "extensions"))
+# 加入项目根目录以支持 extensions.tools.xxx 形式的用户工具导入
+sys.path.insert(0, str(project_root))
 sys.path.insert(0, str(project_root / "src"))
 
 config = json.loads({json.dumps(config, ensure_ascii=False)!r})

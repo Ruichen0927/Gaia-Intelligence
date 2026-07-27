@@ -6,8 +6,9 @@ import traceback
 from pathlib import Path
 from typing import Dict, Any
 
-# 将 src/ 加入模块搜索路径
+# 将 src/ 与项目根目录加入模块搜索路径，确保内置工具与用户扩展工具均可导入
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 from common.config_loader import get_project_root, load_json, load_tool_config
