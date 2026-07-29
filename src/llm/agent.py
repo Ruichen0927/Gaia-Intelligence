@@ -68,11 +68,16 @@ class Agent:
     def initialize_api_client(self):
         """
         初始化 OpenAI API 客户端。
+        优先从配置读取 base_url，否则使用默认地址。
         """
         try:
             if not self.api_key.strip():
                 raise ValueError("API 密钥为空，请在配置文件中设置 'api_key'。")
-            self.client = OpenAI(api_key=self.api_key,base_url="https://api.zhizengzeng.com/v1")
+            # 支持从配置自定义 API 基础 URL（网页/代理地址）
+            base_url = self.config.get("training_setting", {}).get("base_url")
+            if not base_url:
+                base_url = "https://api.zhizengzeng.com/v1"
+            self.client = OpenAI(api_key=self.api_key, base_url=base_url)
             # print("OpenAI API 客户端初始化完成。")
         except Exception as e:
             raise RuntimeError(f"初始化 OpenAI API 客户端时发生错误：{str(e)}")
