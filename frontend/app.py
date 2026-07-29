@@ -26,6 +26,7 @@ from frontend.kg_static_view import build_static_graph
 from frontend.dev_platform import page_dev_platform
 from frontend.agent_platform import page_agent_platform
 from frontend.kb_skill_platform import page_kb_skill_platform
+from frontend.agent_flow_platform import page_agent_flow_platform
 
 
 def run_subprocess_stream(cmd: list, cwd: Path):
@@ -242,7 +243,7 @@ def page_knowledge_graph():
 
 def main():
     st.set_page_config(page_title="Gaia 测井解释平台", layout="wide")
-    page = st.sidebar.radio("导航", ["运行控制台", "知识图谱", "二次开发平台", "智能体平台", "知识库 & Skill"])
+    page = st.sidebar.radio("导航", ["运行控制台", "知识图谱", "二次开发平台", "智能体平台", "知识库 & Skill", "Agent 流程画布"])
     if page == "运行控制台":
         page_run()
     elif page == "知识图谱":
@@ -251,8 +252,10 @@ def main():
         page_dev_platform()
     elif page == "智能体平台":
         page_agent_platform()
-    else:
+    elif page == "知识库 & Skill":
         page_kb_skill_platform()
+    else:
+        page_agent_flow_platform()
 
 
 if __name__ == "__main__":
