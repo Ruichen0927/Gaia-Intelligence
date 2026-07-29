@@ -87,9 +87,18 @@ class Agent:
         生成响应。
         根据模型类型 (local/api) 调用不同的生成逻辑。
         :param user_input: 用户输入
-        :param rag_response: 外部记忆的补充响应
+        :param rag_response: 外部记忆的补充响应；若 Agent 开启 RAG 且未传入，会自动从知识库和 Skill 检索。
         :return: AI 的响应
         """
+        # 若 Agent 启用 RAG 且调用方未提供外部响应，自动检索知识库和 Skill
+        if self.config.get("rag", {}).get("enable", False) and not rag_response:
+            try:
+                from llm.rag import retrieve_context
+                from common.config_loader import get_project_root
+                rag_response = retrieve_context(user_input, get_project_root())
+            except Exception:
+                rag_response = ""
+
         if self.model_type == "local":
             return self.generate_response_local(user_input, rag_response, few_shot_examples)
         elif self.model_type == "api":
