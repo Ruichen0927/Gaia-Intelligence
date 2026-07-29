@@ -84,6 +84,8 @@ def load_flow(flow_id: str, project_root: Path = None) -> Dict[str, Any]:
             nodes.append({
                 "id": f"step_{i}",
                 "agent_id": "ToolDeveloperAgent",  # 默认使用工具开发 Agent 作为执行 Agent
+                "role_description": f"流程法第 {i + 1} 步执行专家",
+                "task_instruction": f"调用工具 `{tool}` 的函数 `{function}` 执行步骤 `{step.get('step', '')}`",
                 "tools": [tool] if tool else [],
                 "kb_docs": [],
                 "skills": [],
@@ -128,6 +130,16 @@ def save_flow(
     safe_id = _sanitize_flow_id(flow_id)
     if not safe_id:
         return {"success": False, "message": "流程 ID 无效", "file": ""}
+
+    # 预校验引用资源和必填字段
+    pre_cfg = {
+        "flow_id": safe_id,
+        "nodes": nodes,
+        "edges": edges,
+    }
+    validation = validate_flow(pre_cfg, root)
+    if not validation["valid"]:
+        return {"success": False, "message": "保存失败:\n" + "\n".join(validation["errors"]), "file": ""}
 
     cfg = {
         "flow_id": safe_id,
@@ -194,6 +206,11 @@ def validate_flow(flow_cfg: Dict[str, Any], project_root: Path = None) -> Dict[s
         if agent_id not in agents:
             errors.append(f"节点 '{nid}' 引用了不存在的 Agent: {agent_id}")
 
+        if not node.get("role_description") or not str(node.get("role_description")).strip():
+            errors.append(f"节点 '{nid}' 的 role_description（角色描述）不能为空")
+        if not node.get("task_instruction") or not str(node.get("task_instruction")).strip():
+            errors.append(f"节点 '{nid}' 的 task_instruction（任务说明）不能为空")
+
         for t in node.get("tools", []):
             if t not in tools:
                 errors.append(f"节点 '{nid}' 引用了不存在的工具: {t}")
@@ -256,10 +273,16 @@ def build_node_prompt(
 ) -> str:
     """构建某个 Agent 节点的最终输入 prompt。
 
-    包含：工具描述、知识库片段、Skill 内容、input_template 渲染结果。
+    包含：团队上下文、角色任务、工具描述、知识库片段、Skill 内容、input_template 渲染结果。
     """
     root = project_root or get_project_root()
     parts = []
+
+    # 角色与任务
+    role = node_cfg.get("role_description", "")
+    task = node_cfg.get("task_instruction", "")
+    if role or task:
+        parts.append("【你的角色与任务】\n" + (f"角色：{role}\n" if role else "") + (f"任务：{task}" if task else ""))
 
     # 工具描述
     tools = node_cfg.get("tools", [])
@@ -294,6 +317,31 @@ def build_node_prompt(
     context["__input__"] = initial_input
     rendered = template.format(**context)
 
-    if parts:
-        return "\n\n".join(parts) + "\n\n【当前任务】\n" + rendered
-    return rendered
+    parts.append("【当前任务】\n" + rendered)
+    parts.append("【输出要求】\n请直接给出你的分析结果或决策，不要调用任何外部函数。你的输出文本将被下游节点作为输入使用。")
+
+    return "\n\n".join(parts)
+
+
+def build_node_system_message(
+    node_cfg: Dict[str, Any],
+    flow_cfg: Dict[str, Any],
+    base_system_message: str,
+) -> str:
+    """为节点生成临时 system message 覆盖。
+
+    在原 Agent system_message 基础上，追加该节点在团队中的角色说明。
+    """
+    role = node_cfg.get("role_description", "")
+    task = node_cfg.get("task_instruction", "")
+    flow_name = flow_cfg.get("name", "多 Agent 流程")
+
+    override_parts = [base_system_message]
+    override_parts.append(f"\n\n你当前正在参与一个名为『{flow_name}』的多 Agent 协作流程。")
+    if role:
+        override_parts.append(f"你在该流程中的角色是：{role}")
+    if task:
+        override_parts.append(f"你的具体任务是：{task}")
+    override_parts.append("请根据用户输入和上下文，完成你的任务并输出清晰、可直接被下游节点使用的文本结果。")
+
+    return "\n".join(override_parts)

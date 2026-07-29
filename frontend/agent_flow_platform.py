@@ -73,7 +73,8 @@ def _build_flow_preview(nodes: list, edges: list, step_results: dict = None):
 
     for i, node in enumerate(nodes):
         nid = node["id"]
-        label = node.get("agent_id", nid)
+        role = node.get("role_description", "")
+        label = role or node.get("agent_id", nid)
 
         # 根据执行状态着色
         color = "#4C78A8"  # 默认蓝色
@@ -86,6 +87,8 @@ def _build_flow_preview(nodes: list, edges: list, step_results: dict = None):
         title_lines = [
             f"ID: {nid}",
             f"Agent: {node.get('agent_id', '')}",
+            f"角色: {role}",
+            f"任务: {node.get('task_instruction', '')}",
             f"输出键: {node.get('output_key', '')}",
         ]
         if step_results and nid in step_results:
@@ -222,6 +225,8 @@ def _tab_editor():
         with st.form("add_node_form"):
             new_node_id = st.text_input("节点 ID *", help="例如 advisor、executor")
             new_agent_id = st.selectbox("选择 Agent *", agent_options) if agent_options else st.text_input("Agent ID *")
+            new_role = st.text_input("角色描述 *", help="例如：泥质含量解释策略专家")
+            new_task = st.text_area("任务说明 *", height=60, help="该 Agent 需要完成的具体任务")
             new_tools = st.multiselect("可调用工具", tool_options)
             new_docs = st.multiselect("引用知识库文档", doc_options)
             new_skills = st.multiselect("引用 Skill", skill_options)
@@ -236,13 +241,17 @@ def _tab_editor():
             submitted = st.form_submit_button("添加节点", type="primary")
             if submitted:
                 if not new_node_id or not new_agent_id or not new_template or not new_output_key:
-                    st.error("请填写所有必填项。")
+                    st.error("请填写所有必填项（节点 ID、Agent、输入模板、输出键名）。")
+                elif not new_role.strip() or not new_task.strip():
+                    st.error("角色描述和任务说明不能为空。")
                 elif new_node_id in {n["id"] for n in st.session_state.flow_nodes}:
                     st.error(f"节点 ID '{new_node_id}' 已存在。")
                 else:
                     st.session_state.flow_nodes.append({
                         "id": new_node_id.strip(),
                         "agent_id": new_agent_id.strip() if isinstance(new_agent_id, str) else new_agent_id,
+                        "role_description": new_role.strip(),
+                        "task_instruction": new_task.strip(),
                         "tools": new_tools,
                         "kb_docs": new_docs,
                         "skills": new_skills,
@@ -253,16 +262,40 @@ def _tab_editor():
                     st.success(f"节点 '{new_node_id}' 已添加")
                     st.rerun()
 
-    # 显示已有节点
+    # 显示/编辑已有节点
     if st.session_state.flow_nodes:
         for i, node in enumerate(st.session_state.flow_nodes):
-            with st.expander(f"节点: {node['id']} ({node['agent_id']}) -> {node['output_key']}"):
-                st.json(node)
-                if st.button("删除节点", key=f"del_node_{i}"):
+            nid = node["id"]
+            with st.expander(f"节点: {nid} ({node['agent_id']}) -> {node['output_key']}"):
+                with st.form(f"edit_node_{nid}"):
+                    edit_role = st.text_input("角色描述 *", value=node.get("role_description", ""), key=f"edit_role_{nid}")
+                    edit_task = st.text_area("任务说明 *", value=node.get("task_instruction", ""), key=f"edit_task_{nid}")
+                    edit_tools = st.multiselect("可调用工具", tool_options, default=node.get("tools", []), key=f"edit_tools_{nid}")
+                    edit_docs = st.multiselect("引用知识库文档", doc_options, default=node.get("kb_docs", []), key=f"edit_docs_{nid}")
+                    edit_skills = st.multiselect("引用 Skill", skill_options, default=node.get("skills", []), key=f"edit_skills_{nid}")
+                    edit_template = st.text_area(
+                        "输入模板 *",
+                        value=node.get("input_template", "{__input__}"),
+                        height=100,
+                        key=f"edit_template_{nid}",
+                    )
+                    if st.form_submit_button("更新节点", type="primary"):
+                        if not edit_role.strip() or not edit_task.strip() or not edit_template.strip():
+                            st.error("角色描述、任务说明和输入模板不能为空。")
+                        else:
+                            node["role_description"] = edit_role.strip()
+                            node["task_instruction"] = edit_task.strip()
+                            node["tools"] = edit_tools
+                            node["kb_docs"] = edit_docs
+                            node["skills"] = edit_skills
+                            node["input_template"] = edit_template.strip()
+                            st.success(f"节点 '{nid}' 已更新")
+                            st.rerun()
+                if st.button("删除节点", key=f"del_node_{nid}"):
                     # 同时删除相关边
                     st.session_state.flow_edges = [
                         e for e in st.session_state.flow_edges
-                        if e.get("from") != node["id"] and e.get("to") != node["id"]
+                        if e.get("from") != nid and e.get("to") != nid
                     ]
                     st.session_state.flow_nodes.pop(i)
                     st.rerun()

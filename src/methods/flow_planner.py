@@ -78,9 +78,22 @@ def plan_flow_from_natural_language(
 
         data = json.loads(json_str)
 
+        # 规整边字段：支持 source/target 或 from/to
+        normalized_edges = []
+        for edge in data.get("edges", []):
+            src = edge.get("from") or edge.get("source")
+            dst = edge.get("to") or edge.get("target")
+            if src and dst:
+                normalized_edges.append({"from": src, "to": dst})
+        data["edges"] = normalized_edges
+
         # 补充 flow_id 字段
-        if "flow_id" not in data:
-            data["flow_id"] = "ai_flow"
+        if "flow_id" not in data or not data["flow_id"]:
+            # 优先使用顶层 id，否则根据流程名生成安全的 flow_id，保留中文、英文、数字和下划线
+            import re
+            name = data.get("id") or data.get("name", "ai_flow")
+            safe = re.sub(r"[^a-zA-Z0-9_\u4e00-\u9fff]", "_", name).strip("_")
+            data["flow_id"] = safe or "ai_flow"
 
         # 校验
         validation = flow_manager.validate_flow(data, root)

@@ -82,12 +82,13 @@ class Agent:
         except Exception as e:
             raise RuntimeError(f"初始化 OpenAI API 客户端时发生错误：{str(e)}")
 
-    def generate_response(self, user_input, rag_response="", few_shot_examples=None):
+    def generate_response(self, user_input, rag_response="", few_shot_examples=None, system_message_override=None):
         """
         生成响应。
         根据模型类型 (local/api) 调用不同的生成逻辑。
         :param user_input: 用户输入
         :param rag_response: 外部记忆的补充响应；若 Agent 开启 RAG 且未传入，会自动从知识库和 Skill 检索。
+        :param system_message_override: 可选，临时覆盖 Agent 配置中的 system_message。
         :return: AI 的响应
         """
         # 若 Agent 启用 RAG 且调用方未提供外部响应，自动检索知识库和 Skill
@@ -100,19 +101,21 @@ class Agent:
                 rag_response = ""
 
         if self.model_type == "local":
-            return self.generate_response_local(user_input, rag_response, few_shot_examples)
+            return self.generate_response_local(user_input, rag_response, few_shot_examples, system_message_override)
         elif self.model_type == "api":
-            return self.generate_response_api(user_input, rag_response, few_shot_examples)
+            return self.generate_response_api(user_input, rag_response, few_shot_examples, system_message_override)
 
-    def generate_response_local(self, user_input, rag_response=""):
+    def generate_response_local(self, user_input, rag_response="", system_message_override=None):
         """
         使用本地模型生成响应。
         :param user_input: 用户输入
         :param rag_response: 外部记忆的补充响应
+        :param system_message_override: 可选，临时覆盖 system prompt。
         :return: AI 的响应
         """
+        system_prompt = system_message_override if system_message_override else self.system_prompt
         messages = [
-            {"role": "system", "content": self.system_prompt}
+            {"role": "system", "content": system_prompt}
         ]
         if isinstance(rag_response, str):
             messages.append({"role": "assistant", "content": rag_response})
@@ -145,14 +148,16 @@ class Agent:
         except Exception as e:
             raise RuntimeError(f"本地模型生成响应时发生错误：{str(e)}")
 
-    def generate_response_api(self, user_input, rag_response="", few_shot_examples=None):
+    def generate_response_api(self, user_input, rag_response="", few_shot_examples=None, system_message_override=None):
         """
         使用 OpenAI API 生成响应。
         :param user_input: 用户输入
         :param rag_response: 外部记忆的补充响应
+        :param system_message_override: 可选，临时覆盖 system prompt。
         :return: AI 的响应
         """
-        messages = [{"role": "system", "content": self.system_prompt}]
+        system_prompt = system_message_override if system_message_override else self.system_prompt
+        messages = [{"role": "system", "content": system_prompt}]
         # 注入Few-Shot范例
         if few_shot_examples and isinstance(few_shot_examples, list):
             messages.extend(few_shot_examples)

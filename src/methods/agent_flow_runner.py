@@ -10,7 +10,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 from common.config_loader import get_project_root
-from dev_platform import flow_manager
+from dev_platform import agent_manager, flow_manager
 from llm.caller import load_agent
 
 
@@ -65,8 +65,12 @@ def run_flow(flow_id: str, initial_input: str = "", project_root: Path = None) -
 
         try:
             prompt = flow_manager.build_node_prompt(node, outputs, initial_input, root)
-            agent = load_agent(f"ctl/agent_configs/{agent_id}.json", root)
-            response = agent.generate_response(user_input=prompt)
+            agent_config_path = agent_manager.resolve_agent_config_path(agent_id, root)
+            agent = load_agent(str(agent_config_path), root)
+
+            # 为该节点生成临时 system message，明确团队角色
+            system_override = flow_manager.build_node_system_message(node, cfg, agent.system_prompt)
+            response = agent.generate_response(user_input=prompt, system_message_override=system_override)
 
             outputs[output_key] = response
             final_output = response

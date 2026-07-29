@@ -49,12 +49,37 @@ def list_agents(project_root: Path = None) -> List[Dict[str, Any]]:
     return agents
 
 
+def resolve_agent_config_path(agent_id: str, project_root: Path = None) -> Path:
+    """根据 agent_id 查找对应的配置文件路径。
+
+    允许文件名与 agent_id 不一致（如 interpretation_advisor_agent_config.json
+    中包含 agent_id InterpretationAdvisorAgent）。
+    """
+    root = project_root or get_project_root()
+    agent_dir = _get_agent_dir(root)
+    if not agent_dir.exists():
+        raise FileNotFoundError(f"Agent 配置目录不存在: {agent_dir}")
+
+    # 优先精确匹配 {agent_id}.json
+    exact = agent_dir / f"{agent_id}.json"
+    if exact.exists():
+        return exact
+
+    # 否则扫描目录，按配置文件内的 agent_id 匹配
+    for cfg_file in agent_dir.glob("*.json"):
+        try:
+            cfg = json.loads(cfg_file.read_text(encoding="utf-8"))
+            if cfg.get("agent_id") == agent_id:
+                return cfg_file
+        except Exception:
+            continue
+
+    raise FileNotFoundError(f"找不到 agent_id 为 '{agent_id}' 的 Agent 配置文件")
+
+
 def load_agent_config(agent_id: str, project_root: Path = None) -> Dict[str, Any]:
     """加载指定 Agent 的完整配置。"""
-    root = project_root or get_project_root()
-    cfg_path = _get_agent_dir(root) / f"{agent_id}.json"
-    if not cfg_path.exists():
-        raise FileNotFoundError(f"Agent 配置不存在: {cfg_path}")
+    cfg_path = resolve_agent_config_path(agent_id, project_root)
     return json.loads(cfg_path.read_text(encoding="utf-8"))
 
 
