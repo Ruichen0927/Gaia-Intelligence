@@ -13,6 +13,7 @@ except ImportError:
 from common.config_loader import get_project_root
 from common.tool_registry import list_tools_for_agent
 from dev_platform import agent_manager, flow_manager, kb_manager, skill_manager
+from methods.flow_planner import plan_flow_from_natural_language
 
 
 def _project_root() -> Path:
@@ -56,8 +57,12 @@ def _load_flow_into_editor(flow_id: str):
     st.session_state.flow_edit_mode = True
 
 
-def _build_flow_preview(nodes: list, edges: list):
-    """使用 streamlit-agraph 构建流程预览图。"""
+def _build_flow_preview(nodes: list, edges: list, step_results: dict = None):
+    """使用 streamlit-agraph 构建流程预览图。
+
+    参数：
+        step_results: 可选，节点执行结果 {node_id: {"success": bool}}，用于着色。
+    """
     if Node is None or Edge is None or Config is None:
         st.error("请安装 streamlit-agraph: pip install streamlit-agraph")
         return None, None, None
@@ -69,11 +74,29 @@ def _build_flow_preview(nodes: list, edges: list):
     for i, node in enumerate(nodes):
         nid = node["id"]
         label = node.get("agent_id", nid)
+
+        # 根据执行状态着色
+        color = "#4C78A8"  # 默认蓝色
+        if step_results:
+            if nid in step_results:
+                color = "#2E8B57" if step_results[nid].get("success") else "#E45756"  # 绿/红
+            else:
+                color = "#AAAAAA"  # 未执行灰色
+
+        title_lines = [
+            f"ID: {nid}",
+            f"Agent: {node.get('agent_id', '')}",
+            f"输出键: {node.get('output_key', '')}",
+        ]
+        if step_results and nid in step_results:
+            status = "成功" if step_results[nid].get("success") else "失败"
+            title_lines.append(f"状态: {status}")
+
         graph_nodes.append(Node(
             id=nid,
             label=label,
-            title=f"{node.get('agent_id', '')}\n输出键: {node.get('output_key', '')}",
-            color="#4C78A8",
+            title="\n".join(title_lines),
+            color=color,
             shape="box",
             size=25,
             font={"color": "#ffffff", "size": 12},
@@ -144,6 +167,41 @@ def _tab_editor():
                 value=st.session_state.flow_input_default,
                 key="flow_input_default",
             )
+
+    # AI 一键规划
+    st.markdown("---")
+    with st.expander("🤖 AI 一键规划", expanded=True):
+        st.markdown("用自然语言描述你想搭建的流程，Agent 会自动生成节点、边和输入模板。")
+        plan_requirement = st.text_area(
+            "需求描述",
+            height=80,
+            placeholder="例如：先用 InterpretationAdvisorAgent 分析泥质含量并制定策略，再调用 shale_run_interpretation 工具执行计算。",
+            key="flow_plan_requirement",
+        )
+        if st.button("🚀 生成流程", type="primary", key="btn_plan_flow"):
+            if not plan_requirement.strip():
+                st.warning("请先填写需求描述。")
+            else:
+                with st.spinner("Agent 正在规划流程，请稍候..."):
+                    res = plan_flow_from_natural_language(plan_requirement.strip(), _project_root())
+                if res["success"]:
+                    flow = res["flow"]
+                    st.session_state.flow_id = flow.get("flow_id", "ai_flow")
+                    st.session_state.flow_name = flow.get("name", "AI 生成流程")
+                    st.session_state.flow_description = flow.get("description", "")
+                    inp = flow.get("input", {})
+                    st.session_state.flow_input_desc = inp.get("description", "用户初始输入")
+                    st.session_state.flow_input_default = inp.get("default_value", "")
+                    st.session_state.flow_nodes = flow.get("nodes", [])
+                    st.session_state.flow_edges = flow.get("edges", [])
+                    st.session_state.flow_edit_mode = False
+                    st.success("流程生成完成，请在下方检查并保存。")
+                    st.rerun()
+                else:
+                    st.error(res.get("error", "生成失败"))
+                    if res.get("raw"):
+                        with st.expander("原始响应"):
+                            st.text(res["raw"])
 
     # 节点管理
     st.markdown("---")
@@ -357,7 +415,22 @@ def _tab_run():
         else:
             st.error(f"流程执行失败: {result.get('error', '')}")
 
-        with st.expander("执行步骤", expanded=True):
+        # 构建执行状态用于可视化
+        step_results = {step["node_id"]: step for step in result.get("steps", [])}
+
+        st.markdown("---")
+        st.subheader("🗺️ 执行步骤可视化")
+        try:
+            cfg = flow_manager.load_flow(flow_id, root)
+            preview = _build_flow_preview(cfg.get("nodes", []), cfg.get("edges", []), step_results)
+            if preview[0] is not None:
+                from streamlit_agraph import agraph
+                agraph(nodes=preview[0], edges=preview[1], config=preview[2])
+                st.caption("🟩 绿色=成功  🟥 红色=失败  ⬜ 灰色=未执行")
+        except Exception as e:
+            st.warning(f"可视化生成失败: {e}")
+
+        with st.expander("执行详情", expanded=True):
             for step in result.get("steps", []):
                 if step.get("success"):
                     st.markdown(f"✅ **{step['node_id']}** ({step['agent_id']}) → `{step['output_key']}`")
