@@ -18,8 +18,34 @@ from dev_platform import agent_manager, flow_manager, kb_manager, skill_manager
 from methods.flow_planner import plan_flow_from_natural_language
 
 
-NODE_WIDTH = 220
-NODE_HEIGHT = 100
+NODE_WIDTH = 240
+NODE_HEIGHT = 120
+
+# Agent 类型颜色映射
+AGENT_TYPE_COLORS = {
+    "advisor": "#3498db",      # 蓝：分析/顾问
+    "diagnosis": "#9b59b6",    # 紫：诊断
+    "developer": "#e67e22",    # 橙：开发/执行
+    "selector": "#1abc9c",     # 青：工具选择/执行
+    "conclusion": "#2ecc71",   # 绿：总结
+    "default": "#4C78A8",      # 默认蓝
+}
+
+
+def _agent_color(agent_id: str) -> str:
+    """根据 Agent ID 返回节点主色。"""
+    aid = agent_id.lower()
+    if "advisor" in aid:
+        return AGENT_TYPE_COLORS["advisor"]
+    if "developer" in aid:
+        return AGENT_TYPE_COLORS["developer"]
+    if "selector" in aid or "tool" in aid:
+        return AGENT_TYPE_COLORS["selector"]
+    if "diagnosis" in aid:
+        return AGENT_TYPE_COLORS["diagnosis"]
+    if "conclusion" in aid or "final" in aid:
+        return AGENT_TYPE_COLORS["conclusion"]
+    return AGENT_TYPE_COLORS["default"]
 
 
 def _project_root() -> Path:
@@ -108,20 +134,39 @@ def _node_label(node: dict) -> str:
     return role or agent or node.get("id", "节点")
 
 
-def _format_node_content(node: dict) -> str:
-    """格式化节点画布上显示的内容。"""
-    lines = []
-    lines.append(f"**{_node_label(node)}**")
+def _format_node_content(node: dict, system_prompt: str = "") -> str:
+    """格式化节点画布上显示的内容（HTML）。"""
+    role = _node_label(node)
     agent = node.get("agent_id", "").strip()
-    if agent:
-        lines.append(f"Agent: `{agent}`")
     tools = node.get("tools", [])
+
+    parts = [
+        f'<div style="font-weight:700;font-size:13px;margin-bottom:4px;">{role}</div>',
+    ]
+    if agent:
+        parts.append(f'<div style="font-size:11px;opacity:0.9;margin-bottom:6px;">Agent: {agent}</div>')
+
     if tools:
-        tools_text = ", ".join(tools[:3])
-        if len(tools) > 3:
-            tools_text += f" +{len(tools) - 3}"
-        lines.append(f"Tools: {tools_text}")
-    return "\n".join(lines)
+        tool_tags = []
+        for t in tools[:4]:
+            tool_tags.append(
+                f'<span style="display:inline-block;background:rgba(255,255,255,0.25);padding:2px 6px;border-radius:4px;margin:2px;font-size:10px;">{t}</span>'
+            )
+        if len(tools) > 4:
+            tool_tags.append(
+                f'<span style="display:inline-block;background:rgba(255,255,255,0.25);padding:2px 6px;border-radius:4px;margin:2px;font-size:10px;">+{len(tools)-4}</span>'
+            )
+        parts.append(f'<div style="margin-top:4px;">{" ".join(tool_tags)}</div>')
+
+    if system_prompt:
+        prompt_hint = system_prompt.replace("\n", " ")[:60]
+        if len(system_prompt) > 60:
+            prompt_hint += "..."
+        parts.append(
+            f'<div style="margin-top:6px;font-size:10px;opacity:0.85;border-top:1px solid rgba(255,255,255,0.3);padding-top:4px;">🧠 {prompt_hint}</div>'
+        )
+
+    return "".join(parts)
 
 
 def _build_node_data(node: dict, step_results: dict = None, project_root: Path = None) -> dict:
@@ -136,7 +181,7 @@ def _build_node_data(node: dict, step_results: dict = None, project_root: Path =
         system_prompt = _get_agent_system_prompt(node.get("agent_id", ""), project_root)
 
     return {
-        "content": _format_node_content(node),
+        "content": _format_node_content(node, system_prompt),
         "agent_id": node.get("agent_id", ""),
         "role_description": node.get("role_description", ""),
         "task_instruction": node.get("task_instruction", ""),
@@ -151,28 +196,44 @@ def _build_node_data(node: dict, step_results: dict = None, project_root: Path =
     }
 
 
-def _node_style(node: dict, step_results: dict = None) -> dict:
+def _node_style(node: dict, step_results: dict = None, selected: bool = False) -> dict:
     """节点样式。"""
     nid = node["id"]
-    color = "#4C78A8"
     if step_results and nid in step_results:
-        color = "#2E8B57" if step_results[nid].get("success") else "#E45756"
+        base_color = "#2E8B57" if step_results[nid].get("success") else "#E45756"
+    else:
+        base_color = _agent_color(node.get("agent_id", ""))
+
+    border = "2px solid rgba(255,255,255,0.4)"
+    box_shadow = "0 2px 6px rgba(0,0,0,0.15)"
+    if selected:
+        border = "3px solid #f1c40f"
+        box_shadow = "0 0 12px rgba(241,196,15,0.7)"
+
     return {
-        "backgroundColor": color,
+        "backgroundColor": base_color,
         "color": "#ffffff",
-        "borderRadius": "8px",
+        "borderRadius": "10px",
         "padding": "10px",
         "width": f"{NODE_WIDTH}px",
         "minHeight": f"{NODE_HEIGHT}px",
         "height": "auto",
         "fontSize": "12px",
-        "border": "1px solid #2c3e50",
+        "border": border,
+        "boxShadow": box_shadow,
         "whiteSpace": "pre-wrap",
         "lineHeight": "1.4",
+        "transition": "all 0.2s ease",
     }
 
 
-def _nodes_edges_to_state(nodes: list, edges: list, step_results: dict = None, project_root: Path = None) -> StreamlitFlowState:
+def _nodes_edges_to_state(
+    nodes: list,
+    edges: list,
+    step_results: dict = None,
+    project_root: Path = None,
+    selected_id: str = None,
+) -> StreamlitFlowState:
     """把内部 nodes/edges 转换为 StreamlitFlowState。"""
     root = project_root or _project_root()
     flow_nodes = []
@@ -180,6 +241,7 @@ def _nodes_edges_to_state(nodes: list, edges: list, step_results: dict = None, p
         pos = node.get("position", {})
         x = pos.get("x", i * 280)
         y = pos.get("y", 100)
+        is_selected = node["id"] == selected_id
         flow_nodes.append(StreamlitFlowNode(
             id=node["id"],
             pos=(x, y),
@@ -187,23 +249,32 @@ def _nodes_edges_to_state(nodes: list, edges: list, step_results: dict = None, p
             node_type="default",
             source_position="bottom",
             target_position="top",
-            style=_node_style(node, step_results),
+            style=_node_style(node, step_results, is_selected),
+            selected=is_selected,
             draggable=True,
             selectable=True,
             connectable=True,
             deletable=True,
         ))
 
+    # 建立节点 id -> output_key 映射，用于边标签
+    output_key_map = {n["id"]: n.get("output_key", "") for n in nodes}
+
     flow_edges = []
     for i, edge in enumerate(edges):
         src = edge.get("from") or edge.get("source")
         dst = edge.get("to") or edge.get("target")
         if src and dst:
+            label = output_key_map.get(src, "")
             flow_edges.append(StreamlitFlowEdge(
                 id=f"e-{src}-{dst}",
                 source=src,
                 target=dst,
                 animated=True,
+                label=label,
+                label_style={"fill": "#555", "fontSize": 11, "fontWeight": 600},
+                label_show_bg=True,
+                label_bg_style={"fill": "#f8f9fa", "stroke": "#ddd", "strokeWidth": 1, "rx": 4, "ry": 4},
                 marker_end={"type": "arrow", "width": 15, "height": 15},
                 style={"strokeWidth": 2, "stroke": "#888"},
                 deletable=True,
@@ -259,7 +330,7 @@ def _sync_state_to_session(state: StreamlitFlowState):
     st.session_state.flow_state = state
 
 
-def _get_flow_state(step_results: dict = None, project_root: Path = None) -> StreamlitFlowState:
+def _get_flow_state(step_results: dict = None, project_root: Path = None, selected_id: str = None) -> StreamlitFlowState:
     """获取当前画布 state（优先用 session_state 中缓存的，避免重复构建）。"""
     if st.session_state.flow_state is None:
         st.session_state.flow_state = _nodes_edges_to_state(
@@ -267,6 +338,7 @@ def _get_flow_state(step_results: dict = None, project_root: Path = None) -> Str
             st.session_state.flow_edges,
             step_results,
             project_root,
+            selected_id=selected_id,
         )
     return st.session_state.flow_state
 
@@ -403,18 +475,22 @@ def _tab_editor():
                             with st.expander("原始响应"):
                                 st.text(res["raw"])
 
-        # 导入流程 JSON
-        with st.expander("📥 导入流程 JSON"):
-            uploaded_file = st.file_uploader("选择流程 JSON 文件", type=["json"], key="flow_import_file")
-            if uploaded_file is not None:
-                try:
-                    import_data = json.loads(uploaded_file.read().decode("utf-8"))
-                    if st.button("加载到画布", key="btn_import_flow"):
-                        _load_flow_dict_into_editor(import_data)
-                        st.success("流程已加载到画布。")
+        # 导入已有流程
+        with st.expander("📥 导入已有流程"):
+            existing_flows = flow_manager.list_flows(root)
+            flow_options = {f["name"]: f["flow_id"] for f in existing_flows}
+            if flow_options:
+                chosen = st.selectbox("选择现有流程", list(flow_options.keys()), key="import_flow_select")
+                if st.button("加载到画布", key="btn_import_existing_flow"):
+                    try:
+                        cfg = flow_manager.load_flow(flow_options[chosen], root)
+                        _load_flow_dict_into_editor(cfg)
+                        st.success(f"流程 '{chosen}' 已加载到画布，可在此基础上修改后保存。")
                         st.rerun()
-                except Exception as e:
-                    st.error(f"导入失败: {e}")
+                    except Exception as e:
+                        st.error(f"加载失败: {e}")
+            else:
+                st.info("暂无已保存的流程。")
 
         # 添加节点
         with st.expander("➕ 添加节点"):
@@ -467,11 +543,11 @@ def _tab_editor():
         st.markdown("#### 流程画布")
         st.caption("拖拽节点调整位置｜从节点底部/顶部拖拽连线｜点击节点在右侧面板编辑")
 
-        flow_state = _get_flow_state(project_root=root)
+        flow_state = _get_flow_state(project_root=root, selected_id=st.session_state.get("selected_node_id"))
         returned_state = streamlit_flow(
             "flow_canvas",
             state=flow_state,
-            height=550,
+            height=650,
             fit_view=True,
             show_controls=True,
             show_minimap=True,
@@ -643,11 +719,17 @@ def _tab_run():
 
         st.markdown("---")
         st.subheader("🗺️ 执行流程可视化")
-        run_state = _nodes_edges_to_state(cfg.get("nodes", []), cfg.get("edges", []), step_results, project_root=root)
+        run_state = _nodes_edges_to_state(
+            cfg.get("nodes", []),
+            cfg.get("edges", []),
+            step_results,
+            project_root=root,
+            selected_id=st.session_state.get("run_selected_node"),
+        )
         returned_run_state = streamlit_flow(
             "run_flow_canvas",
             state=run_state,
-            height=500,
+            height=600,
             fit_view=True,
             show_controls=True,
             show_minimap=True,
