@@ -66,6 +66,9 @@ def _load_flow_into_editor(flow_id: str):
     st.session_state.selected_node_id = None
     st.session_state.flow_state = None
     st.session_state.flow_edit_mode = True
+    # 同步 widget 值
+    for meta_key in ["flow_id", "flow_name", "flow_description", "flow_input_desc", "flow_input_default"]:
+        st.session_state[f"{meta_key}_widget"] = st.session_state.get(meta_key, "")
 
 
 def _default_node_data():
@@ -290,34 +293,40 @@ def _tab_editor():
     col_meta, col_canvas, col_editor = st.columns([1, 3, 1])
 
     with col_meta:
+        # 为了避免 widget key 与 session_state 变量冲突，widget 使用 _widget 后缀
+        for meta_key in ["flow_id", "flow_name", "flow_description", "flow_input_desc", "flow_input_default"]:
+            widget_key = f"{meta_key}_widget"
+            if widget_key not in st.session_state:
+                st.session_state[widget_key] = st.session_state.get(meta_key, "")
+
         with st.expander("流程元信息", expanded=True):
             flow_id = st.text_input(
                 "流程 ID *",
                 value=st.session_state.flow_id,
-                key="flow_id",
+                key="flow_id_widget",
                 help="唯一标识，将作为文件名",
                 disabled=is_edit,
             )
             flow_name = st.text_input(
                 "流程名称 *",
                 value=st.session_state.flow_name,
-                key="flow_name",
+                key="flow_name_widget",
             )
             flow_description = st.text_area(
                 "流程描述",
                 value=st.session_state.flow_description,
-                key="flow_description",
+                key="flow_description_widget",
                 height=80,
             )
             flow_input_desc = st.text_input(
                 "初始输入说明",
                 value=st.session_state.flow_input_desc,
-                key="flow_input_desc",
+                key="flow_input_desc_widget",
             )
             flow_input_default = st.text_input(
                 "初始输入默认值",
                 value=st.session_state.flow_input_default,
-                key="flow_input_default",
+                key="flow_input_default_widget",
             )
 
         with st.expander("🤖 AI 一键规划", expanded=True):
@@ -336,11 +345,16 @@ def _tab_editor():
                     if res["success"]:
                         flow = res["flow"]
                         st.session_state.flow_id = flow.get("flow_id", "ai_flow")
+                        st.session_state.flow_id_widget = st.session_state.flow_id
                         st.session_state.flow_name = flow.get("name", "AI 生成流程")
+                        st.session_state.flow_name_widget = st.session_state.flow_name
                         st.session_state.flow_description = flow.get("description", "")
+                        st.session_state.flow_description_widget = st.session_state.flow_description
                         inp = flow.get("input", {})
                         st.session_state.flow_input_desc = inp.get("description", "用户初始输入")
+                        st.session_state.flow_input_desc_widget = st.session_state.flow_input_desc
                         st.session_state.flow_input_default = inp.get("default_value", "")
+                        st.session_state.flow_input_default_widget = st.session_state.flow_input_default
                         st.session_state.flow_nodes = flow.get("nodes", [])
                         st.session_state.flow_edges = flow.get("edges", [])
                         st.session_state.selected_node_id = None
