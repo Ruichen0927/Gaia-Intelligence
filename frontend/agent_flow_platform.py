@@ -48,6 +48,60 @@ def _agent_color(agent_id: str) -> str:
     return AGENT_TYPE_COLORS["default"]
 
 
+def _apply_auto_layout(nodes: list, edges: list, h_spacing: int = 220, v_spacing: int = 150) -> list:
+    """基于拓扑层级为节点计算紧凑的初始坐标。
+
+    返回更新后的 nodes 列表（包含 position 字段）。
+    """
+    if not nodes:
+        return nodes
+
+    node_map = {n["id"]: n for n in nodes}
+    node_ids = set(node_map.keys())
+
+    # 计算每个节点的入边和出边
+    in_edges = {nid: [] for nid in node_ids}
+    out_edges = {nid: [] for nid in node_ids}
+    for edge in edges:
+        src = edge.get("from") or edge.get("source")
+        dst = edge.get("to") or edge.get("target")
+        if src in node_ids and dst in node_ids:
+            out_edges[src].append(dst)
+            in_edges[dst].append(src)
+
+    # 计算层级：最长路径长度
+    layer = {nid: 0 for nid in node_ids}
+    changed = True
+    while changed:
+        changed = False
+        for nid in node_ids:
+            for parent in in_edges[nid]:
+                if layer[parent] + 1 > layer[nid]:
+                    layer[nid] = layer[parent] + 1
+                    changed = True
+
+    # 按层级分组
+    layers = {}
+    for nid in node_ids:
+        layers.setdefault(layer[nid], []).append(nid)
+
+    # 按当前 nodes 顺序稳定排序每层内的节点
+    order_index = {n["id"]: i for i, n in enumerate(nodes)}
+    for lvl in layers:
+        layers[lvl].sort(key=lambda nid: order_index[nid])
+
+    # 分配坐标：x 按层级，y 按层内索引，整体居中
+    max_layer = max(layers.keys()) if layers else 0
+    for lvl, nids in layers.items():
+        x = lvl * h_spacing
+        total_height = len(nids) * v_spacing
+        start_y = -total_height / 2
+        for i, nid in enumerate(nids):
+            node_map[nid]["position"] = {"x": x, "y": start_y + i * v_spacing}
+
+    return list(node_map.values())
+
+
 def _project_root() -> Path:
     return get_project_root()
 
@@ -79,15 +133,17 @@ def _clear_flow_editor():
 
 
 def _load_flow_dict_into_editor(cfg: dict):
-    """把流程配置字典加载到编辑器。"""
+    """把流程配置字典加载到编辑器，并应用自动布局。"""
     st.session_state.flow_id = cfg.get("flow_id", "")
     st.session_state.flow_name = cfg.get("name", "")
     st.session_state.flow_description = cfg.get("description", "")
     inp = cfg.get("input", {})
     st.session_state.flow_input_desc = inp.get("description", "用户初始输入")
     st.session_state.flow_input_default = inp.get("default_value", "")
-    st.session_state.flow_nodes = cfg.get("nodes", [])
-    st.session_state.flow_edges = cfg.get("edges", [])
+    nodes = cfg.get("nodes", [])
+    edges = cfg.get("edges", [])
+    st.session_state.flow_nodes = _apply_auto_layout(nodes, edges)
+    st.session_state.flow_edges = edges
     st.session_state.selected_node_id = None
     st.session_state.flow_state = None
     st.session_state.flow_edit_mode = bool(st.session_state.flow_id)
@@ -239,8 +295,8 @@ def _nodes_edges_to_state(
     flow_nodes = []
     for i, node in enumerate(nodes):
         pos = node.get("position", {})
-        x = pos.get("x", i * 280)
-        y = pos.get("y", 100)
+        x = pos.get("x", i * 220)
+        y = pos.get("y", 100 + (i % 3) * 160)
         is_selected = node["id"] == selected_id
         flow_nodes.append(StreamlitFlowNode(
             id=node["id"],
@@ -459,7 +515,7 @@ def _tab_editor():
                         inp = flow.get("input", {})
                         st.session_state.flow_input_desc = inp.get("description", "用户初始输入")
                         st.session_state.flow_input_default = inp.get("default_value", "")
-                        st.session_state.flow_nodes = flow.get("nodes", [])
+                        st.session_state.flow_nodes = _apply_auto_layout(flow.get("nodes", []), flow.get("edges", []))
                         st.session_state.flow_edges = flow.get("edges", [])
                         st.session_state.selected_node_id = None
                         st.session_state.flow_state = None
@@ -491,6 +547,17 @@ def _tab_editor():
                         st.error(f"加载失败: {e}")
             else:
                 st.info("暂无已保存的流程。")
+
+        # 自动布局
+        if st.session_state.flow_nodes:
+            if st.button("🧭 自动排列节点", key="btn_auto_layout"):
+                st.session_state.flow_nodes = _apply_auto_layout(
+                    st.session_state.flow_nodes,
+                    st.session_state.flow_edges,
+                )
+                st.session_state.flow_state = None
+                st.success("节点已自动排列")
+                st.rerun()
 
         # 添加节点
         with st.expander("➕ 添加节点"):
