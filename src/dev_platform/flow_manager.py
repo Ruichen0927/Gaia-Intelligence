@@ -77,19 +77,28 @@ def load_flow(flow_id: str, project_root: Path = None) -> Dict[str, Any]:
     if _is_builtin(flow_id):
         pipeline = load_json(PIPELINE_FILE, root)
         # 把 pipeline_config.json 的每个 step 映射为 Agent Flow 节点
+        # 同时将 module+function 映射为 mcp_config.json 中注册的工具名
+        from common.tool_registry import list_tools_for_agent
+        tool_registry = {t["name"]: t for t in list_tools_for_agent(root)}
+        function_to_name = {
+            (t["module"], t["function"]): name
+            for name, t in tool_registry.items()
+        }
+
         nodes = []
         for i, step in enumerate(pipeline):
-            tool = step.get("tool", "")
+            tool_module = step.get("tool", "")
             function = step.get("function", "")
+            tool_name = function_to_name.get((tool_module, function), tool_module)
             nodes.append({
                 "id": f"step_{i}",
-                "agent_id": "ToolDeveloperAgent",  # 默认使用工具开发 Agent 作为执行 Agent
+                "agent_id": "ToolSelectorAgent",  # 流程法节点由平台执行工具
                 "role_description": f"流程法第 {i + 1} 步执行专家",
-                "task_instruction": f"调用工具 `{tool}` 的函数 `{function}` 执行步骤 `{step.get('step', '')}`",
-                "tools": [tool] if tool else [],
+                "task_instruction": f"调用工具 `{tool_name}` 执行步骤 `{step.get('step', '')}`",
+                "tools": [tool_name] if tool_name else [],
                 "kb_docs": [],
                 "skills": [],
-                "input_template": f"请调用工具 `{tool}` 的函数 `{function}` 执行步骤 `{step.get('step', '')}`。",
+                "input_template": f"请调用工具 `{tool_name}` 执行步骤 `{step.get('step', '')}`。",
                 "output_key": step.get("step", f"output_{i}"),
                 "output_parser": "text",
             })
@@ -318,7 +327,23 @@ def build_node_prompt(
     rendered = template.format(**context)
 
     parts.append("【当前任务】\n" + rendered)
-    parts.append("【输出要求】\n请直接给出你的分析结果或决策，不要调用任何外部函数。你的输出文本将被下游节点作为输入使用。")
+
+    if tools:
+        parts.append("""【工具执行输出格式】
+你当前节点配置了可执行工具。你的任务是根据当前上下文，判断如何调用这些工具，并输出一个 JSON 对象用于指定每个工具的配置覆盖。
+JSON 格式如下（只输出一个完整 JSON，不要嵌套在 markdown 代码块中）：
+{
+  "reasoning": "你的分析和执行计划",
+  "tools": [
+    {"tool": "tool_name_1", "overrides": {"paths": {...}, "parameters": {...}}},
+    {"tool": "tool_name_2", "overrides": {"paths": {...}, "parameters": {...}}}
+  ],
+  "summary": "给下游节点的自然语言总结"
+}
+如果不需要修改默认配置，overrides 可省略或为空对象 {}。
+注意：tools 列表中的 tool 名必须是上方【你可使用的工具】中列出的真实工具名。""")
+    else:
+        parts.append("【输出要求】\n请直接给出你的分析结果或决策。你的输出文本将被下游节点作为输入使用。")
 
     return "\n\n".join(parts)
 

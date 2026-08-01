@@ -12,6 +12,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 from common.config_loader import get_project_root
 from dev_platform import agent_manager, flow_manager
 from llm.caller import load_agent
+from methods import tool_executor
 
 
 def run_flow(flow_id: str, initial_input: str = "", project_root: Path = None) -> Dict[str, Any]:
@@ -70,24 +71,65 @@ def run_flow(flow_id: str, initial_input: str = "", project_root: Path = None) -
 
             # 为该节点生成临时 system message，明确团队角色
             system_override = flow_manager.build_node_system_message(node, cfg, agent.system_prompt)
-            response = agent.generate_response(user_input=prompt, system_message_override=system_override)
+            llm_response = agent.generate_response(user_input=prompt, system_message_override=system_override)
 
-            outputs[output_key] = response
-            final_output = response
+            tools = node.get("tools", [])
+            if tools:
+                # 工具执行节点：先解析 LLM 的参数建议，再实际调用工具
+                tool_run = tool_executor.execute_node_tools(
+                    tools=tools,
+                    llm_response=llm_response,
+                    outputs=outputs,
+                    initial_input=initial_input,
+                    project_root=root,
+                )
+                # 组合 LLM 总结与工具结果作为节点输出
+                output_lines = ["【Agent 分析与计划】", llm_response, "", "【工具执行结果】"]
+                for tr in tool_run["tool_results"]:
+                    status = "成功" if tr.get("success") else "失败"
+                    output_lines.append(f"- {tr['tool_name']}: {status}")
+                    if tr.get("result"):
+                        output_lines.append(f"  结果: {json.dumps(tr['result'], ensure_ascii=False)[:500]}")
+                    if tr.get("error"):
+                        output_lines.append(f"  错误: {tr['error']}")
+                node_output = "\n".join(output_lines)
+                step_success = tool_run.get("success", False)
+                step_error = tool_run.get("error")
+            else:
+                node_output = llm_response
+                step_success = True
+                step_error = None
+
+            outputs[output_key] = node_output
+            final_output = node_output
             steps.append({
                 "node_id": nid,
                 "agent_id": agent_id,
                 "output_key": output_key,
-                "success": True,
-                "output": response,
+                "success": step_success,
+                "llm_response": llm_response,
+                "tool_results": tool_run["tool_results"] if tools else [],
+                "output": node_output,
+                "error": step_error,
             })
+
+            if not step_success:
+                return {
+                    "success": False,
+                    "outputs": outputs,
+                    "steps": steps,
+                    "final_output": final_output,
+                    "error": f"节点 '{nid}' 执行失败: {step_error}",
+                }
         except Exception as e:
+            import traceback
             steps.append({
                 "node_id": nid,
                 "agent_id": agent_id,
                 "output_key": output_key,
                 "success": False,
                 "error": str(e),
+                "traceback": traceback.format_exc(),
             })
             return {
                 "success": False,

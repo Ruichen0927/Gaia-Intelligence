@@ -8,6 +8,7 @@ openai>=1.0.0
 mcp>=1.0.0
 streamlit>=1.28.0
 streamlit-agraph>=0.0.45
+streamlit-flow-component>=1.6.1
 matplotlib>=3.7.0
 seaborn>=0.12.0
 # 旧版图谱使用 pyvis，已替换为 streamlit-agraph 以支持点击节点回调
