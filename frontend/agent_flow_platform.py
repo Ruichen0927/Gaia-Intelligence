@@ -52,10 +52,9 @@ def _clear_flow_editor():
     _init_session()
 
 
-def _load_flow_into_editor(flow_id: str):
-    root = _project_root()
-    cfg = flow_manager.load_flow(flow_id, root)
-    st.session_state.flow_id = cfg.get("flow_id", flow_id)
+def _load_flow_dict_into_editor(cfg: dict):
+    """把流程配置字典加载到编辑器。"""
+    st.session_state.flow_id = cfg.get("flow_id", "")
     st.session_state.flow_name = cfg.get("name", "")
     st.session_state.flow_description = cfg.get("description", "")
     inp = cfg.get("input", {})
@@ -65,10 +64,16 @@ def _load_flow_into_editor(flow_id: str):
     st.session_state.flow_edges = cfg.get("edges", [])
     st.session_state.selected_node_id = None
     st.session_state.flow_state = None
-    st.session_state.flow_edit_mode = True
-    # 同步 widget 值
+    st.session_state.flow_edit_mode = bool(st.session_state.flow_id)
+    # 删除 widget key，让下次渲染用新的 canonical 值
     for meta_key in ["flow_id", "flow_name", "flow_description", "flow_input_desc", "flow_input_default"]:
-        st.session_state[f"{meta_key}_widget"] = st.session_state.get(meta_key, "")
+        st.session_state.pop(f"{meta_key}_widget", None)
+
+
+def _load_flow_into_editor(flow_id: str):
+    root = _project_root()
+    cfg = flow_manager.load_flow(flow_id, root)
+    _load_flow_dict_into_editor(cfg)
 
 
 def _default_node_data():
@@ -85,22 +90,53 @@ def _default_node_data():
     }
 
 
+def _get_agent_system_prompt(agent_id: str, project_root: Path = None) -> str:
+    """加载 Agent 配置中的 system_message。"""
+    if not agent_id:
+        return ""
+    try:
+        root = project_root or _project_root()
+        cfg = agent_manager.load_agent_config(agent_id, root)
+        return cfg.get("system_message", "")
+    except Exception:
+        return ""
+
+
 def _node_label(node: dict) -> str:
     role = node.get("role_description", "").strip()
     agent = node.get("agent_id", "").strip()
     return role or agent or node.get("id", "节点")
 
 
-def _build_node_data(node: dict, step_results: dict = None) -> dict:
+def _format_node_content(node: dict) -> str:
+    """格式化节点画布上显示的内容。"""
+    lines = []
+    lines.append(f"**{_node_label(node)}**")
+    agent = node.get("agent_id", "").strip()
+    if agent:
+        lines.append(f"Agent: `{agent}`")
+    tools = node.get("tools", [])
+    if tools:
+        tools_text = ", ".join(tools[:3])
+        if len(tools) > 3:
+            tools_text += f" +{len(tools) - 3}"
+        lines.append(f"Tools: {tools_text}")
+    return "\n".join(lines)
+
+
+def _build_node_data(node: dict, step_results: dict = None, project_root: Path = None) -> dict:
     """把内部节点配置转换为 StreamlitFlowNode 的 data 字段。"""
     nid = node["id"]
-    label = _node_label(node)
     status_color = "#4C78A8"
     if step_results and nid in step_results:
         status_color = "#2E8B57" if step_results[nid].get("success") else "#E45756"
 
+    system_prompt = node.get("system_prompt", "")
+    if not system_prompt:
+        system_prompt = _get_agent_system_prompt(node.get("agent_id", ""), project_root)
+
     return {
-        "label": label,
+        "content": _format_node_content(node),
         "agent_id": node.get("agent_id", ""),
         "role_description": node.get("role_description", ""),
         "task_instruction": node.get("task_instruction", ""),
@@ -110,6 +146,7 @@ def _build_node_data(node: dict, step_results: dict = None) -> dict:
         "input_template": node.get("input_template", ""),
         "output_key": node.get("output_key", ""),
         "output_parser": node.get("output_parser", "text"),
+        "system_prompt": system_prompt,
         "status_color": status_color,
     }
 
@@ -127,13 +164,17 @@ def _node_style(node: dict, step_results: dict = None) -> dict:
         "padding": "10px",
         "width": f"{NODE_WIDTH}px",
         "minHeight": f"{NODE_HEIGHT}px",
+        "height": "auto",
         "fontSize": "12px",
         "border": "1px solid #2c3e50",
+        "whiteSpace": "pre-wrap",
+        "lineHeight": "1.4",
     }
 
 
-def _nodes_edges_to_state(nodes: list, edges: list, step_results: dict = None) -> StreamlitFlowState:
+def _nodes_edges_to_state(nodes: list, edges: list, step_results: dict = None, project_root: Path = None) -> StreamlitFlowState:
     """把内部 nodes/edges 转换为 StreamlitFlowState。"""
+    root = project_root or _project_root()
     flow_nodes = []
     for i, node in enumerate(nodes):
         pos = node.get("position", {})
@@ -142,7 +183,7 @@ def _nodes_edges_to_state(nodes: list, edges: list, step_results: dict = None) -
         flow_nodes.append(StreamlitFlowNode(
             id=node["id"],
             pos=(x, y),
-            data=_build_node_data(node, step_results),
+            data=_build_node_data(node, step_results, root),
             node_type="default",
             source_position="bottom",
             target_position="top",
@@ -197,6 +238,7 @@ def _state_to_nodes_edges(state: StreamlitFlowState) -> tuple:
             "input_template": data.get("input_template", "{__input__}"),
             "output_key": data.get("output_key", ""),
             "output_parser": data.get("output_parser", "text"),
+            "system_prompt": data.get("system_prompt", ""),
             "position": {"x": pos.get("x", 0), "y": pos.get("y", 0)},
         })
 
@@ -217,13 +259,14 @@ def _sync_state_to_session(state: StreamlitFlowState):
     st.session_state.flow_state = state
 
 
-def _get_flow_state(step_results: dict = None) -> StreamlitFlowState:
+def _get_flow_state(step_results: dict = None, project_root: Path = None) -> StreamlitFlowState:
     """获取当前画布 state（优先用 session_state 中缓存的，避免重复构建）。"""
     if st.session_state.flow_state is None:
         st.session_state.flow_state = _nodes_edges_to_state(
             st.session_state.flow_nodes,
             st.session_state.flow_edges,
             step_results,
+            project_root,
         )
     return st.session_state.flow_state
 
@@ -293,12 +336,6 @@ def _tab_editor():
     col_meta, col_canvas, col_editor = st.columns([1, 3, 1])
 
     with col_meta:
-        # 为了避免 widget key 与 session_state 变量冲突，widget 使用 _widget 后缀
-        for meta_key in ["flow_id", "flow_name", "flow_description", "flow_input_desc", "flow_input_default"]:
-            widget_key = f"{meta_key}_widget"
-            if widget_key not in st.session_state:
-                st.session_state[widget_key] = st.session_state.get(meta_key, "")
-
         with st.expander("流程元信息", expanded=True):
             flow_id = st.text_input(
                 "流程 ID *",
@@ -345,21 +382,19 @@ def _tab_editor():
                     if res["success"]:
                         flow = res["flow"]
                         st.session_state.flow_id = flow.get("flow_id", "ai_flow")
-                        st.session_state.flow_id_widget = st.session_state.flow_id
                         st.session_state.flow_name = flow.get("name", "AI 生成流程")
-                        st.session_state.flow_name_widget = st.session_state.flow_name
                         st.session_state.flow_description = flow.get("description", "")
-                        st.session_state.flow_description_widget = st.session_state.flow_description
                         inp = flow.get("input", {})
                         st.session_state.flow_input_desc = inp.get("description", "用户初始输入")
-                        st.session_state.flow_input_desc_widget = st.session_state.flow_input_desc
                         st.session_state.flow_input_default = inp.get("default_value", "")
-                        st.session_state.flow_input_default_widget = st.session_state.flow_input_default
                         st.session_state.flow_nodes = flow.get("nodes", [])
                         st.session_state.flow_edges = flow.get("edges", [])
                         st.session_state.selected_node_id = None
                         st.session_state.flow_state = None
                         st.session_state.flow_edit_mode = False
+                        # 删除 widget key，让下次渲染用新的 canonical 值
+                        for meta_key in ["flow_id", "flow_name", "flow_description", "flow_input_desc", "flow_input_default"]:
+                            st.session_state.pop(f"{meta_key}_widget", None)
                         st.success("流程生成完成，请在画布上检查并保存。")
                         st.rerun()
                     else:
@@ -367,6 +402,19 @@ def _tab_editor():
                         if res.get("raw"):
                             with st.expander("原始响应"):
                                 st.text(res["raw"])
+
+        # 导入流程 JSON
+        with st.expander("📥 导入流程 JSON"):
+            uploaded_file = st.file_uploader("选择流程 JSON 文件", type=["json"], key="flow_import_file")
+            if uploaded_file is not None:
+                try:
+                    import_data = json.loads(uploaded_file.read().decode("utf-8"))
+                    if st.button("加载到画布", key="btn_import_flow"):
+                        _load_flow_dict_into_editor(import_data)
+                        st.success("流程已加载到画布。")
+                        st.rerun()
+                except Exception as e:
+                    st.error(f"导入失败: {e}")
 
         # 添加节点
         with st.expander("➕ 添加节点"):
@@ -419,7 +467,7 @@ def _tab_editor():
         st.markdown("#### 流程画布")
         st.caption("拖拽节点调整位置｜从节点底部/顶部拖拽连线｜点击节点在右侧面板编辑")
 
-        flow_state = _get_flow_state()
+        flow_state = _get_flow_state(project_root=root)
         returned_state = streamlit_flow(
             "flow_canvas",
             state=flow_state,
@@ -497,6 +545,18 @@ def _tab_editor():
                     st.session_state.flow_state = None
                     st.success(f"节点 '{nid}' 已更新")
                     st.rerun()
+
+        with st.expander("🧠 Agent 系统提示词"):
+            system_prompt = selected_node.get("system_prompt", "")
+            if not system_prompt:
+                system_prompt = _get_agent_system_prompt(selected_node.get("agent_id", ""), root)
+            st.text_area(
+                "",
+                value=system_prompt,
+                height=120,
+                disabled=True,
+                key=f"sys_prompt_{nid}",
+            )
 
         if st.button("🗑️ 删除节点", key=f"btn_del_node_{nid}"):
             _delete_node(nid)
@@ -583,7 +643,7 @@ def _tab_run():
 
         st.markdown("---")
         st.subheader("🗺️ 执行流程可视化")
-        run_state = _nodes_edges_to_state(cfg.get("nodes", []), cfg.get("edges", []), step_results)
+        run_state = _nodes_edges_to_state(cfg.get("nodes", []), cfg.get("edges", []), step_results, project_root=root)
         returned_run_state = streamlit_flow(
             "run_flow_canvas",
             state=run_state,
